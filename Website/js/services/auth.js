@@ -16,9 +16,7 @@ class AuthService {
         // Listen on authentication state change
         firebase.auth().onAuthStateChanged(user => {
             if (user) { // if user exists and is authenticated
-                this.userAuthenticated(user);
             } else { // if user is not logged in
-                this.userNotAuthenticated();
             }
         });
     }
