@@ -2,9 +2,10 @@
 <html>
 <head>
  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Repenso Bogholderi | Bogføring med fokus på at flytte kunders økonomi fremad">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="author" content="Fento">
   <!--- aos style --------------------->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- Firebase UI Styles -->
@@ -16,7 +17,15 @@
 
 <title>Barhunt</title>
 </head>
-<body>
+
+<body class="app" onhashchange="pageChange()">
+
+  <nav id="tabbar" class="tabbar hide">
+    <a href="#home">Home</a>
+    <a href="#favorites">Persons</a>
+    <a href="#destination">Movies</a>
+    <a href="#chance">Profile</a>
+  </nav>
 
   <section>
 
