@@ -10,7 +10,7 @@ export default class ProfilePage {
             <h2>profile</h2>
             <a class="right" href="#favorites">name</a>
           </header>
-          <section id="bar-container" class="grid-container"></section>
+          <section id="profile-container" class="grid-container"></section>
         </section>
       `;
     }

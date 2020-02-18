@@ -1,10 +1,13 @@
 // import your pages
 
 import BarPage from "./pages/bars.js";
-
 import ProfilePage from "./pages/profile.js";
+import HomePage from "./pages/home.js";
+import ChancePage from "./pages/chance.js";
+
 // import your services
 import spaService from "./services/spa.js";
+import barService from "./services/bar.js";
 
 
 
@@ -12,12 +15,14 @@ import spaService from "./services/spa.js";
 
 let barPage = new BarPage();
 let profilePage = new ProfilePage();
+let homePage = new HomePage();
+let chancePage = new ChancePage();
 
 
 
 // init services 
 spaService.init();
-
+barService.init();
 
 // onclick handlers
 window.pageChange = () => spaService.pageChange();
