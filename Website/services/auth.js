@@ -1,6 +1,6 @@
-import spaService from "./spa.js.js";
-import loaderService from "./loader.js.js";
-import movieService from "./movie.js.js";
+import spaService from "./spa.js";
+import loaderService from "./loader.js";
+import barService from "./bar.js";
 
 class AuthService {
     constructor() {
@@ -16,7 +16,9 @@ class AuthService {
         // Listen on authentication state change
         firebase.auth().onAuthStateChanged(user => {
             if (user) { // if user exists and is authenticated
+                this.userAuthenticated(user);
             } else { // if user is not logged in
+                this.userNotAuthenticated();
             }
         });
     }
