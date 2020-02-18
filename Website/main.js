@@ -1,31 +1,28 @@
 // import your pages
-import LoginPage from "./pages/login.js";
-import HomePage from "./pages/home.js";
-import PersonsPage from "./pages/persons.js";
-import MoviePage from "./pages/movies.js";
+
+import BarPage from "./pages/bars.js";
 import ProfilePage from "./pages/profile.js";
+import HomePage from "./pages/home.js";
+import ChancePage from "./pages/chance.js";
 
 // import your services
 import spaService from "./services/spa.js";
-import authService from "./services/auth.js";
-import FavoritesPage from "./pages/favorites.js";
+import barService from "./services/bar.js";
+
+
 
 // Declare and init pages
-let loginPage = new LoginPage();
-let homePage = new HomePage();
-let personsPage = new PersonsPage();
-let moviePage = new MoviePage();
-let favorites = new FavoritesPage();
+
+let barPage = new BarPage();
 let profilePage = new ProfilePage();
+let homePage = new HomePage();
+let chancePage = new ChancePage();
+
+
 
 // init services 
 spaService.init();
-authService.init();
+barService.init();
 
 // onclick handlers
 window.pageChange = () => spaService.pageChange();
-window.logout = () => profilePage.logout();
-window.updateUser = () => profilePage.updateUser();
-window.previewImage = (file, previewId) => profilePage.previewImage(file, previewId);
-window.addToFavourites = (movieId) => moviePage.addToFavourites(movieId);
-window.removeFromFavourites = (movieId) => moviePage.removeFromFavourites(movieId);
