@@ -21,7 +21,6 @@ class BarService {
         for (let bar of bars) {
             htmlTemplate += /* html */ `
             <article>
-            <h1>hej</h1>
               <h2>${bar.name}</h2>
               <p>${bar.location}</p>
             </article>

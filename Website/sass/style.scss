@@ -13,30 +13,40 @@ $main-black: #111118;
     position: fixed;
     bottom: 0px;
     width: 100%;
-    padding: 5% 0;
 }
 
 .tabbar-wrapper{
-    width: 50%;
+    width: 80%;
+    height: 60%;
     margin: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     a{
-        width: 15%;
-        img{
-            width: 100%;
-        }
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
     }
 }
 
-.tabbar-icon{
+.tabbar a svg{
     fill: none;
     stroke: white;
-    stroke-width: 6%;
+    stroke-width: 2%;
     stroke-miterlimit: 10;
+    width: 80%;
+}
+
+.tabbar a.active{
+    display: flex;
+    justify-content: center;
+
 }
 
 .tabbar a.active svg{
     fill: white;
-    stroke-width: 3%;
+    stroke: none;
+    width: 85%;
+
 }
