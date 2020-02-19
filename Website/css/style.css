@@ -1,1 +1,1 @@
-*{margin:0;padding:0}
+*{margin:0;padding:0}#tabbar{background-color:#111118;position:fixed;bottom:0px;width:100%;padding:5% 0}.tabbar-wrapper{width:50%;margin:auto;display:flex;justify-content:space-around}.tabbar-wrapper a{width:15%}.tabbar-wrapper a img{width:100%}.tabbar-icon{fill:none;stroke:white;stroke-width:6%;stroke-miterlimit:10}.tabbar a.active svg{fill:white;stroke-width:3%}
