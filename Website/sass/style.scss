@@ -8,6 +8,7 @@ $main-black: #111118;
 }
 
 
+/* ================= TABBAR ====================*/
 #tabbar{
     background-color: $main-black;
     position: fixed;
@@ -33,8 +34,7 @@ $main-black: #111118;
 .tabbar a svg{
     fill: none;
     stroke: white;
-    stroke-width: 2%;
-    stroke-miterlimit: 10;
+    stroke-width: 4%;
     width: 80%;
 }
 
@@ -50,3 +50,5 @@ $main-black: #111118;
     width: 85%;
 
 }
+
+/* ================= TABBAR END ====================== */
