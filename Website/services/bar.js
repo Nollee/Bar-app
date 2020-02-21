@@ -22,12 +22,14 @@ class BarService {
             htmlTemplate += /* html */ `
             <article>
               <h2>${bar.name}</h2>
-              <p>${bar.location}</p>
+              <p>${bar.address}</p>
             </article>
             
           `;
         }
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
+        console.log(bars);
+        
     }
 }
 
