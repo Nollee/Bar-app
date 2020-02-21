@@ -7,6 +7,7 @@ export default class LoginPage {
       document.getElementById('content').innerHTML += /*html*/ `
         <section id="login" class="page">
         <div class="toppic">
+        <h1>BarHunt</h1>
         <img src="../images/cheers.jpg">
         </div>
           <!-- firebase auth container  -->
