@@ -22,7 +22,7 @@ let chancePage = new ChancePage();
 
 // init services 
 spaService.init();
-barService.init();
+barService.init(); 
 
 // onclick handlers
 window.pageChange = () => spaService.pageChange();

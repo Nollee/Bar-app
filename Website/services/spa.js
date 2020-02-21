@@ -58,6 +58,9 @@ class SpaService {
       tabbar.classList.remove("hide");
     }
   }
+
+ 
+
 }
 const spaService = new SpaService();
 export default spaService;
