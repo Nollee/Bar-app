@@ -1,3 +1,43 @@
 @import "_rules"; 
 /* ============ import ======================== */
- 
+
+
+
+ /* ================= SLIDER ====================*/
+ .slider{
+    display: flex;
+    width: 235px; 
+    flex-wrap: nowrap; 
+    overflow-x: scroll; 
+    transition: 0.5s ease;
+    margin: 5% auto 0;
+    transform: scale(0.98);
+    cursor: pointer;
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}    
+
+.slide{
+    margin: 5px;
+    width: 200px;
+    height: 100px;
+    background-color: red;
+    display: inline-block;
+    min-width: 200px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always; 
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+    
+}
+
+.active{
+    transform: scale(1);
+    transition: 0.3s ease;
+    cursor: grabbing;
+}
+
+/* ================= SLIDER END ====================*/
