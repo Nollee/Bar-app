@@ -36,6 +36,8 @@ class BarService {
           `;
         }
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
+        console.log(bars);
+        
     }
 
     showDetailView(id) {
