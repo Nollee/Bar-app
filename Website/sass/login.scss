@@ -29,3 +29,59 @@ background: linear-gradient(180deg, rgba(17,17,24,0) 0%, rgba(17,17,24,1) 77%, r
     }
 }
 
+.mdl-card{
+    background-color: transparent;
+    width: 90%;
+    border-radius: 30px;
+    input{
+    color: white !important;
+    }
+}
+
+.firebaseui-title{
+    color: white;
+    border: none;
+}
+
+.mdl-textfield__input{
+    color: white;
+}
+
+.mdl-textfield__input::placeholder{
+    color: white;
+    opacity: 70%;
+}
+
+.mdl-button--raised.mdl-button--colored{
+    background-color: $main-yellow;
+    color: $main-black;
+}
+
+.mdl-button--primary.mdl-button--primary{
+    color: $main-yellow;
+}
+
+.mdl-textfield__input{
+    border-bottom: 1px solid white;
+}
+
+.firebaseui-textfield.mdl-textfield .firebaseui-input{
+    border-color: white;
+}
+
+.is-upgraded .is-focused {
+    .mdl-textfield__input .firebaseui-input .firebaseui-id-email{
+    border-color: $main-yellow;
+    }
+}
+
+.firebaseui-idp-button{
+    background-color: transparent;
+    color: white;
+    border: 2px solid $main-yellow;
+    border-radius: 15px;
+}
+
+.firebaseui-idp-text .firebaseui-idp-text-long{
+    color: white;
+}
