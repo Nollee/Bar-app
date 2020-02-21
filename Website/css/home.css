@@ -77,14 +77,6 @@
   opacity: 0;
   transition: visibility 0s 0.4s, opacity 0.4s linear; }
 
-/* ================= LOADER END ======================= */
-/* ================= LOGIN ===========================*/
-.toppic {
-  width: 100%;
-  margin-top: 0; }
-  .toppic img {
-    margin-top: 0;
-    padding: 0;
-    width: 100%; }
+/* ============ import ======================== */
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=home.css.map */

@@ -13,5 +13,5 @@ export default class BarPage {
         <section id="bar-container" class="grid-container"></section>
       </section>
     `;
-  }
+  }  
 }
