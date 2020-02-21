@@ -13,7 +13,7 @@ class BarService {
             });
             this.appendBars(bars);
 
-        });
+        });a
     }
 
     appendBars(bars) {
