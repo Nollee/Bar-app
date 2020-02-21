@@ -19,8 +19,8 @@ class BarService {
         let htmlTemplate = "";
         for (let bar of bars) {
              htmlTemplate += /* html */ `
-            <article onclick="showDetailView(${bar.id})">  
-              <h2>${bar.name}</h2>
+            <article onclick="showDetailView('${bar.id}')">  
+              <h2>${bar.name}</h2> 
               <p>${bar.id}</p> 
               <p>${bar.address}</p>
               <p>${bar.description}</p>
