@@ -2,10 +2,6 @@ $main-pink: #FF0560;
 $main-yellow: #F3CA26;
 $main-black: #111118;
 
-*{
-    margin: 0;
-    padding: 0;
-}
 /* inheritances */
 %center {
     display: flex;
@@ -13,6 +9,23 @@ $main-black: #111118;
     align-items: center; 
 }
 /* inheritances end */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: din-2014, sans-serif;
+}
+
+h1{
+    color: white;
+    font-weight: 700;
+    font-style: italic;
+}
+
+body{
+    background-color: $main-black;
+}
+
 
 /* ================= TABBAR ====================*/
  
@@ -24,14 +37,14 @@ $main-black: #111118;
 }
 
 .tabbar-wrapper{
-    width: 80%;
+    width: 90%;
     height: 60%;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     a{
-        width: 20%;
+        width: 15%;
         height: 100%;
         display: flex;
         justify-content: center;
@@ -44,6 +57,7 @@ $main-black: #111118;
     stroke: white;
     stroke-width: 3.5%;
     width: 80%;
+    height: 80%;
 }
 
 .tabbar a.active{
