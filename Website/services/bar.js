@@ -1,11 +1,11 @@
 class BarService {
     constructor() {
-        this.movieRef = _db.collection("bars");
+        this.barRef = _db.collection("bars");
     }
     init() {
         // init all movies
-        this.movieRef.onSnapshot(snapshotData => {
-            let bars = []; 
+        this.barRef.onSnapshot(snapshotData => {
+            let bars = [];
             snapshotData.forEach(doc => {
                 let bar = doc.data();
                 bar.id = doc.id;
@@ -14,7 +14,7 @@ class BarService {
             this.appendBars(bars);
             this.showDetailView();  
         });
-    } 
+    }  
 
     appendBars(bars) {
         let htmlTemplate = "";
