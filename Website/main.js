@@ -33,4 +33,4 @@ authService.init();
 // onclick handlers
 window.pageChange = () => spaService.pageChange();
 window.logout = () => profilePage.logout();
-window.showDetailView = () => barPage.showDetailView(); 
+window.showDetailView = (id) => barPage.showDetailView(id); 
