@@ -9,9 +9,9 @@ class BarService {
             snapshotData.forEach(doc => {
                 let bar = doc.data();
                 bar.id = doc.id;
-                bars.push(bar);
+                bars.push(bar);  
             });
-            this.appendBars(bars);   
+            this.appendBars(bars);  
         });
     }  
 
@@ -42,8 +42,8 @@ class BarService {
     showDetailView(id) {
         for (let bar of bars) {
             if (bar.id === id) {
-                selectedBar = bar; 
-            }
+                this.selectedBar = bar;  
+            } 
         } 
         document.querySelector("#detail-view").innerHTML = /*html*/ `
         <article>  
