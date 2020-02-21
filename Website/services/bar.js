@@ -3,7 +3,7 @@ class BarService {
         this.barRef = _db.collection("bars");
     }
     init() {
-        // init all movies
+        // init all bars
         this.barRef.onSnapshot(snapshotData => {
             let bars = [];
             snapshotData.forEach(doc => {
@@ -11,8 +11,7 @@ class BarService {
                 bar.id = doc.id;
                 bars.push(bar);
             });
-            this.appendBars(bars);
-            this.showDetailView();  
+            this.appendBars(bars);   
         });
     }  
 
