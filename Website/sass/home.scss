@@ -6,7 +6,8 @@
  /* ================= SLIDER ====================*/
  .slider{
     display: flex;
-    width: 235px; 
+    width: 95%; 
+    height: 30vh;
     flex-wrap: nowrap; 
     overflow-x: scroll; 
     transition: 0.5s ease;
@@ -20,13 +21,12 @@
 
 .slide{
     margin: 5px;
-    width: 200px;
-    height: 100px;
+    width: 95%;
     background-color: red;
     display: inline-block;
-    min-width: 200px;
     scroll-snap-align: center;
     scroll-snap-stop: always; 
+    min-width: 85%;
 }
 
 .slider::-webkit-scrollbar {

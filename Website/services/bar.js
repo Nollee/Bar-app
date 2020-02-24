@@ -1,4 +1,4 @@
-class BarService {
+export default class BarService {
     constructor() {
         this.barRef = _db.collection("bars");
     }
@@ -19,7 +19,7 @@ class BarService {
         let htmlTemplate = "";
         for (let bar of bars) {
              htmlTemplate += /* html */ `
-            <article onclick="showDetailView(${bar.id})">  
+            <article onclick="showDetailView('${bar.id}','${bar.name}')">  
               <h2>${bar.name}</h2>
               <p>${bar.id}</p> 
               <p>${bar.address}</p>
@@ -39,31 +39,9 @@ class BarService {
         
     }
 
-    showDetailView(id) {
-        for (let bar of bars) {
-            if (bar.id === id) {
-                this.selectedBar = bar;  
-            } 
-        } 
-        document.querySelector("#detail-view").innerHTML = /*html*/ `
-        <article>  
-              <h2>${selectedBar.name}</h2>
-              <p>${selectedBar.location}</p>
-              <p>${selectedBar.address}</p>
-              <p>${selectedBar.description}</p>
-              <p>plads: 0 - ${selectedBar.space}</p>
-              <p>pris: ${selectedBar.price}kr.</p> 
-              <p>${selectedBar.opening}</p>
-              <p>${selectedBar.games}</p>  
-            </article>
-            <style> 
-            article {background-image: url(${bar.img});}   
-            </style>  
-        `;
-        navigateTo("detail-view");  
+    showDetailView(id, name) {
+        console.log(id, name);    
     }
-
+   
 } 
 
-const barService = new BarService();
-export default barService;
