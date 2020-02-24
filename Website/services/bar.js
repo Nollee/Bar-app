@@ -4,7 +4,7 @@ export default class BarService {
         this.barRef = _db.collection("bars");
         this.bars = [];
         this._selectedBar;
-        this.spaService = spaService;
+        this.spaService = spaService;   
     }
     init() {
         // init all bars
@@ -63,17 +63,17 @@ export default class BarService {
 
     search(value) {
         let searchQuery = value.toLowerCase();
-        let filteredBars = []; 
+        let filteredBars = [];  
         for (let bar of this.bars) {    
-          let title = bar.name.toLowerCase();
+        let title = bar.name.toLowerCase();
           if (title.includes(searchQuery)) {
             filteredBars.push(bar);
           }
-        }   
+        }     
         console.log(filteredBars); 
         appendBars(filteredBars); 
-    } 
- 
-
+    }      
+  
+  
      
 } 

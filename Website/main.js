@@ -33,11 +33,10 @@ spaService.init();
 barService.init();
 authService.init();
 _barDatabase.init();
-/* barService.search(); */  
-
+ 
 // onclick handlers
 window.pageChange = () => spaService.pageChange();
 window.logout = () => profilePage.logout();
 window.showDetailView = (id) => _barDatabase.showDetailView(id); 
-/* window.search = () => barPage.search();  */
+window.search = () => barService.search();  
    
