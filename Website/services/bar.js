@@ -15,7 +15,7 @@ export default class BarService {
                 this.bar.id = doc.id;
                 this.bars.push(this.bar);  
             });
-            this.appendBars(bars);  
+            this.appendBars(bars);    
         });
     }  
 
@@ -37,7 +37,7 @@ export default class BarService {
             .bar-card {background-image: url(${bar.img});}   
             </style> 
           `;
-        }
+        } 
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
         console.log(bars);
         

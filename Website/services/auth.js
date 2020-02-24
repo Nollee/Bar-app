@@ -69,30 +69,41 @@ class AuthService {
         });
     }
 
+    // Appends the data of the user 
     appendUserData(user){
         document.querySelector('#profile-container').innerHTML += /* html */ `
              <article id="profiledata">
-             <img src="${user.photoURL}" alt="user">
+             <img src="${user.photoURL}?height=500" alt="user">
              <h3>${user.displayName}</h3>
-            <h3>${user.email}</h3>
+             <div class="profile-info"> 
+            <p>${user.email}</p>
+            </div>
+            <div class="profile-info">
+            <p class="phone">${user.phone}</p>
+            </div>
              </article>
           `;
         console.log(user);
+        let phone = document.querySelector(".phone")
+        if( phone.innerHTML === "undefined"){
+            phone.innerHTML = "Intet Telefonnummer"
+        }
             }
-
+    
+    // Makes the user log out
     logout() {
         firebase.auth().signOut();
     }
 
+    // appends the value which has been written in updateUser()
     appendAuthUser() {
         document.querySelector('#name').value = this.authUser.displayName || "";
         document.querySelector('#mail').value = this.authUser.email;
-        document.querySelector('#birthdate').value = this.authUser.birthdate || "";
-        document.querySelector('#hairColor').value = this.authUser.hairColor || "";
         document.querySelector('#imagePreview').src = this.authUser.img || "";
         document.querySelector('#phone').value = this.authUser.phone || "";
     }
 
+    // updates the auth user and puts the user into the database 
     updateAuthUser(name, img, birthdate, hairColor, phone) {
         this.loaderService.show(true);
 
@@ -100,15 +111,17 @@ class AuthService {
 
         // update auth user
         user.updateProfile({
-            displayName: name
+            displayName: name,
+            photoURL: img
         });
 
         // update database user
         this.authUserRef.set({
-            img: img,
             birthdate: birthdate,
             hairColor: hairColor,
-            phone: phone
+            name: name,
+            phone: phone,
+            image: img
         }, {
             merge: true
         }).then(() => {
