@@ -21,6 +21,7 @@ let profilePage = new ProfilePage();
 let homePage = new HomePage();
 let chancePage = new ChancePage();
 let tabbar = new Tabbar();
+let detailPage = new BarService();
 let _barDatabase = new BarService();
 const barService = new BarService();
 
@@ -32,9 +33,10 @@ spaService.init();
 barService.init();
 authService.init();
 _barDatabase.init();
-
-
+ 
 // onclick handlers
 window.pageChange = () => spaService.pageChange();
 window.logout = () => profilePage.logout();
-window.showDetailView = (id) => _barDatabase.showDetailView(id);   
+window.showDetailView = (id) => _barDatabase.showDetailView(id); 
+window.search = () => barService.search();  
+   

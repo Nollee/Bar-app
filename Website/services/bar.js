@@ -1,8 +1,10 @@
+import spaService from "../services/spa.js";
 export default class BarService {
     constructor() {
         this.barRef = _db.collection("bars");
         this.bars = [];
         this._selectedBar;
+        this.spaService = spaService;   
     }
     init() {
         // init all bars
@@ -13,7 +15,7 @@ export default class BarService {
                 this.bar.id = doc.id;
                 this.bars.push(this.bar);  
             });
-            this.appendBars(bars);    
+            this.appendBars(bars);      
         });
     }  
 
@@ -55,7 +57,23 @@ export default class BarService {
             <img src="${this._selectedBar.img}">
         </article>
   `;
-  navigateTo("detail-view");
+    this.spaService.navigateTo("detail-view");
 
     }
+
+    search(value) {
+        let searchQuery = value.toLowerCase();
+        let filteredBars = [];  
+        for (let bar of this.bars) {    
+        let title = bar.name.toLowerCase();
+          if (title.includes(searchQuery)) {
+            filteredBars.push(bar);
+          }
+        }     
+        console.log(filteredBars); 
+        appendBars(filteredBars); 
+    }      
+  
+  
+     
 } 
