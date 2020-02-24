@@ -6,6 +6,7 @@ import ProfilePage from "./pages/profile.js";
 import HomePage from "./pages/home.js";
 import ChancePage from "./pages/chance.js";
 import Tabbar from "./pages/tabbar.js"
+import UpdatePage from "./pages/updateprofile.js"
 
 // import your services
 import spaService from "./services/spa.js";
@@ -22,6 +23,7 @@ let homePage = new HomePage();
 let chancePage = new ChancePage();
 let tabbar = new Tabbar();
 let detailPage = new BarService();
+let updatePage = new UpdatePage();
 let _barDatabase = new BarService();
 const barService = new BarService();
 
@@ -38,5 +40,9 @@ _barDatabase.init();
 window.pageChange = () => spaService.pageChange();
 window.logout = () => profilePage.logout();
 window.showDetailView = (id) => _barDatabase.showDetailView(id); 
-window.search = () => barService.search();  
+window.search = () => barService.search(); 
+window.updateUser = () => updatePage.updateUser();
+window.previewImage = (file, previewId) => updatePage.previewImage(file, previewId);
+
+
    

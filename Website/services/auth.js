@@ -1,5 +1,6 @@
 import spaService from "./spa.js";
 import loaderService from "./loader.js";
+import barService from "./bar.js";
 
 class AuthService {
     constructor() {
@@ -86,10 +87,10 @@ class AuthService {
              </article>
           `;
         console.log(user);
-        let phone = document.querySelector(".phone")
-        if( phone.innerHTML === "undefined"){
+        /* let phone = document.querySelector(".phone")
+        if( phone.innerHTML === "null"){
             phone.innerHTML = "Intet Telefonnummer"
-        }
+        } */
             }
     
     // Makes the user log out
@@ -102,11 +103,11 @@ class AuthService {
         document.querySelector('#name').value = this.authUser.displayName || "";
         document.querySelector('#mail').value = this.authUser.email;
         document.querySelector('#imagePreview').src = this.authUser.img || "";
-        document.querySelector('#phone').value = this.authUser.phone || "";
+        document.querySelector('#phone').value = this.authUser.phoneNumber || "";
     }
 
     // updates the auth user and puts the user into the database 
-    updateAuthUser(name, img, birthdate, hairColor, phone) {
+    updateAuthUser(name, img, phone) {
         this.loaderService.show(true);
 
         let user = firebase.auth().currentUser;
@@ -114,16 +115,14 @@ class AuthService {
         // update auth user
         user.updateProfile({
             displayName: name,
-            photoURL: img
-        });
+            phoneNumber: phone
+                });
 
         // update database user
         this.authUserRef.set({
-            birthdate: birthdate,
-            hairColor: hairColor,
+            image: img,
             name: name,
-            phone: phone,
-            image: img
+            phone: phone
         }, {
             merge: true
         }).then(() => {

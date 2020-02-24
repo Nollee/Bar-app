@@ -1,4 +1,7 @@
 import spaService from "../services/spa.js";
+import authService from "./auth.js";
+import loaderService from "./loader.js";
+
 export default class BarService {
     constructor() {
         this.barRef = _db.collection("bars");
@@ -31,7 +34,7 @@ export default class BarService {
               <p>plads: 0 - ${bar.space}</p>
               <p>pris: ${bar.price}kr.</p> 
               <p>${bar.opening}</p>
-              <p>${bar.games}</p>  
+              <p>${bar.games}</p> 
             </article>
             <style> 
             .bar-card {background-image: url(${bar.img});}   
@@ -40,8 +43,10 @@ export default class BarService {
         } 
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
         console.log(bars);
-        
-    }
+      }
+    
+
+
 
     showDetailView(id) { 
 
@@ -61,18 +66,16 @@ export default class BarService {
 
     }
 
+
+
     search(value) {
-        let searchQuery = value.toLowerCase();
-        let filteredBars = [];  
-        for (let bar of this.bars) {    
-        let title = bar.name.toLowerCase();
-          if (title.includes(searchQuery)) {
-            filteredBars.push(bar);
-          }
-        }     
-        console.log(filteredBars); 
-        appendBars(filteredBars); 
-    }      
+      let filteredBars= [];
+      let bars = this.bars;
+        let found =  bars.find(bar => bar = this.value)
+        filteredBars.push(found);
+        this.appendBars(filteredBars);
+    }
+          
   
   
      
