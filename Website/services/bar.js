@@ -1,6 +1,7 @@
 class BarService {
     constructor() {
         this.barRef = _db.collection("bars");
+        
     }
     init() {
         // init all bars
@@ -19,7 +20,7 @@ class BarService {
         let htmlTemplate = "";
         for (let bar of bars) {
              htmlTemplate += /* html */ `
-            <article onclick="showDetailView('${bar.id}')">  
+            <article onclick="showDetailView('${bar.id}')" class="bar-card">  
               <h2>${bar.name}</h2> 
               <p>${bar.id}</p> 
               <p>${bar.address}</p>
@@ -30,7 +31,7 @@ class BarService {
               <p>${bar.games}</p>  
             </article>
             <style> 
-            article {background-image: url(${bar.img});}   
+            .bar-card {background-image: url(${bar.img});}   
             </style> 
           `;
         }
@@ -39,7 +40,8 @@ class BarService {
         
     }
 
-    showDetailView(id) {
+    showDetailView(id) { 
+        let bars = [];
         for (let bar of bars) {
             if (bar.id === id) {
                 this.selectedBar = bar;  
@@ -47,14 +49,14 @@ class BarService {
         } 
         document.querySelector("#detail-view").innerHTML = /*html*/ `
         <article>  
-              <h2>${selectedBar.name}</h2>
-              <p>${selectedBar.location}</p>
-              <p>${selectedBar.address}</p>
-              <p>${selectedBar.description}</p>
-              <p>plads: 0 - ${selectedBar.space}</p>
-              <p>pris: ${selectedBar.price}kr.</p> 
-              <p>${selectedBar.opening}</p>
-              <p>${selectedBar.games}</p>  
+              <h2>${this.selectedBar.name}</h2>
+              <p>${this.selectedBar.location}</p>
+              <p>${this.selectedBar.address}</p>
+              <p>${this.selectedBar.description}</p>
+              <p>plads: 0 - ${this.selectedBar.space}</p>
+              <p>pris: ${this.selectedBar.price}kr.</p> 
+              <p>${this.selectedBar.opening}</p>
+              <p>${this.selectedBar.games}</p>  
             </article>
             <style> 
             article {background-image: url(${bar.img});}   
