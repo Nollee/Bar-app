@@ -10,9 +10,9 @@ export default class ProfilePage {
         <section id="profile" class="page">
           <header class="topbar">
             <h2>PROFIL</h2>
-            <a class="right" href="#" onclick="logout()">Logout</a>
           </header>
           <section id="profile-container" class="grid-container"></section>
+          <a class="right" href="#" onclick="logout()">Logout</a>
         </section>
       `;
     }

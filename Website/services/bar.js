@@ -1,8 +1,10 @@
+import spaService from "../services/spa.js";
 export default class BarService {
     constructor() {
         this.barRef = _db.collection("bars");
         this.bars = [];
-        this._selectedBar; 
+        this._selectedBar;
+        this.spaService = spaService;
     }
     init() {
         // init all bars
@@ -55,7 +57,7 @@ export default class BarService {
             <img src="${this._selectedBar.img}">
         </article>
   `;
-  navigateTo("detail-view");
+    this.spaService.navigateTo("detail-view");
 
     }
 

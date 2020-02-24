@@ -21,6 +21,7 @@ let profilePage = new ProfilePage();
 let homePage = new HomePage();
 let chancePage = new ChancePage();
 let tabbar = new Tabbar();
+let detailPage = new BarService();
 let _barDatabase = new BarService();
 const barService = new BarService();
 
