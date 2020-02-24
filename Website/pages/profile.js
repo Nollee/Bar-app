@@ -9,10 +9,15 @@ export default class ProfilePage {
       document.getElementById('content').innerHTML += /* html */ `
         <section id="profile" class="page">
           <header class="topbar">
-            <h2>PROFIL</h2>
+            <div class="topbar-wrapper">
+            <div class="topbar-left">
+            <a href="#home"><</a>
+            <h1>PROFIL</h1>
+            </div>
+            <a class="logout" href="#" onclick="logout()">Log Ud</a>
+            </div> 
           </header>
           <section id="profile-container" class="grid-container"></section>
-          <a class="right" href="#" onclick="logout()">Logout</a>
         </section>
       `;
     }

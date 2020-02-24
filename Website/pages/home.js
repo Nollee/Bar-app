@@ -8,6 +8,7 @@ export default class homePage {
         <section id="home" class="page">
           <header class="topbar">
             <h2>home</h2>
+            <a href="#profile">profile</a>
           </header>
           <section id="home-container" class="grid-container">
           <section class="slider">
