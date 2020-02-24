@@ -1,4 +1,4 @@
-class BarService {
+ class BarService {
     constructor() {
         this.barRef = _db.collection("bars");
         
@@ -12,7 +12,7 @@ class BarService {
                 bar.id = doc.id;
                 bars.push(bar);  
             });
-            this.appendBars(bars);  
+            this.appendBars(bars);    
         });
     }  
 
@@ -34,38 +34,38 @@ class BarService {
             .bar-card {background-image: url(${bar.img});}   
             </style> 
           `;
-        }
+        } 
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
         console.log(bars);
         
     }
 
     showDetailView(id) { 
-        let bars = [];
-        for (let bar of bars) {
+        let bars = []; 
+        for (let bar of bars) { 
             if (bar.id === id) {
-                this.selectedBar = bar;  
-            } 
+                this._selectedBar = bar;  
+            }
         } 
         document.querySelector("#detail-view").innerHTML = /*html*/ `
-        <article>  
-              <h2>${this.selectedBar.name}</h2>
-              <p>${this.selectedBar.location}</p>
-              <p>${this.selectedBar.address}</p>
-              <p>${this.selectedBar.description}</p>
-              <p>plads: 0 - ${this.selectedBar.space}</p>
-              <p>pris: ${this.selectedBar.price}kr.</p> 
-              <p>${this.selectedBar.opening}</p>
-              <p>${this.selectedBar.games}</p>  
+        <article>   
+              <h2>${this._selectedBar.name}</h2>
+              <p>${this._selectedBar.location}</p>
+              <p>${this._selectedBar.address}</p>
+              <p>${this._selectedBar.description}</p>
+              <p>plads: 0 - ${this._selectedBar.space}</p>
+              <p>pris: ${this._selectedBar.price}kr.</p> 
+              <p>${this._selectedBar.opening}</p>
+              <p>${this._selectedBar.games}</p>  
             </article>
             <style> 
-            article {background-image: url(${bar.img});}   
+            article {background-image: url(${this._selectedBar.img});}   
             </style>  
         `;
-        navigateTo("detail-view");  
-    }
+        navigateTo("detail-view");      
+    } 
 
-} 
+}  
 
 const barService = new BarService();
 export default barService;
