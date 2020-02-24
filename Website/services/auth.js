@@ -76,9 +76,11 @@ class AuthService {
              <img src="${user.photoURL}?height=500" alt="user">
              <h3>${user.displayName}</h3>
              <div class="profile-info"> 
+             <img class="icon" src="./images/mail.svg" alt="mail">
             <p>${user.email}</p>
             </div>
             <div class="profile-info">
+            <img class="icon" src="./images/phone.svg" alt="phone">
             <p class="phone">${user.phone}</p>
             </div>
              </article>
