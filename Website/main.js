@@ -38,5 +38,5 @@ _barDatabase.init();
 window.pageChange = () => spaService.pageChange();
 window.logout = () => profilePage.logout();
 window.showDetailView = (id) => _barDatabase.showDetailView(id); 
-window.search = () => barService.search();  
-   
+window.search = (value) => barService.search(value);   
+     
