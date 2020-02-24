@@ -26,6 +26,9 @@ class AuthService {
         this.spaService.hideTabbar(false);
         this.initAuthUserRef();
         this.loaderService.show(false);
+        console.log(user);
+        //this.appendProfile(user);
+
     }
 
     userNotAuthenticated() {
