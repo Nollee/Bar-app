@@ -1,24 +1,25 @@
-class BarService {
+export default class BarService {
     constructor() {
         this.barRef = _db.collection("bars");
-        
+        this.bars = [];
+        this._selectedBar;
     }
     init() {
         // init all bars
         this.barRef.onSnapshot(snapshotData => {
-            let bars = [];
+            
             snapshotData.forEach(doc => {
-                let bar = doc.data();
-                bar.id = doc.id;
-                bars.push(bar);  
+                this.bar = doc.data();
+                this.bar.id = doc.id;
+                this.bars.push(this.bar);  
             });
-            this.appendBars(bars);  
+            this.appendBars(bars);    
         });
     }  
 
     appendBars(bars) {
         let htmlTemplate = "";
-        for (let bar of bars) {
+        for (let bar of this.bars) {
              htmlTemplate += /* html */ `
             <article onclick="showDetailView('${bar.id}')" class="bar-card">  
               <h2>${bar.name}</h2> 
@@ -34,38 +35,27 @@ class BarService {
             .bar-card {background-image: url(${bar.img});}   
             </style> 
           `;
-        }
+        } 
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
         console.log(bars);
         
     }
 
     showDetailView(id) { 
-        let bars = [];
-        for (let bar of bars) {
+
+        for (let bar of this.bars) {
             if (bar.id === id) {
-                this.selectedBar = bar;  
-            } 
+              this._selectedBar = bar;
+            }
         } 
-        document.querySelector("#detail-view").innerHTML = /*html*/ `
-        <article>  
-              <h2>${this.selectedBar.name}</h2>
-              <p>${this.selectedBar.location}</p>
-              <p>${this.selectedBar.address}</p>
-              <p>${this.selectedBar.description}</p>
-              <p>plads: 0 - ${this.selectedBar.space}</p>
-              <p>pris: ${this.selectedBar.price}kr.</p> 
-              <p>${this.selectedBar.opening}</p>
-              <p>${this.selectedBar.games}</p>  
-            </article>
-            <style> 
-            article {background-image: url(${bar.img});}   
-            </style>  
-        `;
-        navigateTo("detail-view");  
+        document.querySelector("#detail-view").innerHTML = `
+        <article>
+            <h1>${this._selectedBar.name}</h1>
+            <h1>${this._selectedBar.games}</h1>
+            <img src="${this._selectedBar.img}">
+        </article>
+  `;
+  navigateTo("detail-view");
+
     }
-
 } 
-
-const barService = new BarService();
-export default barService;

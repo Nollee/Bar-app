@@ -9,7 +9,7 @@ import Tabbar from "./pages/tabbar.js"
 
 // import your services
 import spaService from "./services/spa.js";
-import barService from "./services/bar.js";
+import BarService from "./services/bar.js";
 import authService from "./services/auth.js";
 
 
@@ -21,6 +21,9 @@ let profilePage = new ProfilePage();
 let homePage = new HomePage();
 let chancePage = new ChancePage();
 let tabbar = new Tabbar();
+let _barDatabase = new BarService();
+const barService = new BarService();
+
 
 
 
@@ -28,9 +31,10 @@ let tabbar = new Tabbar();
 spaService.init();
 barService.init();
 authService.init();
+_barDatabase.init();
 
 
 // onclick handlers
 window.pageChange = () => spaService.pageChange();
 window.logout = () => profilePage.logout();
-window.showDetailView = (id) => barService.showDetailView(id);   
+window.showDetailView = (id) => _barDatabase.showDetailView(id);   
