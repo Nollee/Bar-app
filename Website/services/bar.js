@@ -15,13 +15,14 @@ export default class BarService {
                 this.bar.id = doc.id;
                 this.bars.push(this.bar);  
             });
-            this.appendBars(bars);      
+            this.appendBars(bars);       
         });
     }  
 
     appendBars(bars) {
         let htmlTemplate = "";
-        for (let bar of this.bars) {
+        for (let index = 0; index < bars.length; index++) {
+            let bar = bars[index];     
              htmlTemplate += /* html */ `
             <article onclick="showDetailView('${bar.id}')" class="bar-card">  
               <h2>${bar.name}</h2> 
@@ -31,12 +32,12 @@ export default class BarService {
               <p>plads: 0 - ${bar.space}</p>
               <p>pris: ${bar.price}kr.</p> 
               <p>${bar.opening}</p>
-              <p>${bar.games}</p>  
-            </article>
+              <p>${bar.games}</p>   
+            </article> 
             <style> 
             .bar-card {background-image: url(${bar.img});}   
             </style> 
-          `;
+          `; 
         } 
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
         console.log(bars);
@@ -68,12 +69,24 @@ export default class BarService {
         let title = bar.name.toLowerCase();
           if (title.includes(searchQuery)) {
             filteredBars.push(bar);
-          } 
-        }        
-        console.log(filteredBars);  
-        this.appendBars(filteredBars);        
-    }          
-        
-  
-      
-} 
+            this.appendBars(filteredBars);            
+        } 
+    }           
+    console.log(filteredBars);  
+}         
+          
+/* search(value) {
+    let searchQuery = value.toLowerCase();
+    let filteredMovies = []; 
+    for (let bar of this.bars) {    
+      let title = bar.name.toLowerCase();
+      if (title.includes(searchQuery)) {
+        filteredMovies.push(bar);
+      }
+    }
+    console.log(filteredMovies);
+    this.appendBars(filteredMovies); 
+  }  */   
+       
+}  
+ 
