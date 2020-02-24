@@ -3,6 +3,7 @@
 /* ============ import ======================== */
 .bar-card {
   width: 80%;
-  margin: auto; }
+  margin: auto;
+  border-radius: 15px; }
 
 /*# sourceMappingURL=bar.css.map */

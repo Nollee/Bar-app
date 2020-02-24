@@ -49,7 +49,7 @@
   color: #111118; }
 
 .mdl-button--primary.mdl-button--primary {
-  color: #F3CA26; }
+  color: #FF0560; }
 
 .mdl-textfield__input {
   border-bottom: 1px solid white; }
@@ -66,7 +66,16 @@
   border: 2px solid #F3CA26;
   border-radius: 15px; }
 
-.firebaseui-idp-text .firebaseui-idp-text-long {
+.firebaseui-idp-text .firebaseui-idp-text-long, .firebaseui-idp-google > .firebaseui-idp-text {
   color: white; }
+
+.mdl-textfield__label:after, .mdl-textfield__label:after {
+  background-color: #F3CA26 !important; }
+
+.mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
+  color: #F3CA26; }
+
+.firebaseui-label {
+  color: gray; }
 
 /*# sourceMappingURL=login.css.map */

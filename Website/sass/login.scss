@@ -58,7 +58,7 @@ background: linear-gradient(180deg, rgba(17,17,24,0) 0%, rgba(17,17,24,1) 77%, r
 }
 
 .mdl-button--primary.mdl-button--primary{
-    color: $main-yellow;
+    color: $main-pink;
 }
 
 .mdl-textfield__input{
@@ -79,9 +79,21 @@ background: linear-gradient(180deg, rgba(17,17,24,0) 0%, rgba(17,17,24,1) 77%, r
     background-color: transparent;
     color: white;
     border: 2px solid $main-yellow;
-    border-radius: 15px;
+    border-radius: 15px; 
 }
 
-.firebaseui-idp-text .firebaseui-idp-text-long{
+.firebaseui-idp-text .firebaseui-idp-text-long, .firebaseui-idp-google>.firebaseui-idp-text{
     color: white;
+}
+ 
+.mdl-textfield__label:after, .mdl-textfield__label:after {
+    background-color: $main-yellow !important;  
+}
+
+.mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
+    color: $main-yellow; 
+} 
+
+.firebaseui-label {
+    color: gray; 
 }
