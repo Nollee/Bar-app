@@ -1,18 +1,18 @@
 import authService from "../services/auth.js";
 export default class ProfilePage {
     constructor() {
-      this.appendProfile();
+      this.template();
       this.authService = authService;   
     }
   
-    appendProfile(user) {
+    template() {
       document.getElementById('content').innerHTML += /* html */ `
         <section id="profile" class="page">
           <header class="topbar">
-            <h2>profile</h2>
+            <h2>PROFIL</h2>
+            <a class="right" href="#" onclick="logout()">Logout</a>
           </header>
-          <section id="profile-container" class="grid-container">
-          <a class="right" href="#" onclick="logout()">Logout</a></section>
+          <section id="profile-container" class="grid-container"></section>
         </section>
       `;
     }

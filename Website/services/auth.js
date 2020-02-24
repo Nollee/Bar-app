@@ -27,7 +27,7 @@ class AuthService {
         this.initAuthUserRef();
         this.loaderService.show(false);
         console.log(user);
-        //this.appendProfile(user);
+        this.appendUserData(user);
 
     }
 
@@ -68,6 +68,17 @@ class AuthService {
 
         });
     }
+
+    appendUserData(user){
+        document.querySelector('#profile-container').innerHTML += /* html */ `
+             <article id="profiledata">
+             <img src="${user.photoURL}" alt="user">
+             <h3>${user.displayName}</h3>
+            <h3>${user.email}</h3>
+             </article>
+          `;
+        console.log(user);
+            }
 
     logout() {
         firebase.auth().signOut();
