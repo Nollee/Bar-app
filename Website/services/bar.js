@@ -16,18 +16,18 @@ export default class BarService {
             snapshotData.forEach(doc => {
                 this.bar = doc.data();
                 this.bar.id = doc.id;
-                this.bars.push(this.bar);  
+                this.bars.push(this.bar);   
             });
-            this.appendBars(this.bars);       
+            this.appendBars(this.bars);         
         });
-    }  
-
-    appendBars(bars) {
+    }                  
+ 
+   appendBars(bars) {
         let htmlTemplate = "";
         for (let index = 0; index < bars.length; index++) {
-            let bar = bars[index];     
+            let bar = bars[index];      
              htmlTemplate += /* html */ `
-            <article onclick="showDetailView('${bar.id}')" class="bar-card">  
+            <article onclick="showDetailView('${bar.id}')" class="bar-card" style="background-image: url('${bar.img}')">  
               <h2>${bar.name}</h2> 
               <p>${bar.id}</p> 
               <p>${bar.address}</p>
@@ -36,12 +36,9 @@ export default class BarService {
               <p>pris: ${bar.price}kr.</p> 
               <p>${bar.opening}</p>
               <p>${bar.games}</p>   
-            </article> 
-            <style> 
-            .bar-card {background-image: url(${bar.img});}   
-            </style> 
+            </article>  
             ${this.generateFavBarButton(bar.id)}
-          `;
+          `; 
         } 
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
         console.log(bars);
@@ -146,7 +143,7 @@ export default class BarService {
         }
         document.querySelector('#favourite').innerHTML = template;
     }
-} 
+ 
 
 
 
@@ -190,13 +187,12 @@ export default class BarService {
             address: addressInput.value,
             type: typeInput.value
         }; 
-        /* location.reload();  */
-        this.barRef.add(newBar);    
-      }  
+        /* location.reload();  */  
+        this.barRef.push(newBar);    
+    }       
     ////////////////////////////////////////////////////////////////
-
-
-
+    
+     
 
 
 }    
