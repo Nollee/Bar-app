@@ -40,7 +40,7 @@ authService.init();
 // onclick handlers
 window.pageChange = () => spaService.pageChange();
 window.logout = () => profilePage.logout();
-window.showDetailView = (id) => _barDatabase.showDetailView(id); 
+window.showDetailView = (id) => barService.showDetailView(id); 
 window.addToFavourites = (barId) => barPage.addToFavourites(barId);
 window.removeFromFavourites = (barId) => barPage.removeFromFavourites(barId);  
 window.search = (value) => barService.search(value);   
