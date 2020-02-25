@@ -8,7 +8,7 @@ export default class BarPage {
       <section id="bars" class="page">
         <header class="topbar">
           <h2>SEARCH</h2>
-          <a class="right" href="#favorites">Favorites</a>
+          <a class="right" href="#favourite">Favourites</a>
         </header>
         <section id="bar-container" class="grid-container"></section>
       </section>
