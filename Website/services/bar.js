@@ -18,9 +18,9 @@ class BarService {
             snapshotData.forEach(doc => {
                 this.bar = doc.data();
                 this.bar.id = doc.id;
-                this.bars.push(this.bar);   
+                this.bars.push(this.bar);  
             });
-            this.appendBars(this.bars);         
+            this.appendBars(this.bars);       
         });
         this.appendFavBars();
     }  
@@ -28,9 +28,9 @@ class BarService {
     appendBars(bars) {
         let htmlTemplate = "";
         for (let index = 0; index < bars.length; index++) {
-            let bar = bars[index];      
+            let bar = bars[index];     
              htmlTemplate += /* html */ `
-            <article onclick="showDetailView('${bar.id}')" class="bar-card" style="background-image: url('${bar.img}')">  
+            <article onclick="showDetailView('${bar.id}')" class="bar-card">  
               <h2>${bar.name}</h2> 
               <p>${bar.id}</p> 
               <p>${bar.address}</p>
@@ -39,9 +39,12 @@ class BarService {
               <p>pris: ${bar.price}kr.</p> 
               <p>${bar.opening}</p>
               <p>${bar.games}</p>   
-            </article>  
+            </article> 
+            <style> 
+            .bar-card {background-image: url(${bar.img});}   
+            </style> 
             ${this.generateFavBarButton(bar.id)}
-          `; 
+          `;
         } 
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
         console.log(bars);
@@ -156,7 +159,7 @@ class BarService {
         
     }           
     console.log(filteredBars);  
-}  
+    }  
 
 
           
@@ -203,12 +206,12 @@ class BarService {
     /* location.reload();  */
     this.barRef.add(newBar);    
   }  
-        
-}    
+  
+  
+}     
 
 const barService = new BarService();
-export default barService
-       
+export default barService  
      
     
      
