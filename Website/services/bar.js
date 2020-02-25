@@ -18,7 +18,7 @@ export default class BarService {
                 this.bar.id = doc.id;
                 this.bars.push(this.bar);  
             });
-            this.appendBars(bars);       
+            this.appendBars(this.bars);       
         });
     }  
 
@@ -48,7 +48,7 @@ export default class BarService {
     
 
 
-      
+
 
     showDetailView(id) { 
 
