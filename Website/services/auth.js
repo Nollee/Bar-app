@@ -56,7 +56,7 @@ class AuthService {
         this.authUserRef.onSnapshot({
             includeMetadataChanges: true
         }, userData => {
-            if (!userData.metadata.hasPendingWrites && userData.data()) {
+           // if (!userData.metadata.hasPendingWrites && userData.data()) {
                 let user = {
                     ...authUser,
                     ...userData.data()
@@ -65,7 +65,7 @@ class AuthService {
                 this.appendAuthUser();
                 barService.init();
                 loaderService.show(false);
-            }
+            //}
 
         });
 

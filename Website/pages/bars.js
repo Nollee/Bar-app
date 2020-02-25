@@ -1,3 +1,5 @@
+import barService from "../services/bar.js";
+
 export default class BarPage {
   constructor() {
     this.template();
@@ -30,4 +32,16 @@ export default class BarPage {
       </section>
     `;
   }  
+
+  addToFavourites(barId) {
+    barService.addToFavourites(barId);
+  }
+
+  removeFromFavourites(barId) {
+    barService.removeFromFavourites(barId);
+  }
+
+  removeFromFavourites(barId) {
+    barService.removeFromFavourites(barId);
+  }
 }

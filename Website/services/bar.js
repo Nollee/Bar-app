@@ -117,7 +117,7 @@ class BarService {
             await this.barRef.doc(barId).get().then(function (doc) {
                 let bar = doc.data();
                 bar.id = doc.id;;
-                favBars.push(Bar);
+                favBars.push(bar);
             });
         }
         return favBars;
@@ -129,9 +129,8 @@ class BarService {
         for (let bar of bars) {
             template +=  `
             <article>
-              <h2>${bar.title} (${bar.year})</h2>
+              <h2>${bar.name}</h2>
               <img src="${bar.img}">
-              <p>${bar.description}</p>
               <button onclick="removeFromFavourites('${bar.id}')" class="rm">Remove from favourites</button>
             </article>
           `;
