@@ -201,8 +201,37 @@ class BarService {
     }; 
     /* location.reload();  */
     this.barRef.add(newBar);    
-  }  
-
+  } 
+   
+  createBar() {
+    // references to the input fields
+    let nameInput = document.querySelector('#form-name');
+    let descriptionInput = document.querySelector('#form-description');
+    let imgInput = document.querySelector('#form-img');
+    let spaceInput = document.querySelector('#form-space'); 
+    let priceInput = document.querySelector('#form-price');
+    let addressInput = document.querySelector('#form-address');
+    let typeInput = document.querySelector('#form-type'); 
+    console.log(nameInput.value);
+    console.log(descriptionInput.value);
+    console.log(imgInput.value);
+    console.log(spaceInput.value);
+    console.log(priceInput.value);
+    console.log(addressInput.value);
+    console.log(typeInput.value);  
+  
+    let newBar = {
+        name: nameInput.value,
+        description: descriptionInput.value, 
+        img: imgInput.value,  
+        space: spaceInput.value,
+        price: priceInput.value,
+        address: addressInput.value,
+        type: typeInput.value
+    }; 
+    /* location.reload();  */  
+    this.barRef.push(newBar);    
+}       
 
 }  
 
@@ -211,41 +240,12 @@ export default barService
        
      
     //////////////////////////////////////////////////////////////////
-    createBar() {
-        // references to the input fields
-        let nameInput = document.querySelector('#form-name');
-        let descriptionInput = document.querySelector('#form-description');
-        let imgInput = document.querySelector('#form-img');
-        let spaceInput = document.querySelector('#form-space'); 
-        let priceInput = document.querySelector('#form-price');
-        let addressInput = document.querySelector('#form-address');
-        let typeInput = document.querySelector('#form-type'); 
-        console.log(nameInput.value);
-        console.log(descriptionInput.value);
-        console.log(imgInput.value);
-        console.log(spaceInput.value);
-        console.log(priceInput.value);
-        console.log(addressInput.value);
-        console.log(typeInput.value);  
-      
-        let newBar = {
-            name: nameInput.value,
-            description: descriptionInput.value, 
-            img: imgInput.value,  
-            space: spaceInput.value,
-            price: priceInput.value,
-            address: addressInput.value,
-            type: typeInput.value
-        }; 
-        /* location.reload();  */  
-        this.barRef.push(newBar);    
-    }       
+    
     ////////////////////////////////////////////////////////////////
     
      
 
 
-}    
 
  
  
