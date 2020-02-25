@@ -18,9 +18,9 @@ class BarService {
             snapshotData.forEach(doc => {
                 this.bar = doc.data();
                 this.bar.id = doc.id;
-                this.bars.push(this.bar);   
+                this.bars.push(this.bar);  
             });
-            this.appendBars(this.bars);         
+            this.appendBars(this.bars);       
         });
         this.appendFavBars();
     }  
@@ -28,20 +28,20 @@ class BarService {
     appendBars(bars) {
         let htmlTemplate = "";
         for (let index = 0; index < bars.length; index++) {
-            let bar = bars[index];      
+            let bar = bars[index];     
              htmlTemplate += /* html */ `
-            <article onclick="showDetailView('${bar.id}')" class="bar-card" style="background-image: url('${bar.img}')">  
+            <article onclick="showDetailView('${bar.id}')" class="bar-card" style="background-image: url('${bar.img}');">  
               <h2>${bar.name}</h2> 
               <p>${bar.id}</p> 
-              <p>${bar.address}</p>
+              <p>${bar.address}</p> 
               <p>${bar.description}</p>
               <p>plads: 0 - ${bar.space}</p>
               <p>pris: ${bar.price}kr.</p> 
               <p>${bar.opening}</p>
               <p>${bar.games}</p>   
-            </article>  
+            </article>    
             ${this.generateFavBarButton(bar.id)}
-          `; 
+          `;
         } 
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
         console.log(bars);
@@ -155,7 +155,7 @@ class BarService {
         
     }           
     console.log(filteredBars);  
-}  
+    }  
 
 
           
@@ -201,46 +201,19 @@ class BarService {
     }; 
     /* location.reload();  */
     this.barRef.add(newBar);    
-  } 
-   
-  createBar() {
-    // references to the input fields
-    let nameInput = document.querySelector('#form-name');
-    let descriptionInput = document.querySelector('#form-description');
-    let imgInput = document.querySelector('#form-img');
-    let spaceInput = document.querySelector('#form-space'); 
-    let priceInput = document.querySelector('#form-price');
-    let addressInput = document.querySelector('#form-address');
-    let typeInput = document.querySelector('#form-type'); 
-    console.log(nameInput.value);
-    console.log(descriptionInput.value);
-    console.log(imgInput.value);
-    console.log(spaceInput.value);
-    console.log(priceInput.value);
-    console.log(addressInput.value);
-    console.log(typeInput.value);  
+  }  
   
-    let newBar = {
-        name: nameInput.value,
-        description: descriptionInput.value, 
-        img: imgInput.value,  
-        space: spaceInput.value,
-        price: priceInput.value,
-        address: addressInput.value,
-        type: typeInput.value
-    }; 
-    /* location.reload();  */  
-    this.barRef.push(newBar);    
-}       
-
-}  
+  
+}     
 
 const barService = new BarService();
-export default barService
-
+export default barService  
+     
+    
      
 
 
+   
 
  
  
