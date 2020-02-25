@@ -46,6 +46,7 @@ window.removeFromFavourites = (barId) => barPage.removeFromFavourites(barId);
 window.search = (value) => barService.search(value);   
 window.updateUser = () => updatePage.updateUser();
 window.previewImage = (file, previewId) => updatePage.previewImage(file, previewId);
+window.createBar = () => barService.createBar(); 
 
 
    
