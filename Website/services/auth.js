@@ -63,10 +63,12 @@ class AuthService {
                 }; //concating two objects: authUser object and userData objec from the db
                 this.authUser = user;
                 this.appendAuthUser();
+                barService.init();
                 loaderService.show(false);
             }
 
         });
+
     }
 
     // Appends the data of the user 

@@ -2,7 +2,9 @@ import spaService from "./spa.js";
 import authService from "./auth.js";
 import loaderService from "./loader.js";
 
-export default class BarService {
+
+
+class BarService {
     constructor() {
         this.barRef = _db.collection("bars");
         this.bars = [];
@@ -20,6 +22,7 @@ export default class BarService {
             });
             this.appendBars(this.bars);       
         });
+        this.appendFavBars();
     }  
 
     appendBars(bars) {
@@ -40,14 +43,15 @@ export default class BarService {
             <style> 
             .bar-card {background-image: url(${bar.img});}   
             </style> 
-          `; 
+            ${this.generateFavBarButton(bar.id)}
+          `;
         } 
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
         console.log(bars);
       }
     
 
-
+ 
 
 
     showDetailView(id) { 
@@ -68,6 +72,79 @@ export default class BarService {
 
     }
 
+    generateFavBarButton(barId) {
+        let btnTemplate = `
+          <button onclick="addToFavourites('${barId}')">Add to favourites</button>`;
+        if (this.userHasFav(barId)) {
+            btnTemplate = `
+            <button onclick="removeFromFavourites('${barId}')" class="rm">Remove from favourites</button>`;
+        } 
+        return btnTemplate;
+    }
+
+     userHasFav(favBarId) {
+        if (authService.authUser.favBars && authService.authUser.favBars.includes(favBarId)) {
+            return true;
+        } else {
+            return false;
+        }
+    } 
+
+    // adds a given movieId to the favMovies array inside _currentUser
+
+    addToFavourites(barId) {
+        loaderService.show(true);
+        authService.authUserRef.set({
+            favBars: firebase.firestore.FieldValue.arrayUnion(barId)
+        }, {
+            merge: true
+        });
+        
+    }
+
+    // removes a given movieId to the favMovies array inside _currentUser
+    removeFromFavourites(barId) {
+        loaderService.show(true);
+        authService.authUserRef.update({
+            favBars: firebase.firestore.FieldValue.arrayRemove(barId)
+        });
+    }
+
+
+    async getFavBars() {
+        let favBars = [];
+        for (let barId of authService.authUser.favBars) {
+            await this.barRef.doc(barId).get().then(function (doc) {
+                let bar = doc.data();
+                bar.id = doc.id;;
+                favBars.push(Bar);
+            });
+        }
+        return favBars;
+    }
+
+    async appendFavBars() {
+        let bars = await barService.getFavBars();
+        let template = "";
+        for (let bar of bars) {
+            template +=  `
+            <article>
+              <h2>${bar.title} (${bar.year})</h2>
+              <img src="${bar.img}">
+              <p>${bar.description}</p>
+              <button onclick="removeFromFavourites('${bar.id}')" class="rm">Remove from favourites</button>
+            </article>
+          `;
+        }
+        if (bars.length === 0) {
+            template = `
+                <p>No Bars added</p>
+            `;
+        }
+        document.querySelector('#favourite').innerHTML = template;
+    } 
+
+
 
 
     search(value) {
@@ -79,9 +156,12 @@ export default class BarService {
             filteredBars.push(bar);
             this.appendBars(filteredBars);            
         } 
+        
     }           
     console.log(filteredBars);  
-}         
+}  
+
+
           
 /* search(value) {
     let searchQuery = value.toLowerCase();
@@ -95,5 +175,52 @@ export default class BarService {
     console.log(filteredMovies);
     this.appendBars(filteredMovies); 
   }  */   
-}    
+
+
+  createBar() {
+    // references to the input fields
+    let nameInput = document.querySelector('#form-name');
+    let descriptionInput = document.querySelector('#form-description');
+    let imgInput = document.querySelector('#form-img');
+    let spaceInput = document.querySelector('#form-space'); 
+    let priceInput = document.querySelector('#form-price');
+    let addressInput = document.querySelector('#form-address');
+    let typeInput = document.querySelector('#form-type'); 
+    console.log(nameInput.value);
+    console.log(descriptionInput.value);
+    console.log(imgInput.value);
+    console.log(spaceInput.value);
+    console.log(priceInput.value);
+    console.log(addressInput.value);
+    console.log(typeInput.value);  
+  
+    let newBar = {
+        name: nameInput.value,
+        description: descriptionInput.value, 
+        img: imgInput.value,  
+        space: spaceInput.value,
+        price: priceInput.value,
+        address: addressInput.value,
+        type: typeInput.value
+    }; 
+    /* location.reload();  */
+    this.barRef.add(newBar);    
+  }  
+
+
+}  
+
+const barService = new BarService();
+export default barService
+       
+     
+
+
+
+
+
+
+ 
+
+ 
  
