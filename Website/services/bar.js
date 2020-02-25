@@ -1,8 +1,10 @@
-import spaService from "../services/spa.js";
-import authService from "../services/auth.js";
-import loaderService from "../services/loader.js";
+import spaService from "./spa.js";
+import authService from "./auth.js";
+import loaderService from "./loader.js";
 
-export default class BarService {
+
+
+class BarService {
     constructor() {
         this.barRef = _db.collection("bars");
         this.bars = [];
@@ -20,6 +22,7 @@ export default class BarService {
             });
             this.appendBars(this.bars);       
         });
+        this.appendFavBars();
     }  
 
     appendBars(bars) {
@@ -72,22 +75,23 @@ export default class BarService {
     generateFavBarButton(barId) {
         let btnTemplate = `
           <button onclick="addToFavourites('${barId}')">Add to favourites</button>`;
-        /* if (this.userHasFav(barId)) {
+        if (this.userHasFav(barId)) {
             btnTemplate = `
             <button onclick="removeFromFavourites('${barId}')" class="rm">Remove from favourites</button>`;
-        } */
+        } 
         return btnTemplate;
     }
 
-  /*   userHasFav(favBarId) {
+     userHasFav(favBarId) {
         if (authService.authUser.favBars && authService.authUser.favBars.includes(favBarId)) {
             return true;
         } else {
             return false;
         }
-    } */
+    } 
 
     // adds a given movieId to the favMovies array inside _currentUser
+
     addToFavourites(barId) {
         loaderService.show(true);
         authService.authUserRef.set({
@@ -95,6 +99,7 @@ export default class BarService {
         }, {
             merge: true
         });
+        
     }
 
     // removes a given movieId to the favMovies array inside _currentUser
@@ -105,14 +110,6 @@ export default class BarService {
         });
     }
 
-    addToFavourites(barId) {
-        loaderService.show(true);
-        authService.authUserRef.set({
-            favBars: firebase.firestore.FieldValue.arrayUnion(barId)
-        }, {
-            merge: true
-        });
-    }
 
     async getFavBars() {
         let favBars = [];
@@ -130,7 +127,7 @@ export default class BarService {
         let bars = await barService.getFavBars();
         let template = "";
         for (let bar of bars) {
-            template += /* html */ `
+            template +=  `
             <article>
               <h2>${bar.title} (${bar.year})</h2>
               <img src="${bar.img}">
@@ -145,8 +142,8 @@ export default class BarService {
             `;
         }
         document.querySelector('#favourite').innerHTML = template;
-    }
-} 
+    } 
+
 
 
 
@@ -159,9 +156,12 @@ export default class BarService {
             filteredBars.push(bar);
             this.appendBars(filteredBars);            
         } 
+        
     }           
     console.log(filteredBars);  
-}         
+}  
+
+
           
 /* search(value) {
     let searchQuery = value.toLowerCase();
@@ -175,5 +175,12 @@ export default class BarService {
     console.log(filteredMovies);
     this.appendBars(filteredMovies); 
   }  */   
-}    
+}  
+
+const barService = new BarService();
+export default barService
+
+
+
+
  
