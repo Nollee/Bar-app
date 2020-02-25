@@ -1,6 +1,6 @@
 import spaService from "../services/spa.js";
-import authService from "./auth.js";
-import loaderService from "./loader.js";
+import authService from "../services/auth.js";
+import loaderService from "../services/loader.js";
 
 export default class BarService {
     constructor() {
@@ -40,7 +40,8 @@ export default class BarService {
             <style> 
             .bar-card {background-image: url(${bar.img});}   
             </style> 
-          `; 
+            ${this.generateFavBarButton(bar.id)}
+          `;
         } 
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
         console.log(bars);
@@ -67,6 +68,85 @@ export default class BarService {
     this.spaService.navigateTo("detail-view");
 
     }
+
+    generateFavBarButton(barId) {
+        let btnTemplate = `
+          <button onclick="addToFavourites('${barId}')">Add to favourites</button>`;
+        /* if (this.userHasFav(barId)) {
+            btnTemplate = `
+            <button onclick="removeFromFavourites('${barId}')" class="rm">Remove from favourites</button>`;
+        } */
+        return btnTemplate;
+    }
+
+  /*   userHasFav(favBarId) {
+        if (authService.authUser.favBars && authService.authUser.favBars.includes(favBarId)) {
+            return true;
+        } else {
+            return false;
+        }
+    } */
+
+    // adds a given movieId to the favMovies array inside _currentUser
+    addToFavourites(barId) {
+        loaderService.show(true);
+        authService.authUserRef.set({
+            favBars: firebase.firestore.FieldValue.arrayUnion(barId)
+        }, {
+            merge: true
+        });
+    }
+
+    // removes a given movieId to the favMovies array inside _currentUser
+    removeFromFavourites(barId) {
+        loaderService.show(true);
+        authService.authUserRef.update({
+            favBars: firebase.firestore.FieldValue.arrayRemove(barId)
+        });
+    }
+
+    addToFavourites(barId) {
+        loaderService.show(true);
+        authService.authUserRef.set({
+            favBars: firebase.firestore.FieldValue.arrayUnion(barId)
+        }, {
+            merge: true
+        });
+    }
+
+    async getFavBars() {
+        let favBars = [];
+        for (let barId of authService.authUser.favBars) {
+            await this.barRef.doc(barId).get().then(function (doc) {
+                let bar = doc.data();
+                bar.id = doc.id;;
+                favBars.push(Bar);
+            });
+        }
+        return favBars;
+    }
+
+    async appendFavBars() {
+        let bars = await barService.getFavBars();
+        let template = "";
+        for (let bar of bars) {
+            template += /* html */ `
+            <article>
+              <h2>${bar.title} (${bar.year})</h2>
+              <img src="${bar.img}">
+              <p>${bar.description}</p>
+              <button onclick="removeFromFavourites('${bar.id}')" class="rm">Remove from favourites</button>
+            </article>
+          `;
+        }
+        if (bars.length === 0) {
+            template = `
+                <p>No Bars added</p>
+            `;
+        }
+        document.querySelector('#favourite').innerHTML = template;
+    }
+} 
 
 
 
