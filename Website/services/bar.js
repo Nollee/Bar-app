@@ -30,19 +30,16 @@ class BarService {
         for (let index = 0; index < bars.length; index++) {
             let bar = bars[index];     
              htmlTemplate += /* html */ `
-            <article onclick="showDetailView('${bar.id}')" class="bar-card">  
+            <article onclick="showDetailView('${bar.id}')" class="bar-card" style="background-image: url('${bar.img}');">  
               <h2>${bar.name}</h2> 
               <p>${bar.id}</p> 
-              <p>${bar.address}</p>
+              <p>${bar.address}</p> 
               <p>${bar.description}</p>
               <p>plads: 0 - ${bar.space}</p>
               <p>pris: ${bar.price}kr.</p> 
               <p>${bar.opening}</p>
               <p>${bar.games}</p>   
-            </article> 
-            <style> 
-            .bar-card {background-image: url(${bar.img});}   
-            </style> 
+            </article>    
             ${this.generateFavBarButton(bar.id)}
           `;
         } 
