@@ -40,6 +40,7 @@ authService.init();
 // onclick handlers
 window.pageChange = () => spaService.pageChange();
 window.logout = () => profilePage.logout();
+window.deleteAccount = () => profilePage.deleteAccount();
 window.showDetailView = (id) => barService.showDetailView(id); 
 window.addToFavourites = (barId) => barPage.addToFavourites(barId);
 window.removeFromFavourites = (barId) => barPage.removeFromFavourites(barId);  
@@ -47,6 +48,7 @@ window.search = (value) => barService.search(value);
 window.updateUser = () => updatePage.updateUser();
 window.previewImage = (file, previewId) => updatePage.previewImage(file, previewId);
 window.createBar = () => barService.createBar(); 
+window.toggleDelete = () => profilePage.toggleDelete();
 
 
    
