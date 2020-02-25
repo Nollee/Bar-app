@@ -1,4 +1,7 @@
 import spaService from "../services/spa.js";
+import authService from "./auth.js";
+import loaderService from "./loader.js";
+
 export default class BarService {
     constructor() {
         this.barRef = _db.collection("bars");
@@ -41,8 +44,10 @@ export default class BarService {
         } 
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
         console.log(bars);
-        
-    }
+      }
+    
+
+
 
     showDetailView(id) { 
 
@@ -61,6 +66,8 @@ export default class BarService {
     this.spaService.navigateTo("detail-view");
 
     }
+
+
 
     search(value) {
         let searchQuery = value.toLowerCase();
@@ -87,5 +94,5 @@ export default class BarService {
     console.log(filteredMovies);
     this.appendBars(filteredMovies); 
   }  */   
-}   
+}    
  
