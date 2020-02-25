@@ -40,7 +40,6 @@ class AuthService {
         const uiConfig = {
             credentialHelper: firebaseui.auth.CredentialHelper.NONE,
             signInOptions: [
-                firebase.auth.EmailAuthProvider.PROVIDER_ID,
                 firebase.auth.GoogleAuthProvider.PROVIDER_ID,
                 firebase.auth.FacebookAuthProvider.PROVIDER_ID
             ],
@@ -89,15 +88,12 @@ class AuthService {
     logout() {
         firebase.auth().signOut();
     }
-
+    
+    // deletes the account
     deleteAccount(){
         let user = firebase.auth().currentUser;
 
-        user.delete().then(function() {
-          
-        }).catch(function(error) {
-          // An error happened.
-        });
+        user.delete();
     }
 
 

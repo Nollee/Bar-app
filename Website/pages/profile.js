@@ -14,13 +14,12 @@ export default class ProfilePage {
             <a href="#home"><</a>
             <h1>PROFIL</h1>
             </div>
-            <a class="logout" href="#" onclick="logout()">Log Ud</a>
+            <div class="show-delete" onclick="toggleDelete()">Slet konto</div>
             </div> 
           </header>
           <section id="profile-container">
           </section>
-          <div class="button show-delete" onclick="toggleDelete()">Slet konto</div>
-
+          <a class="logout" href="#" onclick="logout()">Log Ud</a>
           <div class="sure">
           <div class="delete">
           <h3>Er du sikker?</h3>
@@ -36,6 +35,7 @@ export default class ProfilePage {
       `;
     }
 
+    // calls logout() from auth.js
     logout() {
         this.authService.logout();
       }
@@ -45,6 +45,7 @@ export default class ProfilePage {
       sure.classList.toggle("show");
     }
 
+        // calls deleteAccount() from auth.js
     deleteAccount(){
     this.authService.deleteAccount();
     }

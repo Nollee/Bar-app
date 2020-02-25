@@ -92,7 +92,7 @@ body{
   .spinner {
     border: 5px solid $main-yellow;
     border-radius: 50%;
-    border-top: 5px solid $main-yellow;
+    border-top: 5px solid $main-black;
     width: 50px;
     height: 50px;
     -webkit-animation: spin 1s linear infinite;
@@ -160,13 +160,5 @@ body{
     }
 }
 
-.logout{
-    color: $main-black;
-    background-color: $main-yellow;
-    border-radius: 25px;
-    padding: 5px 10px;
-    text-decoration: none;
-    font-weight: 600;
-}
 
   
