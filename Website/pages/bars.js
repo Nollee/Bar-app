@@ -10,6 +10,7 @@ export default class BarPage {
           <h2>SEARCH</h2>
           <a class="right" href="#favourite">Favourites</a>
         </header>
+        <input id="search-bar" type="search" placeholder="Search" onkeyup="search(this.value)">    
         <section id="bar-container" class="grid-container"></section>
       </section>
     `;

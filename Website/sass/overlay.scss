@@ -115,4 +115,58 @@ body{
     transition: visibility 0s 0.4s, opacity 0.4s linear;
   }
 
+  @keyframes fadeIn {
+    from {
+      opacity: 0
+    }
+  
+    to {
+      opacity: 1
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* ===================== TOPBAR ====================*/
+
+.topbar-wrapper{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top: 2%;
+    h1{
+        font-size: 30px
+    }
+}
+
+.topbar-left{
+    display: flex;
+    align-items: center;
+    a{
+        color:white;
+        font-size: 60px;
+        text-decoration: none;
+        margin-right: 3%;
+    }
+}
+
+.logout{
+    color: $main-black;
+    background-color: $main-yellow;
+    border-radius: 25px;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
   
