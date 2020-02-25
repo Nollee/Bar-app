@@ -24,5 +24,5 @@ export default class ProfilePage {
 
     logout() {
         this.authService.logout();
-      }
+      }  
   }

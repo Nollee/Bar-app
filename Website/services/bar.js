@@ -87,6 +87,5 @@ export default class BarService {
     console.log(filteredMovies);
     this.appendBars(filteredMovies); 
   }  */   
-       
-}  
+}   
  
