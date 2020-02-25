@@ -81,19 +81,7 @@ export default class BarService {
         } 
     }           
     console.log(filteredBars);  
-}         
-          
-/* search(value) {
-    let searchQuery = value.toLowerCase();
-    let filteredMovies = []; 
-    for (let bar of this.bars) {    
-      let title = bar.name.toLowerCase();
-      if (title.includes(searchQuery)) {
-        filteredMovies.push(bar);
-      }
-    }
-    console.log(filteredMovies);
-    this.appendBars(filteredMovies); 
-  }  */   
+    }          
+           
 }    
  
