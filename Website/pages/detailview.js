@@ -1,4 +1,4 @@
-export default class detailPage {
+export default class DetailPage {
   constructor() {
     this.template();
   }
