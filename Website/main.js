@@ -43,6 +43,7 @@ window.showDetailView = (id) => _barDatabase.showDetailView(id);
 window.search = (value) => barService.search(value);   
 window.updateUser = () => updatePage.updateUser();
 window.previewImage = (file, previewId) => updatePage.previewImage(file, previewId);
+window.createBar = () => barService.createBar(); 
 
 
    
