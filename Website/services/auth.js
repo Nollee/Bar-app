@@ -80,34 +80,35 @@ class AuthService {
              <img class="icon" src="./images/mail.svg" alt="mail">
             <p>${user.email}</p>
             </div>
-            <div class="profile-info">
-            <img class="icon" src="./images/phone.svg" alt="phone">
-            <p class="phone">${user.phone}</p>
-            </div>
              </article>
           `;
         console.log(user);
-        /* let phone = document.querySelector(".phone")
-        if( phone.innerHTML === "null"){
-            phone.innerHTML = "Intet Telefonnummer"
-        } */
-            }
+    }
     
     // Makes the user log out
     logout() {
         firebase.auth().signOut();
     }
 
+    deleteAccount(){
+        let user = firebase.auth().currentUser;
+
+        user.delete().then(function() {
+          
+        }).catch(function(error) {
+          // An error happened.
+        });
+    }
+
+
     // appends the value which has been written in updateUser()
     appendAuthUser() {
         document.querySelector('#name').value = this.authUser.displayName || "";
         document.querySelector('#mail').value = this.authUser.email;
-        document.querySelector('#imagePreview').src = this.authUser.img || "";
-        document.querySelector('#phone').value = this.authUser.phoneNumber || "";
     }
 
     // updates the auth user and puts the user into the database 
-    updateAuthUser(name, img, phone) {
+    updateAuthUser(name, mail) {
         this.loaderService.show(true);
 
         let user = firebase.auth().currentUser;
@@ -115,14 +116,13 @@ class AuthService {
         // update auth user
         user.updateProfile({
             displayName: name,
-            phoneNumber: phone
                 });
+        
+        
 
         // update database user
         this.authUserRef.set({
-            image: img,
             name: name,
-            phone: phone
         }, {
             merge: true
         }).then(() => {

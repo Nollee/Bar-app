@@ -1,4 +1,4 @@
-import spaService from "../services/spa.js";
+import spaService from "./spa.js";
 import authService from "./auth.js";
 import loaderService from "./loader.js";
 

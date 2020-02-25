@@ -39,6 +39,8 @@ _barDatabase.init();
 // onclick handlers
 window.pageChange = () => spaService.pageChange();
 window.logout = () => profilePage.logout();
+window.toggleDelete = () => profilePage.toggleDelete();
+window.deleteAccount = () => profilePage.deleteAccount();
 window.showDetailView = (id) => _barDatabase.showDetailView(id); 
 window.search = (value) => barService.search(value);   
 window.updateUser = () => updatePage.updateUser();

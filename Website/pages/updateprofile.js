@@ -19,13 +19,10 @@ export default class UpdatePage {
           </header>
       <form>
         <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Type your name" required>
+        <input type="text" id="name" placeholder="Ændre dit navn">
         <label for="mail">Mail</label>
-        <input type="email" id="mail" placeholder="Type your mail" disabled>
+        <input type="email" id="mail" placeholder="Ændre din mail" >
         <label for="mail">Phone</label>
-        <input type="phone" id="phone" placeholder="Type your phone number">
-        <input type="file" id="img" accept="image/*" onchange="previewImage(this.files[0], 'imagePreview')">
-        <img id="imagePreview" class="image-preview">
         <a href="#profile" type="button" name="button" onclick="updateUser()">Save</a>
       </form>
     </section>
@@ -34,21 +31,10 @@ export default class UpdatePage {
 
   updateUser() {
     let name = document.querySelector('#name').value;
-    let img = document.querySelector('#imagePreview').src;
-    let phone = document.querySelector('#phone').value;
+    let mail = document.querySelector("#mail").value;
 
-    this.authService.updateAuthUser(name, img, phone);
+    this.authService.updateAuthUser(name, mail);
     console.log();
     
   }
-
-  previewImage(file, previewId) {
-    if (file) {
-      let reader = new FileReader();
-      reader.onload = function (event) {
-        document.querySelector('#' + previewId).setAttribute('src', event.target.result);
-      };
-      reader.readAsDataURL(file);
-    }
-}
 }
