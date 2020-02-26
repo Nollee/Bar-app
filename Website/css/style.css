@@ -1,9 +1,12 @@
 /* ============ import ======================== */
+/* gradients */
 /* inheritances */
 /* inheritances end */
+/* gradients */
 /* inheritances */
 /* inheritances end */
 /* ============ import ======================== */
+/* gradients */
 /* inheritances */
 /* inheritances end */
 /* ============ import ======================== */
@@ -84,20 +87,76 @@
 .firebaseui-label {
   color: gray; }
 
+/* gradients */
 /* inheritances */
 /* inheritances end */
 /* ============ import ======================== */
 .bar-card {
+  position: relative;
   width: 80%;
   margin: auto;
-  border-radius: 15px; }
+  border-radius: 12px;
+  color: white;
+  padding-top: 30%;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 5%; }
+
+.search-bar-container {
+  text-align: center;
+  margin-bottom: 5%;
+  width: 100%; }
+
+#search-bar {
+  width: 80%;
+  border-radius: 5px;
+  border: none;
+  padding: 5px; }
+
+.bar-card-gradient {
+  background: linear-gradient(360deg, black 0%, rgba(0, 0, 0, 0.9) 15%, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0) 100%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  bottom: 0px; }
+
+.bar-card-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-style: italic;
+  font-weight: 700;
+  bottom: 10px; }
+
+.bar-card-info, h2 {
+  position: relative;
+  z-index: 9;
+  margin-left: 5%;
+  margin-bottom: 5%; }
+
+.small-dot {
+  height: 5px;
+  width: 5px;
+  border-radius: 50px;
+  background-color: #FF0560;
+  margin-left: 2%;
+  margin-right: 2%; }
+
+.fav-btn, .fav-btn-rm {
+  width: 20px;
+  height: auto;
+  position: absolute;
+  right: 5%; }
 
 #barForm {
   margin-bottom: 200px; }
 
+/* gradients */
 /* inheritances */
 /* inheritances end */
 /* ============ import ======================== */
+/* gradients */
 /* inheritances */
 /* inheritances end */
 /* ============ import ======================== */
@@ -223,6 +282,7 @@ body {
     text-decoration: none;
     margin-right: 3%; }
 
+/* gradients */
 /* inheritances */
 /* inheritances end */
 #profiledata {
@@ -313,6 +373,7 @@ body {
   height: 100%;
   top: 0; }
 
+/* gradients */
 /* inheritances */
 /* inheritances end */
 /* ============ import ======================== */

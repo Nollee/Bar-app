@@ -2,8 +2,11 @@ $main-pink: #FF0560;
 $main-yellow: #F3CA26;
 $main-black: #111118;
 
+/* gradients */
+$gradient-bottom: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 15%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0) 100%);       
+     
 /* inheritances */
-%center {
+%center { 
     display: flex;
     justify-content: center;
     align-items: center; 
