@@ -14,7 +14,7 @@ class BarService {
     init() {
         // init all bars
         this.barRef.onSnapshot(snapshotData => {
-            
+            this.bars = [];
             snapshotData.forEach(doc => {
                 this.bar = doc.data();
                 this.bar.id = doc.id;
@@ -92,11 +92,11 @@ class BarService {
           `;
         if (this.userHasFav(barId)) {
             btnTemplate = /*html*/ ` 
-            <img class="fav-btn-rm" src="../images/phone.svg" onclick="removeFromFavourites('${barId}')" 
+            <img class="fav-btn-rm" src="../images/phone.svg" onclick="removeFromFavourites('${barId}')"> 
             `;  
-        } 
+        }; 
         return btnTemplate;
-    } 
+    }; 
 
      userHasFav(favBarId) {
         if (authService.authUser.favBars && authService.authUser.favBars.includes(favBarId)) {
@@ -143,7 +143,7 @@ class BarService {
         let bars = await barService.getFavBars();
         let template = "";
         for (let bar of bars) {
-            template +=  `
+            template += /*html*/ `
             <article>
               <h2>${bar.name}</h2>
               <img src="${bar.img}">

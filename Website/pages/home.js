@@ -19,7 +19,13 @@ export default class homePage {
     <div class="slide">slide 5</div>
     <div class="slide">slide 6</div>
     <div class="slide">slide 7</div>
-  </section></section>
+  </section>
+  <section class="slider" id="myCupons">
+  
+  </section>
+
+
+  </section>
         </section>
       `;
     }
