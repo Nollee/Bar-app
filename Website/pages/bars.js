@@ -12,7 +12,9 @@ export default class BarPage {
           <h2>SEARCH</h2>
           <a class="right" href="#favourite">Favourites</a>
         </header>
-        <input id="search-bar" type="search" placeholder="Search" onkeyup="search(this.value)">    
+        <div class="search-bar-container">
+        <input id="search-bar" type="search" placeholder="Search" onkeyup="search(this.value)"> 
+        </div>    
         <section id="bar-container" class="grid-container"></section>
         <!---------- create new bar ------------->
     <form id="barForm">
@@ -24,6 +26,7 @@ export default class BarPage {
       <input type="text" id="form-price" placeholder="Indtast bars pris" required>
       <input type="text" id="form-type" placeholder="Indtast bars stemning" required> 
       <input type="url" id="form-img" placeholder="Indtast url for bar billede" required> 
+      <input type="number" id="form-age" placeholder ="Indtast mindstealder" required> 
       <button type="button" name="button" onclick="createBar()">Create Bar</button>
     </form> 
         <!---------- create new bar ------------->

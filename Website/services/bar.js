@@ -30,17 +30,22 @@ class BarService {
         for (let index = 0; index < bars.length; index++) {
             let bar = bars[index];     
              htmlTemplate += /* html */ `
-            <article onclick="showDetailView('${bar.id}')" class="bar-card" style="background-image: url('${bar.img}');">  
-              <h2>${bar.name}</h2> 
-              <p>${bar.id}</p> 
-              <p>${bar.address}</p> 
-              <p>${bar.description}</p>
-              <p>plads: 0 - ${bar.space}</p>
-              <p>pris: ${bar.price}kr.</p> 
-              <p>${bar.opening}</p>
-              <p>${bar.games}</p>   
-            </article>    
-            ${this.generateFavBarButton(bar.id)}
+            <article onclick="showDetailView('${bar.id}')" class="bar-card" style="background-image: url('${bar.img}');">
+            <div class="bar-card-gradient"></div>   
+            <h2>${bar.name}</h2>  
+            <div class="bar-card-info"> 
+            <p>${bar.price}kr.</p> 
+              <!---<p>${bar.address}</p>-->
+              <div class="small-dot"></div>   
+              <p>${bar.type}</p> 
+              <div class="small-dot"></div>
+              <p>${bar.age}+</p>  
+              <div class="small-dot"></div> 
+             <!---- <a href="https://maps.google.com/?q=${bar.address}">${bar.address}</a>  ---> 
+             <!--<img class="bar-card-heart" src="../images/heart.svg" alt="image of heart">-->  
+             ${this.generateFavBarButton(bar.id)}
+             </div>     
+             </article>     
           `;
         } 
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
@@ -58,11 +63,23 @@ class BarService {
               this._selectedBar = bar;
             }
         } 
-        document.querySelector("#detail-view").innerHTML = `
-        <article>
+        document.querySelector("#detail-view").innerHTML = /*html */ `
+        <header>
+        <h1>${this._selectedBar.name}</h1>
+        </header>
+
+        <article class="detailview">
+            <div class="detail-top">
             <h1>${this._selectedBar.name}</h1>
-            <h1>${this._selectedBar.games}</h1>
             <img src="${this._selectedBar.img}">
+            <div class="topinfo">
+            <div class="location">
+            <img src="images/pin.svg">
+            <p>${this._selectedBar.address}</p>
+            </div>
+            ${this.generateFavBarButton(this._selectedBar.id)}
+            </div>
+            </div>
         </article>
   `;
     this.spaService.navigateTo("detail-view");
@@ -70,14 +87,16 @@ class BarService {
     }
 
     generateFavBarButton(barId) {
-        let btnTemplate = `
-          <button onclick="addToFavourites('${barId}')">Add to favourites</button>`;
+        let btnTemplate = /*html*/ `
+          <img class="fav-btn" src="../images/heart.svg" onclick="addToFavourites('${barId}')">
+          `;
         if (this.userHasFav(barId)) {
-            btnTemplate = `
-            <button onclick="removeFromFavourites('${barId}')" class="rm">Remove from favourites</button>`;
+            btnTemplate = /*html*/ ` 
+            <img class="fav-btn-rm" src="../images/phone.svg" onclick="removeFromFavourites('${barId}')" 
+            `;  
         } 
         return btnTemplate;
-    }
+    } 
 
      userHasFav(favBarId) {
         if (authService.authUser.favBars && authService.authUser.favBars.includes(favBarId)) {
@@ -182,13 +201,15 @@ class BarService {
     let priceInput = document.querySelector('#form-price');
     let addressInput = document.querySelector('#form-address');
     let typeInput = document.querySelector('#form-type'); 
+    let ageInput = document.querySelector('#form-age'); 
     console.log(nameInput.value);
     console.log(descriptionInput.value);
     console.log(imgInput.value);
     console.log(spaceInput.value);
     console.log(priceInput.value);
     console.log(addressInput.value);
-    console.log(typeInput.value);  
+    console.log(typeInput.value); 
+    console.log(ageInput.value);  
   
     let newBar = {
         name: nameInput.value,
@@ -197,10 +218,12 @@ class BarService {
         space: spaceInput.value,
         price: priceInput.value,
         address: addressInput.value,
-        type: typeInput.value
+        type: typeInput.value, 
+        age: ageInput.value
     }; 
     /* location.reload();  */
-    this.barRef.add(newBar);    
+    this.barRef.add(newBar);
+    this.appendBars(this.bars);    
   }  
   
   
