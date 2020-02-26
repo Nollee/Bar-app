@@ -57,7 +57,7 @@ class CouponService {
         return btnTemplate;
     }; 
 
-    // adds a given movieId to the favMovies array inside _currentUser
+    // adds a given Id to the favMovies array inside _currentUser
 
     addToOwnedCoupons(couponId) {
         loaderService.show(true);
@@ -72,12 +72,12 @@ class CouponService {
     }
 
 
-    async getOwnedCupons() {
+    async getOwnedCoupons() {
         let ownedCoupons = [];
         for (let couponId of authService.authUser.ownedCoupons) {
             await this.couponRef.doc(couponId).get().then(function (doc) {
                 let coupon = doc.data();
-                coupon.id = doc.id;;
+                coupon.id = doc.id;
                 ownedCoupons.push(coupon);
             });
         }
@@ -101,7 +101,7 @@ class CouponService {
             `;
         }
         document.querySelector('#myCoupons').innerHTML = template;
-    } 
+    }; 
 
 
 
