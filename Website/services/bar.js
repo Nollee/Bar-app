@@ -63,11 +63,23 @@ class BarService {
               this._selectedBar = bar;
             }
         } 
-        document.querySelector("#detail-view").innerHTML = `
-        <article>
+        document.querySelector("#detail-view").innerHTML = /*html */ `
+        <header>
+        <h1>${this._selectedBar.name}</h1>
+        </header>
+
+        <article class="detailview">
+            <div class="detail-top">
             <h1>${this._selectedBar.name}</h1>
-            <h1>${this._selectedBar.games}</h1>
             <img src="${this._selectedBar.img}">
+            <div class="topinfo">
+            <div class="location">
+            <img src="images/pin.svg">
+            <p>${this._selectedBar.address}</p>
+            </div>
+            ${this.generateFavBarButton(this._selectedBar.id)}
+            </div>
+            </div>
         </article>
   `;
     this.spaService.navigateTo("detail-view");
@@ -210,7 +222,8 @@ class BarService {
         age: ageInput.value
     }; 
     /* location.reload();  */
-    this.barRef.add(newBar);    
+    this.barRef.add(newBar);
+    this.appendBars(this.bars);    
   }  
   
   
