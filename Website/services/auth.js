@@ -1,6 +1,7 @@
 import spaService from "./spa.js";
 import loaderService from "./loader.js";
 import barService from "./bar.js";
+import couponService from "./coupon.js"
 
 class AuthService {
     constructor() {
@@ -64,6 +65,7 @@ class AuthService {
                 this.authUser = user;
                 this.appendAuthUser();
                 barService.init();
+                couponService.init();
                 loaderService.show(false);
             //}
 

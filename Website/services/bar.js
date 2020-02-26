@@ -103,9 +103,9 @@ class BarService {
             btnTemplate = /*html*/ ` 
             <img class="fav-btn-rm" src="../images/phone.svg" onclick="removeFromFavourites('${barId}')"> 
             `;  
-        } 
+        }; 
         return btnTemplate;
-    } 
+    }; 
 
      userHasFav(favBarId) {
         if (authService.authUser.favBars && authService.authUser.favBars.includes(favBarId)) {
@@ -141,7 +141,7 @@ class BarService {
         for (let barId of authService.authUser.favBars) {
             await this.barRef.doc(barId).get().then(function (doc) {
                 let bar = doc.data();
-                bar.id = doc.id;;
+                bar.id = doc.id;
                 favBars.push(bar);
             });
         }
@@ -152,7 +152,7 @@ class BarService {
         let bars = await barService.getFavBars();
         let template = "";
         for (let bar of bars) {
-            template +=  `
+            template += /*html*/ `
             <article>
               <h2>${bar.name}</h2>
               <img src="${bar.img}">

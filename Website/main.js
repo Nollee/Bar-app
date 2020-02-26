@@ -14,6 +14,7 @@ import spaService from "./services/spa.js";
 import authService from "./services/auth.js";
 import FavouritePage from "./pages/favourite.js";
 import barService from "./services/bar.js";
+import couponService from "./services/coupon.js";
 
 
 
@@ -38,17 +39,27 @@ spaService.init();
 authService.init();
  
 // onclick handlers
+
+// coupon handlers
+window.createCoupon = () => couponService.createCoupon();
+window.appendCoupons = () => couponService.appendCoupons();
+window.addToOwnedCoupons = (couponId) => chancePage.addToOwnedBars(couponId);
+
+// spa handlers
 window.pageChange = () => spaService.pageChange();
+
+// profile handlers
 window.logout = () => profilePage.logout();
 window.deleteAccount = () => profilePage.deleteAccount();
+window.toggleDelete = () => profilePage.toggleDelete();
+
+
+// bar handlers
 window.showDetailView = (id) => barService.showDetailView(id); 
 window.addToFavourites = (barId) => barPage.addToFavourites(barId);
 window.removeFromFavourites = (barId) => barPage.removeFromFavourites(barId);  
 window.search = (value) => barService.search(value);   
-window.updateUser = () => updatePage.updateUser();
-window.previewImage = (file, previewId) => updatePage.previewImage(file, previewId);
 window.createBar = () => barService.createBar(); 
-window.toggleDelete = () => profilePage.toggleDelete();
 
 
    

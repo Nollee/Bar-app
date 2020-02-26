@@ -539,6 +539,9 @@ body {
   align-items: center; }
 
 /* inheritances end */
+.coupon-wrapper {
+  color: white; }
+
 /* ============ import ======================== */
 
 /*# sourceMappingURL=style.css.map */
