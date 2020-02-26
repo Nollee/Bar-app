@@ -19,53 +19,110 @@ export default class BarPage {
         <!---------- create new bar ------------->
     <form id="barForm">
       <h2>Add a new bar</h2>
+      <div class="form-text-wrapper">
+      <h3>Navn</h3>
+      </div>  
       <input type="text" id="form-name" placeholder="Indtast bar navn" required>
+      <div class="form-text-wrapper">
+      <h3>Beskrivelse</h3>
+      </div>  
       <textarea id="form-description" cols="30" rows="5" required placeholder="Indtast beskrivelse af bar"></textarea> 
-      <input type="number" id="form-space" placeholder="Indtast maks antallet af besøgende på én gang" required>
-      <input type="text" id="form-address" placeholder="Indtast bars addresse" required>
-      <input type="text" id="form-price" placeholder="Indtast bars pris" required>
-      <input type="text" id="form-type" placeholder="Indtast bars stemning" required> 
-      <input type="url" id="form-img" placeholder="Indtast url for bar billede" required> 
-      <input type="number" id="form-age" placeholder ="Indtast mindstealder" required> 
+      <div class="form-text-wrapper-space">
+      <h4>Hvor mange er der plads til?</h4>
+      <input type="number" id="form-space" placeholder="(fx 200)" required>
+      </div> 
+      <div class="form-text-wrapper">
+      <img src="../images/pin.svg"><h3>Addresse</h3>
+      </div> 
+      <input type="text" id="form-address" placeholder="Indtast addresse (fx Klostergade 36, 8000 Aarhus)" required>
+
+      <div class="form-input-wrapper">
+      <div class="form-input-container">
+      <div class="form-text-wrapper">
+      <img src="../images/$.svg"><h3>Pris</h3>
+      </div> 
+      <input type="text" id="form-price" placeholder="Indtast pris (fx 200)" required>
+      </div>   
+      
+      <div class="form-input-container">
+      <div class="form-text-wrapper">
+      <img src="../images/smiley.svg"><h3>Stemning</h3>
+      </div> 
+      <input type="text" id="form-type" placeholder="(fx hyggeligt el. festligt)" required>
+      </div> 
+      </div>
+      
+      <div class="form-input-wrapper">
+      <div class="form-input-container">
+      <div class="form-text-wrapper">
+      <img src="../images/photo.svg"><h3>Billede url</h3>
+      </div> 
+      <input type="url" id="form-img" placeholder="Indtast url for billede" required>  
+      </div>
+
+      <div class="form-input-container"> 
+      <div class="form-text-wrapper">
+      <img src="../images/age.svg"><h3>Mindstealder</h3>
+      </div> 
+      <input type="number" id="form-age" placeholder ="Mindstealder (fx 18)" required> 
+      </div>
+      </div> 
       
       <!------------- opening hours for form ------->
+      <div class="form-text-wrapper">
+      <img src="../images/clock.svg"><h3>Åbningstider</h3>
+      </div> 
       <div class="form-days">
       <p>Mandag</p>
-      <input type="number" id="form-from-monday" placeholder="Indtast tidspunkt for åbning (fx 15)" required> <p> - </p>
-      <input type="number" id="form-to-monday" placeholder="Indtast tidspunkt for lukning (fx 02)" required> 
+      <div class="form-days-wrapper">
+      <input type="number" id="form-from-monday" placeholder="(fx 15)" required> <span> - </span>
+      <input type="number" id="form-to-monday" placeholder="(fx 02)" required> 
+      </div> 
       </div>
       <div class="form-days">
-      <p>Tirsdag</p>
-      <input type="number" id="form-from-tuesday" placeholder="Indtast tidspunkt for åbning (fx 15)" required> <p> - </p>
-      <input type="number" id="form-to-tuesday" placeholder="Indtast tidspunkt for lukning (fx 02)" required> 
+      <span>Tirsdag</span>
+      <div class="form-days-wrapper">
+      <input type="number" id="form-from-tuesday" placeholder="(fx 15)" required> <span> - </span>
+      <input type="number" id="form-to-tuesday" placeholder="(fx 02)" required> 
       </div>
+      </div> 
       <div class="form-days">
       <p>Onsdag</p>
-      <input type="number" id="form-from-wednesday" placeholder="Indtast tidspunkt for åbning (fx 15)" required> <p> - </p>
-      <input type="number" id="form-to-wednesday" placeholder="Indtast tidspunkt for lukning (fx 02)" required> 
+      <div class="form-days-wrapper">
+      <input type="number" id="form-from-wednesday" placeholder="(fx 15)" required> <span> - </span>
+      <input type="number" id="form-to-wednesday" placeholder="(fx 02)" required> 
+      </div>
       </div>
       <div class="form-days">
       <p>Torsdag</p>
-      <input type="number" id="form-from-thursday" placeholder="Indtast tidspunkt for åbning (fx 15)" required> <p> - </p>
-      <input type="number" id="form-to-thursday" placeholder="Indtast tidspunkt for lukning (fx 02)" required> 
+      <div class="form-days-wrapper">
+      <input type="number" id="form-from-thursday" placeholder="(fx 15)" required> <span> - </span>
+      <input type="number" id="form-to-thursday" placeholder="(fx 02)" required> 
+      </div>
       </div>
       <div class="form-days">
       <p>Fredag</p>
-      <input type="number" id="form-from-friday" placeholder="Indtast tidspunkt for åbning (fx 15)" required> <p> - </p>
-      <input type="number" id="form-to-friday" placeholder="Indtast tidspunkt for lukning (fx 02)" required> 
+      <div class="form-days-wrapper">
+      <input type="number" id="form-from-friday" placeholder="(fx 15)" required> <span> - </span>
+      <input type="number" id="form-to-friday" placeholder="(fx 02)" required> 
       </div>
+      </div> 
       <div class="form-days">
       <p>Lørdag</p>
-      <input type="number" id="form-from-saturday" placeholder="Indtast tidspunkt for åbning (fx 15)" required> <p> - </p>
-      <input type="number" id="form-to-saturday" placeholder="Indtast tidspunkt for lukning (fx 02)" required> 
-      </div>
+      <div class="form-days-wrapper">
+      <input type="number" id="form-from-saturday" placeholder="(fx 15)" required> <span> - </span>
+      <input type="number" id="form-to-saturday" placeholder="(fx 02)" required> 
+      </div> 
+      </div> 
       <div class="form-days">
       <p>Søndag</p>
-      <input type="number" id="form-from-sunday" placeholder="Indtast tidspunkt for åbning (fx 15)" required> <p> - </p>
-      <input type="number" id="form-to-sunday" placeholder="Indtast tidspunkt for lukning (fx 02)" required> 
+      <div class="form-days-wrapper">
+      <input type="number" id="form-from-sunday" placeholder="(fx 15)" required> <span> - </span>
+      <input type="number" id="form-to-sunday" placeholder="(fx 02)" required> 
       </div>
+      </div> 
       
-      <button type="button" name="button" onclick="createBar()">Create Bar</button>
+      <button id="create-bar" type="button" name="button" onclick="createBar()">Create Bar</button>
       </form>  
           <!---------- create new bar ------------->
       

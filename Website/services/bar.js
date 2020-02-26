@@ -258,6 +258,7 @@ class BarService {
         address: addressInput.value,
         type: typeInput.value, 
         age: ageInput.value,
+        /* days */
         mondayFrom: mondayFromInput.value,
         mondayTo: mondayToInput.value, 
         tuesdayFrom: tuesdayFromInput.value,
@@ -275,7 +276,7 @@ class BarService {
     }; 
     /* location.reload();  */
     this.barRef.add(newBar);
-    this.appendBars(this.bars);    
+    this.appendBars(this.bars);   
   }  
   
   

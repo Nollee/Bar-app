@@ -47,7 +47,7 @@
 
 .bar-card-info, h2 {
     position: relative;
-    z-index: 9; 
+    z-index: 1; 
     margin-left: 5%; 
     margin-bottom: 5%; 
 }
@@ -74,13 +74,15 @@
     @extend %center; 
     flex-direction: column;
     margin-bottom: 200px;
+    color: $main-pink;
     input, textarea {
         width: 80%; 
         margin: 1%;
         padding: 1%;
         background: none; 
-        border: solid 2px $main-pink;
+        border: solid 2px white;
         border-radius: 5px;
+        color: white;
     }
     h2 {
         margin: 0; 
@@ -90,7 +92,76 @@ textarea {
     resize: none;
 }
 
+.form-text-wrapper, .form-text-wrapper-space {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80%;    
+    img {
+        width: 20px;
+        height: auto;
+    } 
+}
+
+.form-text-wrapper-space {
+    justify-content: space-between;
+}
+
+.form-text-wrapper {
+    margin-top: 2%;     
+    margin-bottom: 2%;
+    img {
+        width: auto;
+        height: 20px;
+        margin-right: 8px;
+    }
+}
+
+#form-space {
+    width: 20% !important;  
+}
+
+.form-input-container {
+    width: 100%; 
+}
+
+.form-input-wrapper {
+    display: flex; 
+    flex-direction: row;
+    width: 80%;
+}
+
 .form-days {
     display: flex;
     flex-direction: row;
+    width: 80%;
+    justify-content: space-between;  
 }
+
+.form-days-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end; 
+    input {
+        width: 20% !important;
+        margin-left: 5% !important; 
+    }
+    span {
+        margin-left: 5%;
+        font-weight: 700;
+    }
+}
+
+#create-bar {
+    color: $main-black;
+    background-color: $main-yellow;
+    border-radius: 5px;
+    padding: 2% 4%;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    margin-top: 5%;
+}
+
