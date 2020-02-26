@@ -28,21 +28,23 @@ body{
 /* ================= TABBAR ====================*/
  
  #tabbar{
+   display: flex;
+   justify-content: center;
     background-color: $main-black;
     position: fixed;
     bottom: 0px;
     width: 100%;
+    height: 10%;
 }
 
 .tabbar-wrapper{
-    width: 90%;
-    height: 30%;
+    width: 50%;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     a{
-        width: 15%;
+        width: 2em;
         height: 100%;
         display: flex;
         justify-content: center;
@@ -67,9 +69,13 @@ body{
 .tabbar a.active svg{
     transition: .5s ease;
     fill: white;
-    stroke: none;
+    stroke: white;
     width: 85%; 
 
+}
+
+#bars{
+  height: 1em;
 }
 
 /* ================= TABBAR END ====================== */
