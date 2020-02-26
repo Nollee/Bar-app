@@ -71,6 +71,26 @@
 
 
 #barForm {
+    @extend %center; 
+    flex-direction: column;
     margin-bottom: 200px;
+    input, textarea {
+        width: 80%; 
+        margin: 1%;
+        padding: 1%;
+        background: none; 
+        border: solid 2px $main-pink;
+        border-radius: 5px;
+    }
+    h2 {
+        margin: 0; 
+    }
 } 
+textarea {
+    resize: none;
+}
 
+.form-days {
+    display: flex;
+    flex-direction: row;
+}

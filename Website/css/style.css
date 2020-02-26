@@ -1,13 +1,28 @@
 /* ============ import ======================== */
 /* gradients */
 /* inheritances */
+#barForm {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 /* inheritances end */
 /* gradients */
 /* inheritances */
+#barForm {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 /* inheritances end */
 /* ============ import ======================== */
 /* gradients */
 /* inheritances */
+#barForm {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 /* inheritances end */
 /* ============ import ======================== */
 /* ================= LOGIN ===========================*/
@@ -89,6 +104,11 @@
 
 /* gradients */
 /* inheritances */
+#barForm {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 /* inheritances end */
 /* ============ import ======================== */
 .bar-card {
@@ -150,14 +170,41 @@
   right: 5%; }
 
 #barForm {
+  flex-direction: column;
   margin-bottom: 200px; }
+  #barForm input, #barForm textarea {
+    width: 80%;
+    margin: 1%;
+    padding: 1%;
+    background: none;
+    border: solid 2px #FF0560;
+    border-radius: 5px; }
+  #barForm h2 {
+    margin: 0; }
+
+textarea {
+  resize: none; }
+
+.form-days {
+  display: flex;
+  flex-direction: row; }
 
 /* gradients */
 /* inheritances */
+#barForm {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 /* inheritances end */
 /* ============ import ======================== */
 /* gradients */
 /* inheritances */
+#barForm {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 /* inheritances end */
 /* ============ import ======================== */
 * {
@@ -284,6 +331,11 @@ body {
 
 /* gradients */
 /* inheritances */
+#barForm {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 /* inheritances end */
 #profiledata {
   display: flex;
@@ -375,6 +427,11 @@ body {
 
 /* gradients */
 /* inheritances */
+#barForm {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 /* inheritances end */
 /* ============ import ======================== */
 /* ================= SLIDER ====================*/
@@ -412,6 +469,11 @@ body {
 /* ================= SLIDER END ====================*/
 /* gradients */
 /* inheritances */
+#barForm {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 /* inheritances end */
 /* ============ import ======================== */
 
