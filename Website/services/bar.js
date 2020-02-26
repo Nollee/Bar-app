@@ -14,12 +14,13 @@ class BarService {
     init() {
         // init all bars
         this.barRef.onSnapshot(snapshotData => {
-            this.bars = [];
+            this.bars = []; 
             snapshotData.forEach(doc => {
-                this.bar = doc.data();
-                this.bar.id = doc.id;
-                this.bars.push(this.bar);  
+                let bar = doc.data();
+                bar.id = doc.id;
+                this.bars.push(bar);  
             });
+            console.log(this.bars); 
             this.appendBars(this.bars);       
         });
         this.appendFavBars();
@@ -41,7 +42,7 @@ class BarService {
               <div class="small-dot"></div>
               <p>${bar.age}+</p>  
               <div class="small-dot"></div> 
-             <!---- <a href="https://maps.google.com/?q=${bar.address}">${bar.address}</a>  ---> 
+             <!--<a href="https://maps.google.com/?q=${bar.address}">${bar.address}</a>  --> 
              <!--<img class="bar-card-heart" src="../images/heart.svg" alt="image of heart">-->  
              ${this.generateFavBarButton(bar.id)}
              </div>     
@@ -76,6 +77,14 @@ class BarService {
             <div class="location">
             <img src="images/pin.svg">
             <p>${this._selectedBar.address}</p>
+            <h2>Åbningstider</h2>
+            <p>Mandag: ${this._selectedBar.mondayFrom} - ${this._selectedBar.mondayTo}</p> 
+            <p>Tirsdag: ${this._selectedBar.tuesdayFrom} - ${this._selectedBar.tuesdayTo}</p> 
+            <p>Onsdag: ${this._selectedBar.wednesdayFrom} - ${this._selectedBar.wednesdayTo}</p> 
+            <p>Torsdag: ${this._selectedBar.thursdayFrom} - ${this._selectedBar.thursdayTo}</p>
+            <p>Fredag: ${this._selectedBar.fridayFrom} - ${this._selectedBar.fridayTo}</p>  
+            <p>Lørdag: ${this._selectedBar.saturdayFrom} - ${this._selectedBar.saturdayTo}</p>  
+            <p>Søndag: ${this._selectedBar.sundayFrom} - ${this._selectedBar.sundayTo}</p>    
             </div>
             ${this.generateFavBarButton(this._selectedBar.id)}
             </div>
@@ -202,6 +211,20 @@ class BarService {
     let addressInput = document.querySelector('#form-address');
     let typeInput = document.querySelector('#form-type'); 
     let ageInput = document.querySelector('#form-age'); 
+    let mondayFromInput = document.querySelector('#form-from-monday'); 
+    let mondayToInput = document.querySelector('#form-to-monday'); 
+    let tuesdayFromInput = document.querySelector('#form-from-tuesday'); 
+    let tuesdayToInput = document.querySelector('#form-to-tuesday'); 
+    let wednesdayFromInput = document.querySelector('#form-from-wednesday'); 
+    let wednesdayToInput = document.querySelector('#form-to-wednesday'); 
+    let thursdayFromInput = document.querySelector('#form-from-thursday'); 
+    let thursdayToInput = document.querySelector('#form-to-thursday'); 
+    let fridayFromInput = document.querySelector('#form-from-friday'); 
+    let fridayToInput = document.querySelector('#form-to-friday'); 
+    let saturdayFromInput = document.querySelector('#form-from-saturday'); 
+    let saturdayToInput = document.querySelector('#form-to-saturday'); 
+    let sundayFromInput = document.querySelector('#form-from-sunday'); 
+    let sundayToInput = document.querySelector('#form-to-sunday'); 
     console.log(nameInput.value);
     console.log(descriptionInput.value);
     console.log(imgInput.value);
@@ -210,6 +233,21 @@ class BarService {
     console.log(addressInput.value);
     console.log(typeInput.value); 
     console.log(ageInput.value);  
+    console.log(mondayFromInput.value);
+    console.log(mondayToInput.value); 
+    console.log(tuesdayFromInput.value);
+    console.log(tuesdayToInput.value); 
+    console.log(wednesdayFromInput.value);
+    console.log(wednesdayToInput.value); 
+    console.log(thursdayFromInput.value);
+    console.log(thursdayToInput.value); 
+    console.log(fridayFromInput.value);
+    console.log(fridayToInput.value); 
+    console.log(saturdayFromInput.value);
+    console.log(saturdayToInput.value); 
+    console.log(sundayFromInput.value);
+    console.log(sundayToInput.value); 
+    
   
     let newBar = {
         name: nameInput.value,
@@ -219,7 +257,21 @@ class BarService {
         price: priceInput.value,
         address: addressInput.value,
         type: typeInput.value, 
-        age: ageInput.value
+        age: ageInput.value,
+        mondayFrom: mondayFromInput.value,
+        mondayTo: mondayToInput.value, 
+        tuesdayFrom: tuesdayFromInput.value,
+        tuesdayTo: tuesdayToInput.value,
+        wednesdayFrom: wednesdayFromInput.value,
+        wednesdayTo: wednesdayToInput.value,
+        thursdayFrom: thursdayFromInput.value,
+        thursdayTo: thursdayToInput.value,
+        fridayFrom: fridayFromInput.value,
+        fridayTo: fridayToInput.value,
+        saturdayFrom: saturdayFromInput.value,
+        saturdayTo: saturdayToInput.value,
+        sundayFrom: sundayFromInput.value,
+        sundayTo: sundayToInput.value 
     }; 
     /* location.reload();  */
     this.barRef.add(newBar);
