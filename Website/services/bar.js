@@ -21,7 +21,8 @@ class BarService {
                 this.bars.push(bar);  
             });
             console.log(this.bars); 
-            this.appendBars(this.bars);       
+            this.appendBars(this.bars);
+            this.appendBarsHome(this.bars);       
         });
         this.appendFavBars();
     }  
@@ -50,13 +51,39 @@ class BarService {
           `;
         } 
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
+        
         console.log(bars);
       }
+
+      appendBarsHome(bars) {
+        let htmlTemplate = "";
+        for (let index = 0; index < bars.length; index++) {
+            let bar = bars[index];     
+             htmlTemplate += /* html */ `
+            <article class="bar-card bar-card-home" style="background-image: url('${bar.img}');">
+            <div class="bar-card-onclick" onclick="showDetailView('${bar.id}')"></div> 
+            <div class="bar-card-gradient"></div>
+            <div class="bar-card-home-info">   
+            <h2>${bar.name}</h2>  
+            <div class="bar-card-info"> 
+            <p>${bar.price}kr.</p>  
+              <div class="small-dot"></div>    
+              <p>${bar.type}</p> 
+              <div class="small-dot"></div>
+              <p>${bar.age}+</p>  
+              <div class="small-dot"></div> 
+             <!--<a href="https://maps.google.com/?q=${bar.address}">${bar.address}</a>  --> 
+             <!--<img class="bar-card-heart" src="../images/heart.svg" alt="image of heart">-->  
+             ${this.generateFavBarButton(bar.id)}
+             </div>
+             </div>     
+             </article>       
+          `;
+        } 
+        document.querySelector('#bar-highlight').innerHTML = htmlTemplate;
     
-
- 
-
-
+      }
+    
     showDetailView(id) { 
 
         for (let bar of this.bars) {

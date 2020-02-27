@@ -6,7 +6,6 @@
  /* ================= SLIDER ====================*/
  .slider{
     display: flex;
-    width: 235px; 
     flex-wrap: nowrap; 
     overflow-x: scroll; 
     transition: 0.5s ease;
@@ -16,6 +15,9 @@
     scroll-snap-type: x mandatory; 
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    height: 60vw;
+    max-width: 500px;
+    max-height: 300px;
 }    
 
 .slide{
@@ -23,10 +25,7 @@
     width: 200px;
     height: 100px;
     background-color: red;
-    display: inline-block;
-    min-width: 200px;
-    scroll-snap-align: center;
-    scroll-snap-stop: always; 
+    
 }
 
 .slider::-webkit-scrollbar {
@@ -38,6 +37,27 @@
     transform: scale(1);
     transition: 0.3s ease;
     cursor: grabbing;
+}
+
+.bar-card-home {
+    position: relative;
+    margin: 2%;
+    display: inline-block;
+    min-width: 90%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always; 
+    padding-top: 0;
+}
+
+.bar-card-home h2 p{
+    margin: 0;
+    padding: 0;
+}
+
+.bar-card-home-info{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 /* ================= SLIDER END ====================*/
