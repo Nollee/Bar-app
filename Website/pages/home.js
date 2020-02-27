@@ -20,7 +20,7 @@ export default class homePage {
     <div class="slide">slide 6</div>
     <div class="slide">slide 7</div>
   </section>
-  <section class="slider" id="myCupons">
+  <section class="slider" id="myCoupons">
   
   </section>
 

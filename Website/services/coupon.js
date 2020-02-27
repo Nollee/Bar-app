@@ -31,8 +31,12 @@ class CouponService {
         if (this.randomCoupon.lose === "lose") {
             document.querySelector("#coupon-container").innerHTML = /* html */ `
             <article class="coupon-wrapper">
+            <div class="img-gradient">
             <img src="https://i.redd.it/mzz6i3sjrsd11.png" alt="tabt">
-            <h3>Ingen gevinst i dag. Prøv igen imorgen!</h3>
+            <h2>Øv!</h2>
+            </div>
+            <h3>Ingen gevinst</h3>
+            <h4>Prøv igen imorgen!</h4>
             </article>
             `;
         
@@ -40,12 +44,18 @@ class CouponService {
         } else {
             document.querySelector("#coupon-container").innerHTML = /* html */ `
             <article class="coupon-wrapper">
+            <div class="img-gradient toppic">
             <img src="${this.randomCoupon.img}" alt="gevinst">
-            <h3>${this.randomCoupon.rabat}</h3>
+            <h2>${this.randomCoupon.rabat}</h2>
+            </div>
             <h3>${this.randomCoupon.for}</h3>
-            <h3>${this.randomCoupon.to}</h3>
-            <a href="#home">Se kuponer</a>
+            <h4> På ${this.randomCoupon.to}</h4>
+            <p>Indløs kuponen ved at vise den til en bartender hos den ovennævnte bar!
+            </p>
+            <p class="expire">Udløber: ${this.randomCoupon.expire}</p>
+            <a class="seeMore" href="#home">Se kuponer</a>
             </article>
+            <div class="overlav"></div>
             `;
             this.addToOwnedCoupons(this.randomCoupon.id);
         }
