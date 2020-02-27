@@ -182,11 +182,22 @@ class BarService {
         let template = "";
         for (let bar of bars) {
             template += /*html*/ `
-            <article>
-              <h2>${bar.name}</h2>
-              <img src="${bar.img}">
-              <button onclick="removeFromFavourites('${bar.id}')" class="rm">Remove from favourites</button>
-            </article>
+            <article class="bar-card" style="background-image: url('${bar.img}');">
+            <div class="bar-card-onclick" onclick="showDetailView('${bar.id}')"></div> 
+            <div class="bar-card-gradient"></div>   
+            <h2>${bar.name}</h2>  
+            <div class="bar-card-info"> 
+            <p>${bar.price}kr.</p>  
+              <div class="small-dot"></div>    
+              <p>${bar.type}</p> 
+              <div class="small-dot"></div>
+              <p>${bar.age}+</p>  
+              <div class="small-dot"></div> 
+             <!--<a href="https://maps.google.com/?q=${bar.address}">${bar.address}</a>  --> 
+             <!--<img class="bar-card-heart" src="../images/heart.svg" alt="image of heart">-->  
+             ${this.generateFavBarButton(bar.id)}
+             </div>      
+             </article> 
           `;
         }
         if (bars.length === 0) {
@@ -194,7 +205,7 @@ class BarService {
                 <p>No Bars added</p>
             `;
         }
-        document.querySelector('#favourite').innerHTML = template;
+        document.querySelector('#fav-container').innerHTML = template;
     }
  
 
