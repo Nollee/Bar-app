@@ -125,12 +125,8 @@ export default class BarPage {
       <button id="create-bar" type="button" name="button" onclick="createBar()">Tilføj bar</button>
       </form>  
           <!---------- create new bar ------------->
-      
-      
-
-
       </section>
-    `;
+    `; 
   }  
 
   addToFavourites(barId) {
