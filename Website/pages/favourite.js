@@ -7,11 +7,11 @@ export default class FavouritePage {
       document.getElementById('content').innerHTML += /* html */ `
         <section id="favourite" class="page">
           <header class="topbar">
-            <h2>favourites</h2>
-            <a class="right" href="#favourite">Favourites</a>
+            <h2>FAVOURITES</h2>     
           </header>
-          <section id="bar-container" class="grid-container"></section>
+
+          <section id="fav-container" class="grid-container"></section>
         </section>
       `;
     }  
-  }
+  } 

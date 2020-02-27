@@ -18,7 +18,7 @@ export default class BarPage {
         <section id="bar-container" class="grid-container"></section>
         <!---------- create new bar ------------->
     <form id="barForm">
-      <h2>Add a new bar</h2>
+      <h2>Tilføj en bar</h2>
       <div class="form-text-wrapper">
       <h3>Navn</h3>
       </div>  
@@ -122,15 +122,11 @@ export default class BarPage {
       </div>
       </div> 
       
-      <button id="create-bar" type="button" name="button" onclick="createBar()">Create Bar</button>
+      <button id="create-bar" type="button" name="button" onclick="createBar()">Tilføj bar</button>
       </form>  
           <!---------- create new bar ------------->
-      
-      
-
-
       </section>
-    `;
+    `; 
   }  
 
   addToFavourites(barId) {

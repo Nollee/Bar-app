@@ -31,13 +31,13 @@ class BarService {
         for (let index = 0; index < bars.length; index++) {
             let bar = bars[index];     
              htmlTemplate += /* html */ `
-            <article onclick="showDetailView('${bar.id}')" class="bar-card" style="background-image: url('${bar.img}');">
+            <article class="bar-card" style="background-image: url('${bar.img}');">
+            <div class="bar-card-onclick" onclick="showDetailView('${bar.id}')"></div> 
             <div class="bar-card-gradient"></div>   
             <h2>${bar.name}</h2>  
             <div class="bar-card-info"> 
-            <p>${bar.price}kr.</p> 
-              <!---<p>${bar.address}</p>-->
-              <div class="small-dot"></div>   
+            <p>${bar.price}kr.</p>  
+              <div class="small-dot"></div>    
               <p>${bar.type}</p> 
               <div class="small-dot"></div>
               <p>${bar.age}+</p>  
@@ -45,8 +45,8 @@ class BarService {
              <!--<a href="https://maps.google.com/?q=${bar.address}">${bar.address}</a>  --> 
              <!--<img class="bar-card-heart" src="../images/heart.svg" alt="image of heart">-->  
              ${this.generateFavBarButton(bar.id)}
-             </div>     
-             </article>     
+             </div>      
+             </article>       
           `;
         } 
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
@@ -97,11 +97,13 @@ class BarService {
 
     generateFavBarButton(barId) {
         let btnTemplate = /*html*/ `
-          <img class="fav-btn" src="../images/heart.svg" onclick="addToFavourites('${barId}')">
-          `;
+        <div class="fav-btn" onclick="addToFavourites('${barId}')">   
+        <img src="../images/heart.svg">
+        </div> 
+          `; 
         if (this.userHasFav(barId)) {
             btnTemplate = /*html*/ ` 
-            <img class="fav-btn-rm" src="../images/phone.svg" onclick="removeFromFavourites('${barId}')"> 
+            <img class="fav-btn-rm" src="../images/heart-fill.svg" onclick="removeFromFavourites('${barId}')"> 
             `;  
         }; 
         return btnTemplate;
@@ -153,11 +155,22 @@ class BarService {
         let template = "";
         for (let bar of bars) {
             template += /*html*/ `
-            <article>
-              <h2>${bar.name}</h2>
-              <img src="${bar.img}">
-              <button onclick="removeFromFavourites('${bar.id}')" class="rm">Remove from favourites</button>
-            </article>
+            <article class="bar-card" style="background-image: url('${bar.img}');">
+            <div class="bar-card-onclick" onclick="showDetailView('${bar.id}')"></div> 
+            <div class="bar-card-gradient"></div>   
+            <h2>${bar.name}</h2>  
+            <div class="bar-card-info"> 
+            <p>${bar.price}kr.</p>  
+              <div class="small-dot"></div>    
+              <p>${bar.type}</p> 
+              <div class="small-dot"></div>
+              <p>${bar.age}+</p>  
+              <div class="small-dot"></div> 
+             <!--<a href="https://maps.google.com/?q=${bar.address}">${bar.address}</a>  --> 
+             <!--<img class="bar-card-heart" src="../images/heart.svg" alt="image of heart">-->  
+             ${this.generateFavBarButton(bar.id)}
+             </div>      
+             </article> 
           `;
         }
         if (bars.length === 0) {
@@ -165,7 +178,7 @@ class BarService {
                 <p>No Bars added</p>
             `;
         }
-        document.querySelector('#favourite').innerHTML = template;
+        document.querySelector('#fav-container').innerHTML = template;
     }
  
 
