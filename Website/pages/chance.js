@@ -13,6 +13,8 @@ export default class ChancePage {
             <div onclick="appendCoupons()">TRYK HER</div>
           </header>
           <section id="coupon-container" class="grid-container"></section>
+
+         
           <form id="barForm">
       <h2>Tilføj en ny kupon</h2>
       
@@ -23,8 +25,12 @@ export default class ChancePage {
       <button type="button" name="button" onclick="createCoupon()">Lav kupon</button>
     </form> 
         </section>
+
+      
       `;
     }
+
+    
 
     addToOwnedBars(couponId) {
       couponService.addToOwnedCoupons(couponId);
