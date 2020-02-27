@@ -44,10 +44,12 @@ class CouponService {
             <h3>${this.randomCoupon.rabat}</h3>
             <h3>${this.randomCoupon.for}</h3>
             <h3>${this.randomCoupon.to}</h3>
-            ${this.generateGetCouponButton(this.randomCoupon.id)}
+            <a href="#home">Se kuponer</a>
             </article>
-            `; 
+            `;
+            this.addToOwnedCoupons(this.randomCoupon.id);
         }
+        
     }
 
     generateGetCouponButton(couponId) {
@@ -66,7 +68,6 @@ class CouponService {
         }, {
             merge: true
         });
-        this.spaService.navigateTo("home");
         loaderService.show(false);
 
     }
@@ -89,7 +90,7 @@ class CouponService {
         let template = "";
         for (let coupon of coupons) {
             template += /* html*/ `
-            <div class="slide coupon" style="background-image: url('${coupon.img}');">
+            <div class="slide coupon">
             <h3>${coupon.rabat}</h3>
             <p>${coupon.for}</p>
             </div>
