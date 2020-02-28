@@ -114,7 +114,8 @@
 /* inheritances end */
 /* ============ import ======================== */
 #bar-container {
-  margin-bottom: 20%; }
+  margin-bottom: 20%;
+  margin-top: 35%; }
 
 .bar-card {
   position: relative;
