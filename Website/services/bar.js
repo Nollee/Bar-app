@@ -102,7 +102,7 @@ class BarService {
             <div class="detailview-gradient"><h1>${this._selectedBar.name}</h1></div> 
             <div class="detailview-img" style="background-image: url('${this._selectedBar.img}');"></div> 
             <a href="https://maps.google.com/?q=${this._selectedBar.address}" target="_blank"><img src="images/pin.svg" alt="ikon af addresse">${this._selectedBar.address}    
-            </a>  
+            </a>   
             ${this.generateFavBarButton(this._selectedBar.id)} 
             <p>${this._selectedBar.description}</p> 
             <h2>Stedet</h2> 
