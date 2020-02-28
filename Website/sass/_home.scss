@@ -3,6 +3,13 @@
  
 #home{
     overflow: hidden;
+
+    .home-h2{
+        margin: 0;
+        margin-left: 2%;
+        margin-top: 4%;
+        color: $main-pink;
+    }
 }
 
  /* ================= SLIDER ====================*/

@@ -9,6 +9,7 @@ export default class FavouritePage {
           <header class="topbar">
           <div class="topbar-wrapper">
           <div class="topbar-left">
+          <div class="pic-wrapper"></div>
             <h1>FAVORITTER</h1>   
             </div>
             </div>  

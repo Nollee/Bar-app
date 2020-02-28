@@ -6,11 +6,19 @@
 }
 
 .detailview {
-    @extend %center; 
     p {
         color: white; 
         margin: 0% 5% 0% 5%; 
     }
+
+}
+
+#detail-h2{
+    margin: 0;
+    position: absolute;
+    left: 7.5%;
+    top: 2%;
+    font-size: 2rem;
 }
 
 .detailview-content {
@@ -34,14 +42,24 @@
         @extend %center; 
         color: white;
         text-decoration: none;
-        margin: 5%;
+        margin: 5% 0 2% 0;
         img {
             height: auto;
             width: 8%;
             margin-right: 2%;
         }
     }
+
+    .fav-btn, .fav-btn-rm{
+        position: unset;
+        margin: auto;
+        margin-bottom: 3%;
+    }
 } 
+
+.detailview-openings-container{
+    margin-bottom: 5%;
+}
 
 .detailview-img, .detailview-gradient {
     /* border-top-left-radius: 10px; 

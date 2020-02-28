@@ -60,7 +60,10 @@ class CouponService {
             <div class="overlav"></div>
             `;
             this.addToOwnedCoupons(this.randomCoupon.id);
+
         }
+        this.spaService.navigateTo("coupon-container");
+
         
     }
 

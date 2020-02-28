@@ -13,7 +13,7 @@ export default class BarPage {
         <div class="topbar-left">
         <div class="pic-wrapper"></div>
 
-          <h1>Oversigt</h1>
+          <h1>OVERSIGT</h1>
           </div>
           </div>
           <div class="search-bar-container">

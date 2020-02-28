@@ -8,6 +8,7 @@ import ChancePage from "./pages/chance.js";
 import Tabbar from "./pages/tabbar.js";
 import UpdatePage from "./pages/updateprofile.js";
 import DetailPage from "./pages/detailview.js"
+import CouponPage from "./pages/coupons.js"
 
 // import your services
 import spaService from "./services/spa.js";
@@ -31,6 +32,7 @@ let tabbar = new Tabbar();
 let updatePage = new UpdatePage();
 let _barDatabase = new BarPage();
 let detailPage = new DetailPage();
+let couponPage = new CouponPage();
 
 
 

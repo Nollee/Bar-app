@@ -98,7 +98,11 @@ class BarService {
         document.querySelector("#detail-view").innerHTML = /*html */ `
         <a href="#bars" class="exit"><img src="images/x.svg"></a>
         <article class="detailview"> 
+        <header>
+        <h2 id="detail-h2">BAR</h2>
+        </header>
             <div class="detailview-content">
+        
             <div class="detailview-gradient"><h1>${this._selectedBar.name}</h1></div> 
             <div class="detailview-img" style="background-image: url('${this._selectedBar.img}');"></div> 
             <a href="https://maps.google.com/?q=${this._selectedBar.address}" target="_blank"><img src="images/pin.svg" alt="ikon af addresse">${this._selectedBar.address}    
@@ -128,6 +132,7 @@ class BarService {
 
 
             <h2>Åbningstider</h2>
+            <div class="detailview-openings-container">
             <div class="detailview-openings">
             <div class="openings-content">Mandag:</div> 
             <div class="openings-content">
@@ -208,6 +213,7 @@ class BarService {
             ${this._selectedBar.sundayTo}
             </div>
             </div>    
+            </div>
             </div>       
         </article>
   `; 

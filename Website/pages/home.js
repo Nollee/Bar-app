@@ -10,16 +10,16 @@ export default class homePage {
           <div class="topbar-wrapper">
           <div class="topbar-left">
           <div class="pic-wrapper"></div>
-          <h1>Hjem</h1>
+          <h1>HJEM</h1>
           </div>
           <div class="topbar-right">
             </div>
           </header>
           <section id="home-container" class="grid-container">
-
+            <h2 class="home-h2">BARER</h2>
             <section class="slider" id="bar-highlight">
             </section>
-
+            <h2 class="home-h2">DINE KUPONER</h2>
             <section class="slider coupon-slider" id="myCoupons">
             </section>
 

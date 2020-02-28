@@ -39,8 +39,7 @@ body{
 }
 
 .tabbar-wrapper{
-
-    margin: auto;
+  width: 50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,7 +47,8 @@ body{
         width: 2em;
         height: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        
     }
 }
 
@@ -165,7 +165,7 @@ header{
 }
 
 .pic-wrapper, .pic-wrapper-overview{
-  width: 20%;
+  width: 15%;
   display: flex;
   align-items: center;
   img{
@@ -181,9 +181,9 @@ header{
 
 .exit{
   position: absolute;
-  width: 10%;
-  top: 2%;
-  right: 10%;
+  width: 5%;
+  top: 3%;
+  right: 7.5%;
   z-index: 999999999999999;
   img{
     width: 100%;
