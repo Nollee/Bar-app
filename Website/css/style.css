@@ -388,13 +388,14 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: auto;
-  margin-top: 2%; }
+  margin-top: 1%; }
   .topbar-wrapper h1 {
     font-size: 30px; }
 
 .topbar-left {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  width: 60%; }
   .topbar-left a {
     color: white;
     font-size: 60px;
@@ -563,7 +564,6 @@ body {
   position: absolute;
   left: 5%;
   top: 10%;
-  z-index: -2;
   text-align: center;
   height: 90%;
   border-radius: 20px; }
@@ -580,6 +580,9 @@ body {
 .expire {
   opacity: 18%; }
 
+.obs {
+  font-size: 12px; }
+
 .seeMore {
   background-color: #F3CA26;
   padding: 5px 10px;
@@ -593,28 +596,36 @@ body {
   width: 30%;
   text-decoration: none;
   color: black;
-  border-radius: 10px; }
+  border-radius: 10px;
+  font-weight: 600; }
 
-.img-gradient {
+.img-wrapper {
   display: inline-block;
   position: relative;
   width: 100%;
   margin-top: 0;
-  background: black;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, black 95%, black 100%);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px; }
-  .img-gradient img {
+  .img-wrapper .img-gradient {
+    position: absolute;
+    background: black;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, black 95%, black 100%);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 2;
+    width: 100%;
+    height: 100%; }
+  .img-wrapper img {
     margin-top: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     position: relative;
-    z-index: -1;
+    z-index: 1;
     display: block;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px; }
-  .img-gradient h2 {
+  .img-wrapper h2 {
     position: absolute;
     color: white;
     bottom: 0%;
@@ -625,7 +636,32 @@ body {
     right: 0;
     font-size: 3em;
     text-align: center;
-    color: #FF0560; }
+    color: #FF0560;
+    z-index: 4; }
+
+.chance-intro {
+  width: 80%;
+  margin: auto;
+  margin-top: 15%; }
+  .chance-intro img {
+    width: 100%; }
+  .chance-intro h2 {
+    text-align: center;
+    font-size: 2.5rem; }
+  .chance-intro p {
+    font-size: 1rem;
+    color: white;
+    font-weight: 600; }
+
+.chance-btn {
+  background-color: #F3CA26;
+  padding: 15px 6px;
+  border-radius: 10px;
+  margin: auto;
+  width: 40%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.4rem; }
 
 /* ============ import ======================== */
 

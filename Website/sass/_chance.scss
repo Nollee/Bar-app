@@ -8,7 +8,6 @@
     position: absolute;
     left: 5%;
     top: 10%;
-    z-index: -2;
     text-align: center;
     height: 90%;
     border-radius: 20px;
@@ -30,6 +29,9 @@
     opacity: 18%;
 }
 
+.obs{
+    font-size: 12px;
+}
 .seeMore{
     background-color: $main-yellow;
     padding: 5px 10px;
@@ -44,24 +46,33 @@
     text-decoration: none;
     color: black;
     border-radius: 10px;
+    font-weight: 600;
 }
 
-.img-gradient{
+.img-wrapper{
     display: inline-block;
     position: relative;
     width: 100%;
     margin-top: 0;
-    background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 95%, rgba(0,0,0,1) 100%);
 border-top-left-radius: 20px;
 border-top-right-radius: 20px;
+    .img-gradient{
+        position: absolute;
+        background: rgb(0,0,0);
+        background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 95%, rgba(0,0,0,1) 100%);
+        border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    }
     img{
         margin-top: 0;
         padding: 0;
         width: 100%;
         height: 100%;
         position:relative;
-        z-index:-1;
+        z-index:1;
         display:block;
         border-top-left-radius: 20px;
 border-top-right-radius: 20px;
@@ -78,6 +89,36 @@ border-top-right-radius: 20px;
         font-size: 3em;
         text-align: center;
         color: $main-pink;
+        z-index: 4;
 
     }
+}
+
+.chance-intro{
+    width: 80%;
+    margin: auto;
+    margin-top: 15%;
+    img{
+        width: 100%;
+    }
+    h2{
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    p{
+        font-size: 1rem;
+        color: white;
+        font-weight: 600;
+    }
+}
+
+.chance-btn{
+    background-color: $main-yellow;
+    padding: 15px 6px;
+    border-radius: 10px;
+    margin: auto;
+    width: 40%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.4rem;
 }
