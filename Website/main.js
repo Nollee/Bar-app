@@ -7,7 +7,6 @@ import HomePage from "./pages/home.js";
 import ChancePage from "./pages/chance.js";
 import Tabbar from "./pages/tabbar.js";
 import UpdatePage from "./pages/updateprofile.js";
-import DetailPage from "./pages/detailview.js";
 
 // import your services
 import spaService from "./services/spa.js";
@@ -27,7 +26,6 @@ let profilePage = new ProfilePage();
 let homePage = new HomePage();
 let chancePage = new ChancePage();
 let tabbar = new Tabbar();
-let detailPage = new DetailPage();
 let updatePage = new UpdatePage();
 let _barDatabase = new BarPage();
 

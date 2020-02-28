@@ -10,13 +10,17 @@ export default class BarPage {
       <section id="bars" class="page">
         <header class="topbar">
         <div class="topbar-wrapper">
-          <h1>SEARCH</h1>
-          <a class="right" href="#favourite">Favourites</a>
+        <div class="topbar-left">
+        <div class="pic-wrapper-overview"></div>
+
+          <h1>Oversigt</h1>
           </div>
-        </header>
-        <div class="search-bar-container">
+          </div>
+          <div class="search-bar-container">
         <input id="search-bar" type="search" placeholder="Search" onkeyup="search(this.value)"> 
-        </div>    
+        </div>
+        </header>
+      
         <section id="bar-container" class="grid-container"></section>
         <!---------- create new bar ------------->
     <!-----<form id="barForm">

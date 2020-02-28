@@ -144,13 +144,20 @@ body{
 
   /* ===================== TOPBAR ====================*/
 
+header{
+  background-color: $main-black;
+  position: fixed;
+  top: 0;
+  z-index: 999999;
+  width: 100%;
+}
 .topbar-wrapper{
     width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    margin-top: 1%;
+    margin-top: 1.5%;
 }
 
 .topbar-left{
@@ -162,7 +169,7 @@ body{
   }
 }
 
-.pic-wrapper{
+.pic-wrapper, .pic-wrapper-overview{
   width: 25%;
   display: flex;
   align-items: center;
@@ -174,6 +181,16 @@ body{
     display: flex;
     align-items: center;
     margin-right: 20%;
+  }
+}
+
+.exit{
+  position: absolute;
+  width: 10%;
+  top: 2%;
+  right: 10%;
+  img{
+    width: 100%;
   }
 }
 

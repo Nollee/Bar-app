@@ -131,14 +131,9 @@ class CouponService {
         }
         console.log(this.selectedCoupon);
         document.querySelector("#detail-view").innerHTML = /* html */ `
-        <header>
-        <div class="topbar-wrapper">
-        <div class="topbar-left">
-        <h2>${this.selectedCoupon.to}</h2>
-        </div>
-        </div>
-        </header>
+        <a class="exit" href="#home"><img src="images/x.svg"></a>
         <article class="coupon-wrapper">
+
         <div class="img-wrapper">
         <div class="img-gradient"></div>
         <img src="${this.selectedCoupon.img}" alt="gevinst">
@@ -174,12 +169,14 @@ class CouponService {
         let forInput = document.querySelector('#coupon-for');
         let imgInput = document.querySelector('#coupon-img'); 
         let toInput = document.querySelector('#coupon-to'); 
+        let expireInput = document.querySelector('#expire');
 
         let newCoupon = {
             rabat: rabatInput.value,
             for: forInput.value, 
             img: imgInput.value,  
             to: toInput.value,
+            expire: expireInput
         };
         
         let lose = {
@@ -187,8 +184,8 @@ class CouponService {
         };
         /* location.reload();  */
         this.couponRef.add(newCoupon);
-        this.couponRef.add(lose);
-        this.couponRef.add(lose);
+       /*  this.couponRef.add(lose);
+        this.couponRef.add(lose); */
         console.log(this.coupons);
       } 
 }

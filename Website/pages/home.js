@@ -10,7 +10,7 @@ export default class homePage {
           <div class="topbar-wrapper">
           <div class="topbar-left">
           <div class="pic-wrapper"></div>
-            <h1>Hjem</h1>
+          <h1>Hjem</h1>
           </div>
           <div class="topbar-right">
             </div>
