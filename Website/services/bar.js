@@ -34,7 +34,9 @@ class BarService {
              htmlTemplate += /* html */ `
             <article class="bar-card" style="background-image: url('${bar.img}');">
             <div class="bar-card-onclick" onclick="showDetailView('${bar.id}')"></div> 
-            <div class="bar-card-gradient"></div>   
+            <div>
+            <div class="bar-card-gradient"></div> 
+            </div>  
             <h2>${bar.name}</h2>  
             <div class="bar-card-info"> 
             <p>${bar.price}kr.</p>  
@@ -61,8 +63,10 @@ class BarService {
             let bar = bars[index];     
              htmlTemplate += /* html */ `
             <article class="bar-card bar-card-home" style="background-image: url('${bar.img}');">
-            <div class="bar-card-onclick" onclick="showDetailView('${bar.id}')"></div> 
+            <div class="bar-card-onclick" onclick="showDetailView('${bar.id}')"></div>
+            <div> 
             <div class="bar-card-gradient"></div>
+            </div>
             <div class="bar-card-home-info">   
             <h2>${bar.name}</h2>  
             <div class="bar-card-info"> 
@@ -77,7 +81,7 @@ class BarService {
              ${this.generateFavBarButton(bar.id)}
              </div>
              </div>     
-             </article>       
+             </article>
           `;
         } 
         document.querySelector('#bar-highlight').innerHTML = htmlTemplate;
@@ -105,7 +109,7 @@ class BarService {
             <h2>Stedet</h2> 
             <div class="detailview-info">
             <div class="detailview-info-content">
-            <img src="../images/age.svg" alt="ikon af mindstealder"> 
+            <img src="../images/age-white.svg" alt="ikon af mindstealder"> 
             <p>${this._selectedBar.age}+</p>
             </div>  
             <div class="detailview-info-content">
@@ -113,7 +117,7 @@ class BarService {
             <p>${this._selectedBar.price}kr.</p> 
             </div> 
             <div class="detailview-info-content">
-            <img src="../images/smiley.svg" alt="ikon af stemning">
+            <img src="../images/smile.svg" alt="ikon af stemning">
             <p>${this._selectedBar.type}</p> 
             </div>
             <div class="detailview-info-content">
@@ -314,21 +318,6 @@ class BarService {
     }           
     console.log(filteredBars);  
     }  
-
-
-          
-/* search(value) {
-    let searchQuery = value.toLowerCase();
-    let filteredMovies = []; 
-    for (let bar of this.bars) {    
-      let title = bar.name.toLowerCase();
-      if (title.includes(searchQuery)) {
-        filteredMovies.push(bar);
-      }
-    }
-    console.log(filteredMovies);
-    this.appendBars(filteredMovies); 
-  }  */   
 
 
   createBar() {
