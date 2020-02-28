@@ -20,11 +20,13 @@ background: linear-gradient(180deg, rgba(17,17,24,0) 0%, rgba(17,17,24,1) 77%, r
     }
     h1{
         position: absolute;
-        margin: auto;
         color: white; 
+        margin-right: auto;
+        margin-left: auto;
+        left: 0;
+        right: 0;
         bottom: 5%;
-        font-size: 4em;
-        left: 1em;
+        font-size: 3rem;
         text-align: center;
     }
 }

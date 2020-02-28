@@ -30,11 +30,12 @@ class AuthService {
         this.loaderService.show(false);
         console.log(user);
         this.appendUserData(user);
+        this.insertProfilePic(user);
 
     }
 
     userNotAuthenticated() {
-        this.spaService.hideTabbar(false);
+        this.spaService.hideTabbar(true);
         this.spaService.navigateTo("login");
 
         // Firebase UI configuration
@@ -88,6 +89,14 @@ class AuthService {
         console.log(user);
     }
     
+    insertProfilePic(user){
+        document.querySelector('.pic-wrapper').innerHTML = /* html*/ `
+        <a href="#profile"><img src="${user.photoURL}?height=200"></a>
+        `
+        document.querySelector('.pic-wrapper-overview').innerHTML = /* html*/ `
+        <a href="#profile"><img src="${user.photoURL}?height=200"></a>
+        `
+    }
     // Makes the user log out
     logout() {
         firebase.auth().signOut();

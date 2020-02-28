@@ -1,1 +1,93 @@
 @import "_rules";
+
+.detailview {
+    @extend %center; 
+    p {
+        color: white; 
+        margin: 0% 5% 0% 5%; 
+    }
+}
+
+.detailview-content {
+    width: 85%;
+    height: 80vh; 
+    background-color: black;
+    border-radius: 10px; 
+    position: fixed;
+    top: 10%;
+    overflow-y: scroll; 
+    text-align: center; 
+    h2 {margin: 0; 
+        padding: 0; 
+        color: $main-pink; 
+        text-align: left;
+        margin: 5%;
+    }
+    a {
+        @extend %center; 
+        color: white;
+        text-decoration: none;
+        margin: 5%;
+        img {
+            height: auto;
+            width: 8%;
+            margin-right: 2%;
+        }
+    }
+} 
+
+.detailview-img, .detailview-gradient {
+    /* border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; */
+    width: 100%;
+    height: 35vh; 
+}
+
+.detailview-img {
+    background-position: center;
+    background-size: cover;
+}  
+
+.detailview-gradient {
+    background: $gradient-bottom;  
+    position: absolute;
+    z-index: 2; 
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap; 
+    h1 { 
+        color: $main-pink; 
+        text-align: center;
+        font-size: 35px; 
+        margin: 0% 5% 0% 5%;   
+    }
+}
+
+.detailview-info {
+    margin: 5% 5% 10% 5%; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.detailview-info-content {
+    img {
+        height: 30px;
+    }
+} 
+
+.detailview-openings {
+    text-align: center; 
+    margin: 0% 5% 0% 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.openings-content {
+    width: 10vw; 
+    color: white;
+    display: flex;
+    align-items: flex-start;
+}

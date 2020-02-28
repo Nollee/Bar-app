@@ -144,28 +144,54 @@ body{
 
   /* ===================== TOPBAR ====================*/
 
+header{
+  background-color: $main-black;
+  position: fixed;
+  top: 0;
+  z-index: 999999;
+  width: 100%;
+}
 .topbar-wrapper{
     width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    margin-top: 1%;
-    h1{
-        font-size: 30px
-    }
+    margin-top: 1.5%;
 }
 
 .topbar-left{
     display: flex;
     align-items: center;
     width: 60%;
-    a{
-        color:white;
-        font-size: 60px;
-        text-decoration: none;
-        margin-right: 3%;
-    }
+    h1{
+      font-size: 3rem;
+  }
+}
+
+.pic-wrapper, .pic-wrapper-overview{
+  width: 25%;
+  display: flex;
+  align-items: center;
+  img{
+    width: 100%;
+    border-radius: 50%;
+  }
+  a{
+    display: flex;
+    align-items: center;
+    margin-right: 20%;
+  }
+}
+
+.exit{
+  position: absolute;
+  width: 10%;
+  top: 2%;
+  right: 10%;
+  img{
+    width: 100%;
+  }
 }
 
 

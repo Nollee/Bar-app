@@ -9,12 +9,18 @@ export default class BarPage {
     document.getElementById('content').innerHTML += /* html */ `
       <section id="bars" class="page">
         <header class="topbar">
-          <h2>SEARCH</h2>
-          <a class="right" href="#favourite">Favourites</a>
-        </header>
-        <div class="search-bar-container">
+        <div class="topbar-wrapper">
+        <div class="topbar-left">
+        <div class="pic-wrapper-overview"></div>
+
+          <h1>Oversigt</h1>
+          </div>
+          </div>
+          <div class="search-bar-container">
         <input id="search-bar" type="search" placeholder="Search" onkeyup="search(this.value)"> 
-        </div>    
+        </div>
+        </header>
+      
         <section id="bar-container" class="grid-container"></section>
         <!---------- create new bar ------------->
     <!-----<form id="barForm">

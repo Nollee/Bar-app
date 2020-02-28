@@ -39,11 +39,9 @@ class CouponService {
             </div>
             <h3>Ingen gevinst</h3>
             <h4>Prøv igen imorgen!</h4>
-            <a href="home" class="seeMore">Hjem</a>
+            <a href="#home" class="seeMore">Hjem</a>
             </article>
             `;
-        
-            
         } else {
             document.querySelector("#coupon-container").innerHTML = /* html */ `
             <article class="coupon-wrapper">
@@ -54,7 +52,7 @@ class CouponService {
             </div>
             <h3>${this.randomCoupon.for}</h3>
             <h4> På ${this.randomCoupon.to}</h4>
-            <p>Indløs kuponen ved at vise den til en bartender hos ¤{this.randomCoupon.to}
+            <p>Indløs kuponen ved at vise den til en bartender hos ${this.randomCoupon.to}
             </p>
             <p class="expire">Udløber: ${this.randomCoupon.expire}</p>
             <a class="seeMore" href="#home">Se kuponer</a>
@@ -138,15 +136,9 @@ class CouponService {
         }
         console.log(this.selectedCoupon);
         document.querySelector("#detail-view").innerHTML = /* html */ `
-        <header>
-        <div class="topbar-wrapper">
-        <div class="topbar-left">
-        <a href="#home"><</a>
-        <h1>${this.selectedCoupon.to}</h1>
-        </div>
-        </div>
-        </header>
+        <a class="exit" href="#home"><img src="images/x.svg"></a>
         <article class="coupon-wrapper">
+
         <div class="img-wrapper">
         <div class="img-gradient"></div>
         <img src="${this.selectedCoupon.img}" alt="gevinst">
@@ -154,8 +146,6 @@ class CouponService {
         </div>
         <h3>${this.selectedCoupon.for}</h3>
         <h4> På ${this.selectedCoupon.to}</h4>
-        <p>Indløs kuponen ved at vise den til en bartender hos ${this.selectedCoupon.to}
-        </p>
         <p class="expire">Udløber: ${this.selectedCoupon.expire}</p>
         <p class="obs">OBS! DENNE KUPON KAN KUN INDLØSES AF EN MEDARBEJDER HOS ${this.selectedCoupon.to}</p>
         <div class="seeMore" onclick="removeCoupon('${this.selectedCoupon.id}')">Indløs Kupon</div>
@@ -184,12 +174,14 @@ class CouponService {
         let forInput = document.querySelector('#coupon-for');
         let imgInput = document.querySelector('#coupon-img'); 
         let toInput = document.querySelector('#coupon-to'); 
+        let expireInput = document.querySelector('#expire');
 
         let newCoupon = {
             rabat: rabatInput.value,
             for: forInput.value, 
             img: imgInput.value,  
             to: toInput.value,
+            expire: expireInput
         };
         
         let lose = {
@@ -197,8 +189,8 @@ class CouponService {
         };
         /* location.reload();  */
         this.couponRef.add(newCoupon);
-        this.couponRef.add(lose);
-        this.couponRef.add(lose);
+       /*  this.couponRef.add(lose);
+        this.couponRef.add(lose); */
         console.log(this.coupons);
       } 
 }
