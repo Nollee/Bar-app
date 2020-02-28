@@ -14,7 +14,7 @@ import spaService from "./services/spa.js";
 import authService from "./services/auth.js";
 import FavouritePage from "./pages/favourite.js";
 import barService from "./services/bar.js";
-import couponService from "./services/coupon.js";
+import couponService from "./services/coupon.js"; 
 
 
 
@@ -59,7 +59,9 @@ window.showDetailView = (id) => barService.showDetailView(id);
 window.addToFavourites = (barId) => barPage.addToFavourites(barId);
 window.removeFromFavourites = (barId) => barPage.removeFromFavourites(barId);  
 window.search = (value) => barService.search(value);   
-window.createBar = () => barService.createBar(); 
+window.createBar = () => barService.createBar();
+window.showAddBar = () => barService.showAddBar(); 
+window.hideAddBar = () => barService.hideAddBar();  
 
 
    

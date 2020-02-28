@@ -1,10 +1,11 @@
 import spaService from "../services/spa.js";
-
+import loaderService from "./loader.js";
+import barService from "./bar.js";
 
 export default class ProfileService {
-    constructor() {
-            
+    constructor() {      
     }
+    
     init() {
         // init all bars
         this.barRef.onSnapshot(snapshotData => {
@@ -16,4 +17,17 @@ export default class ProfileService {
             });
             this.appendBars(bars);       
         }); 
-    }
+    } 
+
+
+
+    
+
+
+
+
+
+
+
+    
+}

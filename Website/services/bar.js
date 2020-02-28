@@ -143,7 +143,7 @@ class BarService {
         for (let barId of authService.authUser.favBars) {
             await this.barRef.doc(barId).get().then(function (doc) {
                 let bar = doc.data();
-                bar.id = doc.id;
+                bar.id = doc.id;  
                 favBars.push(bar);
             });
         }
@@ -291,6 +291,16 @@ class BarService {
     this.barRef.add(newBar);
     this.appendBars(this.bars);   
   }  
+
+  showAddBar() {
+     let form = document.getElementById("form-popup");
+     form.classList.add("active");       
+  }
+
+  hideAddBar() {
+      let form = document.getElementById("form-popup");
+      form.classList.remove("active"); 
+  } 
   
   
 }     
