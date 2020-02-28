@@ -11,7 +11,7 @@ export default class homePage {
             <a href="#profile">profile</a>
           </header>
           <section id="home-container" class="grid-container">
-          <section class="slider">
+          <section class="slider" id="bar-highlight">
     <div class="slide">slide 1</div>
     <div class="slide">slide 2</div>
     <div class="slide">slide 3</div>
@@ -20,7 +20,7 @@ export default class homePage {
     <div class="slide">slide 6</div>
     <div class="slide">slide 7</div>
   </section>
-  <section class="slider" id="myCupons">
+  <section class="slider" id="myCoupons">
   
   </section>
 
