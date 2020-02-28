@@ -151,21 +151,30 @@ body{
     align-items: center;
     margin: auto;
     margin-top: 1%;
-    h1{
-        font-size: 30px
-    }
 }
 
 .topbar-left{
     display: flex;
     align-items: center;
     width: 60%;
-    a{
-        color:white;
-        font-size: 60px;
-        text-decoration: none;
-        margin-right: 3%;
-    }
+    h1{
+      font-size: 3rem;
+  }
+}
+
+.pic-wrapper{
+  width: 25%;
+  display: flex;
+  align-items: center;
+  img{
+    width: 100%;
+    border-radius: 50%;
+  }
+  a{
+    display: flex;
+    align-items: center;
+    margin-right: 20%;
+  }
 }
 
 

@@ -39,11 +39,9 @@ class CouponService {
             </div>
             <h3>Ingen gevinst</h3>
             <h4>Prøv igen imorgen!</h4>
-            <a href="home" class="seeMore">Hjem</a>
+            <a href="#home" class="seeMore">Hjem</a>
             </article>
             `;
-        
-            
         } else {
             document.querySelector("#coupon-container").innerHTML = /* html */ `
             <article class="coupon-wrapper">
@@ -54,7 +52,7 @@ class CouponService {
             </div>
             <h3>${this.randomCoupon.for}</h3>
             <h4> På ${this.randomCoupon.to}</h4>
-            <p>Indløs kuponen ved at vise den til en bartender hos ¤{this.randomCoupon.to}
+            <p>Indløs kuponen ved at vise den til en bartender hos ${this.randomCoupon.to}
             </p>
             <p class="expire">Udløber: ${this.randomCoupon.expire}</p>
             <a class="seeMore" href="#home">Se kuponer</a>
@@ -136,8 +134,7 @@ class CouponService {
         <header>
         <div class="topbar-wrapper">
         <div class="topbar-left">
-        <a href="#home"><</a>
-        <h1>${this.selectedCoupon.to}</h1>
+        <h2>${this.selectedCoupon.to}</h2>
         </div>
         </div>
         </header>
@@ -149,8 +146,6 @@ class CouponService {
         </div>
         <h3>${this.selectedCoupon.for}</h3>
         <h4> På ${this.selectedCoupon.to}</h4>
-        <p>Indløs kuponen ved at vise den til en bartender hos ${this.selectedCoupon.to}
-        </p>
         <p class="expire">Udløber: ${this.selectedCoupon.expire}</p>
         <p class="obs">OBS! DENNE KUPON KAN KUN INDLØSES AF EN MEDARBEJDER HOS ${this.selectedCoupon.to}</p>
         <div class="seeMore" onclick="removeCoupon('${this.selectedCoupon.id}')">Indløs Kupon</div>

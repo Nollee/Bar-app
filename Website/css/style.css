@@ -415,18 +415,25 @@ body {
   align-items: center;
   margin: auto;
   margin-top: 1%; }
-  .topbar-wrapper h1 {
-    font-size: 30px; }
 
 .topbar-left {
   display: flex;
   align-items: center;
   width: 60%; }
-  .topbar-left a {
-    color: white;
-    font-size: 60px;
-    text-decoration: none;
-    margin-right: 3%; }
+  .topbar-left h1 {
+    font-size: 3rem; }
+
+.pic-wrapper {
+  width: 25%;
+  display: flex;
+  align-items: center; }
+  .pic-wrapper img {
+    width: 100%;
+    border-radius: 50%; }
+  .pic-wrapper a {
+    display: flex;
+    align-items: center;
+    margin-right: 20%; }
 
 /* gradients */
 /* inheritances */
