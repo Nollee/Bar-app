@@ -108,6 +108,7 @@ class CouponService {
             template += /* html*/ `
             <div class="slide coupon" onclick="showOwnedCoupon('${coupon.id}')">
             <h3>${coupon.rabat}</h3>
+            <img src="${coupon.img}" alt="gevinst">
             <p>${coupon.for}</p>
             </div>
           `;

@@ -17,7 +17,7 @@ export default class BarPage {
         </div>    
         <section id="bar-container" class="grid-container"></section>
         <!---------- create new bar ------------->
-    <form id="barForm">
+    <!-----<form id="barForm">
       <h2>Tilføj en bar</h2>
       <div class="form-text-wrapper">
       <h3>Navn</h3>
@@ -69,7 +69,7 @@ export default class BarPage {
       </div> 
       
       <!------------- opening hours for form ------->
-      <div class="form-text-wrapper">
+      <!---<div class="form-text-wrapper">
       <img src="../images/clock.svg"><h3>Åbningstider</h3>
       </div> 
       <div class="form-days">
@@ -123,7 +123,7 @@ export default class BarPage {
       </div> 
       
       <button id="create-bar" type="button" name="button" onclick="createBar()">Tilføj bar</button>
-      </form>  
+      </form>---> 
           <!---------- create new bar ------------->
       </section>
     `; 
