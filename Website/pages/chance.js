@@ -16,7 +16,7 @@ export default class ChancePage {
 
          
           <form id="barForm">
-      <!-- <h2>Tilføj en ny kupon</h2>
+    <h2>Tilføj en ny kupon</h2>
       
       <input type="text" id="coupon-rabat" placeholder="Indtast hvor meget rabat" required>
       <input type="text" id="coupon-for" placeholder="Indtast hvad rabatten er til" required> 

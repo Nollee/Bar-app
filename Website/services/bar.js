@@ -226,21 +226,6 @@ class BarService {
     }  
 
 
-          
-/* search(value) {
-    let searchQuery = value.toLowerCase();
-    let filteredMovies = []; 
-    for (let bar of this.bars) {    
-      let title = bar.name.toLowerCase();
-      if (title.includes(searchQuery)) {
-        filteredMovies.push(bar);
-      }
-    }
-    console.log(filteredMovies);
-    this.appendBars(filteredMovies); 
-  }  */   
-
-
   createBar() {
     // references to the input fields
     let nameInput = document.querySelector('#form-name');

@@ -9,7 +9,7 @@
     flex-wrap: nowrap; 
     overflow-x: scroll; 
     transition: 0.5s ease;
-    margin: 5% auto 0;
+    margin: 2% auto 0;
     transform: scale(0.98);
     cursor: pointer;
     scroll-snap-type: x mandatory; 
@@ -19,14 +19,6 @@
     max-width: 500px;
     max-height: 300px;
 }    
-
-.slide{
-    margin: 5px;
-    width: 200px;
-    height: 100px;
-    background-color: red;
-    
-}
 
 .slider::-webkit-scrollbar {
     display: none;
@@ -60,4 +52,41 @@
     width: 100%;
 }
 
+.coupon{
+    position: relative;
+    margin: 2%;
+    display: inline-block;
+    width: 27.3333%;
+    min-width: 27.25%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always; 
+    padding-top: 0;
+}
+
+.coupon-slider{
+    height: 45vw;
+    max-height: 200px;
+}
+
+.coupon-card-info{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    flex-direction: column;
+    height: 90%;
+    z-index: 1;
+}
+
+.coupon-card-info h3{
+    font-size: 2em;
+}
+
+.coupon-card-info p{
+    color: $main-pink;
+}
+
+.coupon .bar-card-gradient{
+    background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.35) 65%, rgba(0,0,0,0) 100%);       ;
+}
 /* ================= SLIDER END ====================*/

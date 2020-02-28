@@ -100,10 +100,12 @@ class CouponService {
         let template = "";
         for (let coupon of coupons) {
             template += /* html*/ `
-            <div class="slide coupon">
-            <h3>${coupon.rabat}</h3>
-            <img src="${coupon.img}" alt="gevinst">
-            <p>${coupon.for}</p>
+            <div class="coupon bar-card" style="background-image: url('${coupon.img}');"> 
+            <div class="coupon-card-info">    
+                <h3>${coupon.rabat}</h3>
+                <p>${coupon.for}</p>
+            </div>
+            <div class="bar-card-gradient"></div>
             </div>
           `;
         }
