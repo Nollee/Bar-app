@@ -11,4 +11,19 @@
 @import "_chance";
 /* ============ import ======================== */
 
- 
+body{
+    display: flex;
+    justify-content: center;
+    background-color: #09090D;
+}
+
+#content{
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    background-color: #101017;  
+}
+
+.page{
+    height: 100vh;
+}

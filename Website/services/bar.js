@@ -34,7 +34,9 @@ class BarService {
              htmlTemplate += /* html */ `
             <article class="bar-card" style="background-image: url('${bar.img}');">
             <div class="bar-card-onclick" onclick="showDetailView('${bar.id}')"></div> 
-            <div class="bar-card-gradient"></div>   
+            <div>
+            <div class="bar-card-gradient"></div> 
+            </div>  
             <h2>${bar.name}</h2>  
             <div class="bar-card-info"> 
             <p>${bar.price}kr.</p>  
@@ -61,8 +63,10 @@ class BarService {
             let bar = bars[index];     
              htmlTemplate += /* html */ `
             <article class="bar-card bar-card-home" style="background-image: url('${bar.img}');">
-            <div class="bar-card-onclick" onclick="showDetailView('${bar.id}')"></div> 
+            <div class="bar-card-onclick" onclick="showDetailView('${bar.id}')"></div>
+            <div> 
             <div class="bar-card-gradient"></div>
+            </div>
             <div class="bar-card-home-info">   
             <h2>${bar.name}</h2>  
             <div class="bar-card-info"> 
@@ -77,7 +81,7 @@ class BarService {
              ${this.generateFavBarButton(bar.id)}
              </div>
              </div>     
-             </article>       
+             </article>
           `;
         } 
         document.querySelector('#bar-highlight').innerHTML = htmlTemplate;
@@ -92,11 +96,7 @@ class BarService {
             }
         } 
         document.querySelector("#detail-view").innerHTML = /*html */ `
-        <header>
-        <h1>Bar</h1>
-        <img src="../images/x.svg" class="exit" alt="img of a x"> 
-        </header> 
-
+        <a href="#bars" class="exit"><img src="images/x.svg"></a>
         <article class="detailview"> 
             <div class="detailview-content">
             <div class="detailview-gradient"><h1>${this._selectedBar.name}</h1></div> 
@@ -297,21 +297,6 @@ class BarService {
     }           
     console.log(filteredBars);  
     }  
-
-
-          
-/* search(value) {
-    let searchQuery = value.toLowerCase();
-    let filteredMovies = []; 
-    for (let bar of this.bars) {    
-      let title = bar.name.toLowerCase();
-      if (title.includes(searchQuery)) {
-        filteredMovies.push(bar);
-      }
-    }
-    console.log(filteredMovies);
-    this.appendBars(filteredMovies); 
-  }  */   
 
 
   createBar() {
