@@ -105,7 +105,6 @@ class BarService {
             </a>  
             ${this.generateFavBarButton(this._selectedBar.id)} 
             <p>${this._selectedBar.description}</p> 
-            
             <h2>Stedet</h2> 
             <div class="detailview-info">
             <div class="detailview-info-content">
@@ -121,95 +120,75 @@ class BarService {
             <p>${this._selectedBar.type}</p> 
             </div>
             <div class="detailview-info-content">
-            <img src="../images/space.svg" alt="ikon af rummelighed">
+            <img src="../images/space.svg" alt="ikon af rummelighed"> 
             <p>0 - ${this._selectedBar.space}</p> 
-            </div> 
-            </div> 
-
-
+            </div>
+            </div>
+            <!---åbningstider---> 
             <h2>Åbningstider</h2>
             <div class="detailview-openings">
             <div class="openings-content">Mandag:</div> 
             <div class="openings-content">
             ${this._selectedBar.mondayFrom}
-            </div>
-            <p> - </p>
+            </div><p> - </p>
             <div class="openings-content">
             ${this._selectedBar.mondayTo}
             </div> 
             </div>  
             <div class="detailview-openings">
-            <div class="openings-content">
-            Tirsdag: 
-            </div>
+            <div class="openings-content">Tirsdag:</div>
             <div class="openings-content">
             ${this._selectedBar.tuesdayFrom}
-            </div>
-            <p> - </p>
+            </div><p> - </p>
             <div class="openings-content">
             ${this._selectedBar.tuesdayTo}
             </div> 
             </div> 
             <div class="detailview-openings">
-            <div class="openings-content">
-            Onsdag: 
-            </div>
+            <div class="openings-content">Onsdag:</div>
             <div class="openings-content">
             ${this._selectedBar.wednesdayFrom}
-            </div>
-            <p> - </p>
+            </div><p> - </p>
             <div class="openings-content">
             ${this._selectedBar.wednesdayTo}
             </div>
             </div>  
             <div class="detailview-openings">
+            <div class="openings-content">Torsdag:</div>
             <div class="openings-content">
-            Torsdag: 
-            </div>
-            <div class="openings-content">
-            ${this._selectedBar.thursdayFrom}</div>
-            <p> - </p>
+            ${this._selectedBar.thursdayFrom}</div><p> - </p>
             <div class="openings-content">
             ${this._selectedBar.thursdayTo}
             </div>
             </div>
             <div class="detailview-openings"> 
-            <div class="openings-content">
-            Fredag: 
-            </div>
+            <div class="openings-content">Fredag:</div>
             <div class="openings-content">           
-            ${this._selectedBar.fridayFrom}</div>
-            <p> - </p>
+            ${this._selectedBar.fridayFrom}</div><p> - </p>
             <div class="openings-content">
             ${this._selectedBar.fridayTo}
             </div>
             </div>  
             <div class="detailview-openings">
-            <div class="openings-content">
-            Lørdag: 
-            </div>
+            <div class="openings-content">Lørdag:</div>
             <div class="openings-content">
             ${this._selectedBar.saturdayFrom}
-            </div>
-            <p> - </p>
+            </div><p> - </p>
             <div class="openings-content">
             ${this._selectedBar.saturdayTo}
             </div>
             </div>  
             <div class="detailview-openings">
-            <div class="openings-content">
-            Søndag: 
-            </div>
+            <div class="openings-content">Søndag:</div>
             <div class="openings-content">
             ${this._selectedBar.sundayFrom}
-            </div>
-            <p> - </p>
+            </div><p> - </p>
             <div class="openings-content">
             ${this._selectedBar.sundayTo}
             </div>
             </div>    
-            </div>       
-        </article>
+            </div>        
+        </article> 
   `; 
             
     this.spaService.navigateTo("detail-view");
