@@ -77,8 +77,8 @@ class AuthService {
     // Appends the data of the user 
     appendUserData(user){
         document.querySelector('#profile-container').innerHTML += /* html */ `
-             <article id="profiledata">
-             <img src="${user.photoURL}?height=500" alt="user">
+             <article class="profiledata">
+             <img id="profile-pic" src="${user.photoURL}?height=500" alt="user">
              <h3>${user.displayName}</h3>
              <div class="profile-info"> 
              <img class="icon" src="./images/mail.svg" alt="mail">

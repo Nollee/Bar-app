@@ -17,6 +17,10 @@ body{
     background-color: #09090D;
 }
 
+*::-webkit-scrollbar{
+    display: none;
+}
+
 #content, #detail-view, .detailview-content{
     max-width: 500px;
     width: 100%;

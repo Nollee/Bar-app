@@ -20,6 +20,20 @@ export default class ProfilePage {
           <section id="profile-container">
           </section>
           <div id="show-add-bar" onclick="showAddBar()">+</div>  
+          <div class="logout"><a href="#" onclick="logout()">Log Ud</a></div>
+
+
+          <div class="sure">
+          <div class="delete">
+          <h3>Er du sikker?</h3>
+          <p>Du er er ved at slette din konto på Barhunt. Hvis dette ikke var meningen, tryk på "Tilbage"</p>
+          <div class="buttons">
+          <div class="button" id="delete-btn" onclick="deleteAccount()">Slet</div>
+          <div class="button" id="back-btn" onclick="toggleDelete()">Tilbage</div>
+          </div>
+          </div>
+          <div class="overlay" onclick="toggleDelete()"></div>
+          </div>
 
           <!----------- FORM  ------------->  
 
@@ -136,21 +150,6 @@ export default class ProfilePage {
           <button id="create-bar" type="button" name="button" onclick="createBar()">Tilføj bar</button>
           </form> 
           </div> 
- 
- 
-
-          <a class="logout" href="#" onclick="logout()">Log Ud</a>
-          <div class="sure">
-          <div class="delete">
-          <h3>Er du sikker?</h3>
-          <p>Du er er ved at slette din konto på Barhunt. Hvis dette ikke var meningen, tryk på "Tilbage"</p>
-          <div class="buttons">
-          <div class="button" id="delete-btn" onclick="deleteAccount()">Slet</div>
-          <div class="button" id="back-btn" onclick="toggleDelete()">Tilbage</div>
-          </div>
-          </div>
-          <div class="overlay" onclick="toggleDelete()"></div>
-          </div>
         </section>
       `;
     }
