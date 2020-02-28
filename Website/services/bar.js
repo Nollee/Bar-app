@@ -94,8 +94,8 @@ class BarService {
         document.querySelector("#detail-view").innerHTML = /*html */ `
         <header>
         <h1>Bar</h1>
-        <img src="../images/x.svg" alt="img of a x"> 
-        </header>
+        <img src="../images/x.svg" class="exit" alt="img of a x"> 
+        </header> 
 
         <article class="detailview"> 
             <div class="detailview-content">
@@ -109,7 +109,7 @@ class BarService {
             <h2>Stedet</h2> 
             <div class="detailview-info">
             <div class="detailview-info-content">
-            <img src="../images/age.svg" alt="ikon af mindstealder"> 
+            <img src="../images/age-white.svg" alt="ikon af mindstealder"> 
             <p>${this._selectedBar.age}+</p>
             </div>  
             <div class="detailview-info-content">
@@ -117,7 +117,7 @@ class BarService {
             <p>${this._selectedBar.price}kr.</p> 
             </div> 
             <div class="detailview-info-content">
-            <img src="../images/smiley.svg" alt="ikon af stemning">
+            <img src="../images/smile.svg" alt="ikon af stemning">
             <p>${this._selectedBar.type}</p> 
             </div>
             <div class="detailview-info-content">
