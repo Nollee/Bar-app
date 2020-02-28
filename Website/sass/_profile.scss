@@ -112,3 +112,18 @@ bottom: 20%;
 }
 
 
+#show-add-bar {
+    width: 50px;
+    position: absolute; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    left: 0;
+    right: 0; 
+    height: 50px;
+    border-radius: 100%;
+    font-size: 70px;   
+    @extend %center; 
+    background-color: $main-yellow;  
+}
+ 
