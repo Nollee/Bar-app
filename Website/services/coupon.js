@@ -107,12 +107,14 @@ class CouponService {
             let coupon = coupons[i];
             template += /* html*/ `
             <div class="coupon bar-card" style="background-image: url('${coupon.img}');">
-            <div class="slide coupon" onclick="showOwnedCoupon('${coupon.id}')"> 
+            <div class="detail-view"onclick="showOwnedCoupon('${coupon.id}')"></div> 
             <div class="coupon-card-info">    
                 <h3>${coupon.rabat}</h3>
                 <p>${coupon.for}</p>
             </div>
+            <div>
             <div class="bar-card-gradient"></div>
+            </div>
             </div>
           `;
         }
