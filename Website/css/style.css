@@ -1,7 +1,7 @@
 /* ============ import ======================== */
 /* gradients */
 /* inheritances */
-#barForm, #show-add-bar {
+#barForm, #show-add-bar, .detailview, .detailview-content a {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -9,7 +9,7 @@
 /* inheritances end */
 /* gradients */
 /* inheritances */
-#barForm, #show-add-bar {
+#barForm, #show-add-bar, .detailview, .detailview-content a {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -18,7 +18,7 @@
 /* ============ import ======================== */
 /* gradients */
 /* inheritances */
-#barForm, #show-add-bar {
+#barForm, #show-add-bar, .detailview, .detailview-content a {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -106,7 +106,7 @@
 
 /* gradients */
 /* inheritances */
-#barForm, #show-add-bar {
+#barForm, #show-add-bar, .detailview, .detailview-content a {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -279,7 +279,7 @@ textarea {
   align-items: center;
   justify-content: flex-end; }
   .form-days-wrapper input {
-    width: 20% !important;
+    width: 15vw !important;
     margin-left: 5% !important; }
   .form-days-wrapper span {
     margin-left: 5%;
@@ -297,7 +297,7 @@ textarea {
 
 /* gradients */
 /* inheritances */
-#barForm, #show-add-bar {
+#barForm, #show-add-bar, .detailview, .detailview-content a {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -309,7 +309,7 @@ textarea {
 
 /* gradients */
 /* inheritances */
-#barForm, #show-add-bar {
+#barForm, #show-add-bar, .detailview, .detailview-content a {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -469,7 +469,7 @@ header {
 
 /* gradients */
 /* inheritances */
-#barForm, #show-add-bar {
+#barForm, #show-add-bar, .detailview, .detailview-content a {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -588,7 +588,7 @@ header {
 
 /* gradients */
 /* inheritances */
-#barForm, #show-add-bar {
+#barForm, #show-add-bar, .detailview, .detailview-content a {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -649,15 +649,89 @@ header {
 
 /* gradients */
 /* inheritances */
-#barForm, #show-add-bar {
+#barForm, #show-add-bar, .detailview, .detailview-content a {
   display: flex;
   justify-content: center;
   align-items: center; }
 
 /* inheritances end */
+.detailview p {
+  color: white;
+  margin: 0% 5% 0% 5%; }
+
+.detailview-content {
+  width: 85%;
+  height: 80vh;
+  background-color: black;
+  border-radius: 10px;
+  position: fixed;
+  top: 10%;
+  overflow-y: scroll;
+  text-align: center; }
+  .detailview-content h2 {
+    margin: 0;
+    padding: 0;
+    color: #FF0560;
+    text-align: left;
+    margin: 5%; }
+  .detailview-content a {
+    color: white;
+    text-decoration: none;
+    margin: 5%; }
+    .detailview-content a img {
+      height: auto;
+      width: 8%;
+      margin-right: 2%; }
+
+.detailview-img, .detailview-gradient {
+  /* border-top-left-radius: 10px; 
+  border-top-right-radius: 10px; */
+  width: 100%;
+  height: 35vh; }
+
+.detailview-img {
+  background-position: center;
+  background-size: cover; }
+
+.detailview-gradient {
+  background: linear-gradient(360deg, black 0%, rgba(0, 0, 0, 0.9) 15%, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0) 100%);
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap; }
+  .detailview-gradient h1 {
+    color: #FF0560;
+    text-align: center;
+    font-size: 35px;
+    margin: 0% 5% 0% 5%; }
+
+.detailview-info {
+  margin: 5% 5% 10% 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.detailview-info-content img {
+  height: 30px; }
+
+.detailview-openings {
+  text-align: center;
+  margin: 0% 5% 0% 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.openings-content {
+  width: 10vw;
+  color: white;
+  display: flex;
+  align-items: flex-start; }
+
 /* gradients */
 /* inheritances */
-#barForm, #show-add-bar {
+#barForm, #show-add-bar, .detailview, .detailview-content a {
   display: flex;
   justify-content: center;
   align-items: center; }
