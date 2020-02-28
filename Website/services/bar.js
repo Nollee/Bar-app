@@ -93,31 +93,125 @@ class BarService {
         } 
         document.querySelector("#detail-view").innerHTML = /*html */ `
         <header>
-        <h1>${this._selectedBar.name}</h1>
+        <h1>Bar</h1>
+        <img src="../images/x.svg" alt="img of a x"> 
         </header>
 
-        <article class="detailview">
-            <div class="detail-top">
-            <h1>${this._selectedBar.name}</h1>
-            <img src="${this._selectedBar.img}">
-            <div class="topinfo">
-            <div class="location">
-            <img src="images/pin.svg">
-            <p>${this._selectedBar.address}</p>
+        <article class="detailview"> 
+            <div class="detailview-content">
+            <div class="detailview-gradient"><h1>${this._selectedBar.name}</h1></div> 
+            <div class="detailview-img" style="background-image: url('${this._selectedBar.img}');"></div> 
+            <a href="https://maps.google.com/?q=${this._selectedBar.address}" target="_blank"><img src="images/pin.svg" alt="ikon af addresse">${this._selectedBar.address}    
+            </a>  
+            ${this.generateFavBarButton(this._selectedBar.id)} 
+            <p>${this._selectedBar.description}</p> 
+            
+            <h2>Stedet</h2> 
+            <div class="detailview-info">
+            <div class="detailview-info-content">
+            <img src="../images/age.svg" alt="ikon af mindstealder"> 
+            <p>${this._selectedBar.age}+</p>
+            </div>  
+            <div class="detailview-info-content">
+            <img src="../images/coins.svg" alt="ikon af pris">
+            <p>${this._selectedBar.price}kr.</p> 
+            </div> 
+            <div class="detailview-info-content">
+            <img src="../images/smiley.svg" alt="ikon af stemning">
+            <p>${this._selectedBar.type}</p> 
+            </div>
+            <div class="detailview-info-content">
+            <img src="../images/space.svg" alt="ikon af rummelighed">
+            <p>0 - ${this._selectedBar.space}</p> 
+            </div> 
+            </div> 
+
+
             <h2>Åbningstider</h2>
-            <p>Mandag: ${this._selectedBar.mondayFrom} - ${this._selectedBar.mondayTo}</p> 
-            <p>Tirsdag: ${this._selectedBar.tuesdayFrom} - ${this._selectedBar.tuesdayTo}</p> 
-            <p>Onsdag: ${this._selectedBar.wednesdayFrom} - ${this._selectedBar.wednesdayTo}</p> 
-            <p>Torsdag: ${this._selectedBar.thursdayFrom} - ${this._selectedBar.thursdayTo}</p>
-            <p>Fredag: ${this._selectedBar.fridayFrom} - ${this._selectedBar.fridayTo}</p>  
-            <p>Lørdag: ${this._selectedBar.saturdayFrom} - ${this._selectedBar.saturdayTo}</p>  
-            <p>Søndag: ${this._selectedBar.sundayFrom} - ${this._selectedBar.sundayTo}</p>    
+            <div class="detailview-openings">
+            <div class="openings-content">Mandag:</div> 
+            <div class="openings-content">
+            ${this._selectedBar.mondayFrom}
             </div>
-            ${this.generateFavBarButton(this._selectedBar.id)}
+            <p> - </p>
+            <div class="openings-content">
+            ${this._selectedBar.mondayTo}
+            </div> 
+            </div>  
+            <div class="detailview-openings">
+            <div class="openings-content">
+            Tirsdag: 
+            </div>
+            <div class="openings-content">
+            ${this._selectedBar.tuesdayFrom}
+            </div>
+            <p> - </p>
+            <div class="openings-content">
+            ${this._selectedBar.tuesdayTo}
+            </div> 
+            </div> 
+            <div class="detailview-openings">
+            <div class="openings-content">
+            Onsdag: 
+            </div>
+            <div class="openings-content">
+            ${this._selectedBar.wednesdayFrom}
+            </div>
+            <p> - </p>
+            <div class="openings-content">
+            ${this._selectedBar.wednesdayTo}
+            </div>
+            </div>  
+            <div class="detailview-openings">
+            <div class="openings-content">
+            Torsdag: 
+            </div>
+            <div class="openings-content">
+            ${this._selectedBar.thursdayFrom}</div>
+            <p> - </p>
+            <div class="openings-content">
+            ${this._selectedBar.thursdayTo}
             </div>
             </div>
+            <div class="detailview-openings"> 
+            <div class="openings-content">
+            Fredag: 
+            </div>
+            <div class="openings-content">           
+            ${this._selectedBar.fridayFrom}</div>
+            <p> - </p>
+            <div class="openings-content">
+            ${this._selectedBar.fridayTo}
+            </div>
+            </div>  
+            <div class="detailview-openings">
+            <div class="openings-content">
+            Lørdag: 
+            </div>
+            <div class="openings-content">
+            ${this._selectedBar.saturdayFrom}
+            </div>
+            <p> - </p>
+            <div class="openings-content">
+            ${this._selectedBar.saturdayTo}
+            </div>
+            </div>  
+            <div class="detailview-openings">
+            <div class="openings-content">
+            Søndag: 
+            </div>
+            <div class="openings-content">
+            ${this._selectedBar.sundayFrom}
+            </div>
+            <p> - </p>
+            <div class="openings-content">
+            ${this._selectedBar.sundayTo}
+            </div>
+            </div>    
+            </div>       
         </article>
-  `;
+  `; 
+            
     this.spaService.navigateTo("detail-view");
 
     }
