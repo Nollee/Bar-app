@@ -9,9 +9,15 @@ export default class ChancePage {
       document.getElementById('content').innerHTML += /* html */ `
         <section id="chance" class="page">
           <header class="topbar">
-            <h2>Prøv lykken!</h2>
-            <div onclick="appendCoupons()">TRYK HER</div>
+            <h1>Prøv lykken!</h1>
           </header>
+          <section class="chance-intro">
+          <h2>Vind en kupon!</h2>
+          <p>Prøv chancen og vind en kupon til en bar. Du kan vinde alt fra en gratis drink til et beerpong-sæt!</p>
+          <img src="images/spin.png" alt="spin">
+          <div class="chance-btn" onclick="appendCoupons()">TRYK HER</div>
+
+          </section>
           <section id="coupon-container" class="grid-container"></section>
 
          
