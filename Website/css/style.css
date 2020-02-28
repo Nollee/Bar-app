@@ -422,7 +422,7 @@ header {
   background-color: #101017;
   top: 0;
   z-index: 999999;
-  width: 500px; }
+  max-width: 500px; }
 
 .topbar-wrapper {
   width: 90%;
