@@ -92,11 +92,7 @@ class BarService {
             }
         } 
         document.querySelector("#detail-view").innerHTML = /*html */ `
-        <header>
-        <h1>Bar</h1>
-        <img src="../images/x.svg" alt="img of a x"> 
-        </header>
-
+        <a href="#bars" class="exit"><img src="images/x.svg"></a>
         <article class="detailview"> 
             <div class="detailview-content">
             <div class="detailview-gradient"><h1>${this._selectedBar.name}</h1></div> 
