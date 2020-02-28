@@ -7,6 +7,7 @@ class CouponService {
         this.couponRef = _db.collection("coupons");
         this.spaService = spaService;
         this.coupons = [];
+        this.selectedCoupon;
         
     }
 
@@ -31,26 +32,27 @@ class CouponService {
         if (this.randomCoupon.lose === "lose") {
             document.querySelector("#coupon-container").innerHTML = /* html */ `
             <article class="coupon-wrapper">
-            <div class="img-gradient">
+            <div class="img-wrapper">
+            <div class="img-gradient"></div>
             <img src="https://i.redd.it/mzz6i3sjrsd11.png" alt="tabt">
             <h2>Øv!</h2>
             </div>
             <h3>Ingen gevinst</h3>
             <h4>Prøv igen imorgen!</h4>
+            <a href="#home" class="seeMore">Hjem</a>
             </article>
             `;
-        
-            
         } else {
             document.querySelector("#coupon-container").innerHTML = /* html */ `
             <article class="coupon-wrapper">
-            <div class="img-gradient toppic">
+            <div class="img-wrapper">
+            <div class="img-gradient"></div>
             <img src="${this.randomCoupon.img}" alt="gevinst">
             <h2>${this.randomCoupon.rabat}</h2>
             </div>
             <h3>${this.randomCoupon.for}</h3>
             <h4> På ${this.randomCoupon.to}</h4>
-            <p>Indløs kuponen ved at vise den til en bartender hos den ovennævnte bar!
+            <p>Indløs kuponen ved at vise den til en bartender hos ${this.randomCoupon.to}
             </p>
             <p class="expire">Udløber: ${this.randomCoupon.expire}</p>
             <a class="seeMore" href="#home">Se kuponer</a>
@@ -96,23 +98,73 @@ class CouponService {
     }
 
     async appendOwnedCoupons() {
+        loaderService.show(true);
         let coupons = await couponService.getOwnedCoupons();
         let template = "";
-        for (let coupon of coupons) {
+        for (let i = 0; i< coupons.length; i++) {
+            let coupon = coupons[i];
             template += /* html*/ `
-            <div class="slide coupon">
+            <div class="slide coupon" onclick="showOwnedCoupon('${coupon.id}')">
             <h3>${coupon.rabat}</h3>
+            <img src="${coupon.img}" alt="gevinst">
             <p>${coupon.for}</p>
             </div>
           `;
         }
         if (coupons.length === 0) {
             template = `
-                <p>No Bars added</p>
+                <p>Du har ingen kuponer</p>
             `;
         }
         document.querySelector('#myCoupons').innerHTML = template;
+        loaderService.show(false);
     }; 
+
+    async showOwnedCoupon(id){
+    let coupons = await couponService.getOwnedCoupons();
+
+        for (let coupon of coupons) {
+            if(coupon.id === id){
+             this.selectedCoupon = coupon;
+            }
+
+        }
+        console.log(this.selectedCoupon);
+        document.querySelector("#detail-view").innerHTML = /* html */ `
+        <header>
+        <div class="topbar-wrapper">
+        <div class="topbar-left">
+        <h2>${this.selectedCoupon.to}</h2>
+        </div>
+        </div>
+        </header>
+        <article class="coupon-wrapper">
+        <div class="img-wrapper">
+        <div class="img-gradient"></div>
+        <img src="${this.selectedCoupon.img}" alt="gevinst">
+        <h2>${this.selectedCoupon.rabat}</h2>
+        </div>
+        <h3>${this.selectedCoupon.for}</h3>
+        <h4> På ${this.selectedCoupon.to}</h4>
+        <p class="expire">Udløber: ${this.selectedCoupon.expire}</p>
+        <p class="obs">OBS! DENNE KUPON KAN KUN INDLØSES AF EN MEDARBEJDER HOS ${this.selectedCoupon.to}</p>
+        <div class="seeMore" onclick="removeCoupon('${this.selectedCoupon.id}')">Indløs Kupon</div>
+        </article>
+        <div class="overlav"></div>
+        `;
+        this.spaService.navigateTo("detail-view");
+    }
+
+    removeCoupon(couponId) {
+        loaderService.show(true);
+        authService.authUserRef.update({
+            ownedCoupons: firebase.firestore.FieldValue.arrayRemove(couponId)
+        });
+        setTimeout(this.spaService.navigateTo("home"), 1000
+        )
+ 
+    }
+
 
 
 

@@ -9,8 +9,10 @@ export default class BarPage {
     document.getElementById('content').innerHTML += /* html */ `
       <section id="bars" class="page">
         <header class="topbar">
-          <h2>SEARCH</h2>
+        <div class="topbar-wrapper">
+          <h1>SEARCH</h1>
           <a class="right" href="#favourite">Favourites</a>
+          </div>
         </header>
         <div class="search-bar-container">
         <input id="search-bar" type="search" placeholder="Search" onkeyup="search(this.value)"> 

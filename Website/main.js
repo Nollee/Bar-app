@@ -44,6 +44,8 @@ authService.init();
 window.createCoupon = () => couponService.createCoupon();
 window.appendCoupons = () => couponService.appendCoupons();
 window.addToOwnedCoupons = (couponId) => chancePage.addToOwnedBars(couponId);
+window.removeCoupon = (couponId) => couponService.removeCoupon(couponId);
+window.showOwnedCoupon = (id) => couponService.showOwnedCoupon(id);
 
 // spa handlers
 window.pageChange = () => spaService.pageChange();
