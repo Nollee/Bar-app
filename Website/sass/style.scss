@@ -18,10 +18,10 @@ body{
 }
 
 #content{
-    width: 100%;
+    width: 500px;
     height: 100%;
-    max-width: 500px;
     background-color: #101017;  
+    overflow: hidden;
 }
 
 .page{

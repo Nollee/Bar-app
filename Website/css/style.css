@@ -72,7 +72,7 @@
 
 .mdl-button--raised.mdl-button--colored {
   background-color: #F3CA26;
-  color: #111118; }
+  color: #101017; }
 
 .mdl-button--primary.mdl-button--primary {
   color: #FF0560; }
@@ -114,8 +114,7 @@
 /* inheritances end */
 /* ============ import ======================== */
 #bar-container {
-  margin-bottom: 20%;
-  margin-top: 30%; }
+  margin-bottom: 20%; }
 
 .bar-card {
   position: relative;
@@ -195,7 +194,7 @@ input::-webkit-search-cancel-button {
   height: 30px; }
 
 #form-popup {
-  background-color: #111118;
+  background-color: #101017;
   z-index: 99999;
   position: absolute;
   top: 0;
@@ -286,7 +285,7 @@ textarea {
     font-weight: 700; }
 
 #create-bar {
-  color: #111118;
+  color: #101017;
   background-color: #F3CA26;
   border-radius: 5px;
   padding: 2% 4%;
@@ -304,9 +303,6 @@ textarea {
 
 /* inheritances end */
 /* ============ import ======================== */
-#fav-container {
-  margin-top: 17%; }
-
 /* gradients */
 /* inheritances */
 #barForm, #show-add-bar, .detailview, .detailview-content a {
@@ -332,21 +328,20 @@ h2 {
   font-style: italic; }
 
 body {
-  background-color: #111118; }
+  background-color: #101017; }
 
 /* ================= TABBAR ====================*/
 #tabbar {
   display: flex;
   justify-content: center;
-  background-color: #111118;
+  background-color: #101017;
   position: fixed;
   bottom: 0px;
-  width: 100%;
+  width: 500px;
   height: 10%;
   z-index: 9999; }
 
 .tabbar-wrapper {
-  width: 50%;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -375,9 +370,6 @@ body {
   stroke: white;
   width: 85%; }
 
-#bars {
-  height: 1em; }
-
 /* ================= TABBAR END ====================== */
 /* ================= LOADER =========================== */
 #loader {
@@ -394,7 +386,7 @@ body {
 .spinner {
   border: 5px solid #F3CA26;
   border-radius: 50%;
-  border-top: 5px solid #111118;
+  border-top: 5px solid #101017;
   width: 50px;
   height: 50px;
   -webkit-animation: spin 1s linear infinite;
@@ -426,11 +418,10 @@ body {
     transform: rotate(360deg); } }
 /* ===================== TOPBAR ====================*/
 header {
-  background-color: #111118;
-  position: fixed;
+  background-color: #101017;
   top: 0;
   z-index: 999999;
-  width: 100%; }
+  width: 500px; }
 
 .topbar-wrapper {
   width: 90%;
@@ -442,13 +433,12 @@ header {
 
 .topbar-left {
   display: flex;
-  align-items: center;
-  width: 60%; }
+  align-items: center; }
   .topbar-left h1 {
     font-size: 3rem; }
 
 .pic-wrapper, .pic-wrapper-overview {
-  width: 25%;
+  width: 20%;
   display: flex;
   align-items: center; }
   .pic-wrapper img, .pic-wrapper-overview img {
@@ -468,6 +458,11 @@ header {
   .exit img {
     width: 100%; }
 
+#search-header {
+  position: fixed;
+  top: 0;
+  width: 100%; }
+
 /* gradients */
 /* inheritances */
 #barForm, #show-add-bar, .detailview, .detailview-content a {
@@ -480,8 +475,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
-  margin-top: 15%; }
+  color: white; }
   #profiledata img {
     width: 50%;
     border-radius: 50%;
@@ -540,10 +534,10 @@ header {
   padding: 8px 0;
   background-color: #F3CA26;
   text-decoration: none;
-  color: #111118; }
+  color: #101017; }
 
 .show-delete, .logout {
-  color: #111118;
+  color: #101017;
   background-color: #F3CA26;
   border-radius: 5px;
   padding: 2% 4%;
@@ -596,12 +590,14 @@ header {
 
 /* inheritances end */
 /* ============ import ======================== */
+#home {
+  overflow: hidden; }
+
 /* ================= SLIDER ====================*/
 .slider {
   display: flex;
   flex-wrap: nowrap;
   transition: 0.5s ease;
-  margin: 2% auto 0;
   cursor: pointer;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -675,10 +671,6 @@ header {
   z-index: 10; }
 
 /* ================= SLIDER END ====================*/
-/* ================= SLIDER END ====================*/
-#home-container {
-  margin-top: 15%; }
-
 /* gradients */
 /* inheritances */
 #barForm, #show-add-bar, .detailview, .detailview-content a {
@@ -804,14 +796,10 @@ header {
 .seeMore {
   background-color: #F3CA26;
   padding: 5px 10px;
-  font-size: 20px;
-  position: absolute;
-  bottom: 15%;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  width: 30%;
+  font-size: 1.2rem;
+  margin: auto;
+  margin-top: 10%;
+  width: 35%;
   text-decoration: none;
   color: black;
   border-radius: 10px;
@@ -888,10 +876,10 @@ body {
   background-color: #09090D; }
 
 #content {
-  width: 100%;
+  width: 500px;
   height: 100%;
-  max-width: 500px;
-  background-color: #101017; }
+  background-color: #101017;
+  overflow: hidden; }
 
 .page {
   height: 100vh; }

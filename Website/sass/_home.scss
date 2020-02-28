@@ -1,14 +1,15 @@
 @import "_rules"; 
 /* ============ import ======================== */
  
-
+#home{
+    overflow: hidden;
+}
 
  /* ================= SLIDER ====================*/
  .slider{
     display: flex;
     flex-wrap: nowrap; 
     transition: 0.5s ease;
-    margin: 2% auto 0;
     cursor: pointer;
     scroll-snap-type: x mandatory; 
     -webkit-overflow-scrolling: touch;
@@ -95,8 +96,4 @@
     z-index: 10;
 }
 /* ================= SLIDER END ====================*/
-/* ================= SLIDER END ====================*/
 
-#home-container{
-    margin-top: 15%;
-}
