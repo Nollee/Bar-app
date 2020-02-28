@@ -17,9 +17,10 @@ body{
     background-color: #09090D;
 }
 
-#content{
-    width: 500px;
-    height: 100%;
+#content, #detail-view, .detailview-content{
+    max-width: 500px;
+    width: 100%;
+    height: 100vh;
     background-color: #101017;  
 }
 

@@ -1,9 +1,15 @@
 @import "_rules"; 
 /* ============ import ======================== */
 
-#bar-container {
-    margin-bottom: 20%;
+#bar-container{
+    padding-bottom: 20%;
     margin-top: 35%;
+    background-color: $main-black;
+}
+
+#favourite{
+    background-color: $main-black;
+    padding-bottom: 20%;
 }
 
 .bar-card  {
