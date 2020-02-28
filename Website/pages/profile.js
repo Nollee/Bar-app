@@ -11,7 +11,7 @@ export default class ProfilePage {
           <header class="topbar">
             <div class="topbar-wrapper">
             <div class="topbar-left">
-            <a href="#home"><</a>
+            <a id="gohome" href="#home"><</a>
             <h1>PROFIL</h1>
             </div>
             <div class="show-delete" onclick="toggleDelete()">Slet konto</div>

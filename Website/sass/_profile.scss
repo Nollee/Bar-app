@@ -5,10 +5,15 @@
     flex-direction: column;
     align-items: center;
     color: white;
+    margin-top: 15%;
     img{
         width: 50%;
         border-radius: 50%;
         margin: auto;
+    }
+    h3{
+        margin-top: 5%;
+        font-size: 1.5rem;
     }
 }
 
@@ -17,6 +22,7 @@
     flex-direction: row;
     align-items: center;    
     width: 60%;
+    margin-top: 2%;
     img{
         margin: 0;
         width: 10% !important;
@@ -27,6 +33,7 @@
         width: 80%;
         font-size: 16px;
     }
+    
 
 }
 
@@ -38,6 +45,12 @@
 
 .show{
     display: block;
+}
+
+#gohome{
+    font-size: 50px;
+    color: white;
+    text-decoration: none;
 }
 
 .delete{
@@ -80,11 +93,6 @@
     font-weight: 600;
 }
 
-#profiledata{
-    h3{
-        margin-top: 5%;
-    }
-}
 
 .logout{
 position: absolute;
@@ -125,5 +133,10 @@ bottom: 20%;
     font-size: 70px;   
     @extend %center; 
     background-color: $main-yellow;  
+}
+
+#form-popup{
+    padding-top: 10%;
+
 }
  

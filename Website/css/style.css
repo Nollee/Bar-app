@@ -43,11 +43,13 @@
     display: block; }
   .toppic h1 {
     position: absolute;
-    margin: auto;
     color: white;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;
     bottom: 5%;
-    font-size: 4em;
-    left: 1em;
+    font-size: 3rem;
     text-align: center; }
 
 .mdl-card {
@@ -112,7 +114,8 @@
 /* inheritances end */
 /* ============ import ======================== */
 #bar-container {
-  margin-bottom: 20%; }
+  margin-bottom: 20%;
+  margin-top: 30%; }
 
 .bar-card {
   position: relative;
@@ -128,6 +131,7 @@
 .search-bar-container {
   text-align: center;
   margin-bottom: 5%;
+  margin-top: 5%;
   width: 100%; }
 
 #search-bar {
@@ -135,6 +139,16 @@
   border-radius: 5px;
   border: none;
   padding: 5px; }
+
+input::-webkit-search-cancel-button {
+  position: relative;
+  -webkit-appearance: none;
+  background-image: url("../images/quit.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 20px;
+  width: 20px; }
 
 .bar-card-gradient, .bar-card-onclick {
   position: absolute;
@@ -290,6 +304,9 @@ textarea {
 
 /* inheritances end */
 /* ============ import ======================== */
+#fav-container {
+  margin-top: 17%; }
+
 /* gradients */
 /* inheritances */
 #barForm, #show-add-bar, .detailview, .detailview-content a {
@@ -408,13 +425,20 @@ body {
   100% {
     transform: rotate(360deg); } }
 /* ===================== TOPBAR ====================*/
+header {
+  background-color: #111118;
+  position: fixed;
+  top: 0;
+  z-index: 999999;
+  width: 100%; }
+
 .topbar-wrapper {
   width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: auto;
-  margin-top: 1%; }
+  margin-top: 1.5%; }
 
 .topbar-left {
   display: flex;
@@ -423,17 +447,25 @@ body {
   .topbar-left h1 {
     font-size: 3rem; }
 
-.pic-wrapper {
+.pic-wrapper, .pic-wrapper-overview {
   width: 25%;
   display: flex;
   align-items: center; }
-  .pic-wrapper img {
+  .pic-wrapper img, .pic-wrapper-overview img {
     width: 100%;
     border-radius: 50%; }
-  .pic-wrapper a {
+  .pic-wrapper a, .pic-wrapper-overview a {
     display: flex;
     align-items: center;
     margin-right: 20%; }
+
+.exit {
+  position: absolute;
+  width: 10%;
+  top: 2%;
+  right: 10%; }
+  .exit img {
+    width: 100%; }
 
 /* gradients */
 /* inheritances */
@@ -447,17 +479,22 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white; }
+  color: white;
+  margin-top: 15%; }
   #profiledata img {
     width: 50%;
     border-radius: 50%;
     margin: auto; }
+  #profiledata h3 {
+    margin-top: 5%;
+    font-size: 1.5rem; }
 
 .profile-info {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 60%; }
+  width: 60%;
+  margin-top: 2%; }
   .profile-info img {
     margin: 0;
     width: 10% !important;
@@ -471,6 +508,11 @@ body {
 
 .show {
   display: block; }
+
+#gohome {
+  font-size: 50px;
+  color: white;
+  text-decoration: none; }
 
 .delete {
   position: absolute;
@@ -507,9 +549,6 @@ body {
   text-decoration: none;
   font-weight: 600; }
 
-#profiledata h3 {
-  margin-top: 5%; }
-
 .logout {
   position: absolute;
   font-size: 150%;
@@ -543,6 +582,9 @@ body {
   border-radius: 100%;
   font-size: 70px;
   background-color: #F3CA26; }
+
+#form-popup {
+  padding-top: 10%; }
 
 /* gradients */
 /* inheritances */
@@ -602,6 +644,9 @@ body {
   width: 100%; }
 
 /* ================= SLIDER END ====================*/
+#home-container {
+  margin-top: 15%; }
+
 /* gradients */
 /* inheritances */
 #barForm, #show-add-bar, .detailview, .detailview-content a {
