@@ -72,7 +72,7 @@
 
 .mdl-button--raised.mdl-button--colored {
   background-color: #F3CA26;
-  color: #111118; }
+  color: #101017; }
 
 .mdl-button--primary.mdl-button--primary {
   color: #FF0560; }
@@ -195,7 +195,7 @@ input::-webkit-search-cancel-button {
   height: 30px; }
 
 #form-popup {
-  background-color: #111118;
+  background-color: #101017;
   z-index: 99999;
   position: absolute;
   top: 0;
@@ -286,7 +286,7 @@ textarea {
     font-weight: 700; }
 
 #create-bar {
-  color: #111118;
+  color: #101017;
   background-color: #F3CA26;
   border-radius: 5px;
   padding: 2% 4%;
@@ -329,21 +329,20 @@ h2 {
   font-style: italic; }
 
 body {
-  background-color: #111118; }
+  background-color: #101017; }
 
 /* ================= TABBAR ====================*/
 #tabbar {
   display: flex;
   justify-content: center;
-  background-color: #111118;
+  background-color: #101017;
   position: fixed;
   bottom: 0px;
-  width: 100%;
+  width: 500px;
   height: 10%;
   z-index: 9999; }
 
 .tabbar-wrapper {
-  width: 50%;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -372,9 +371,6 @@ body {
   stroke: white;
   width: 85%; }
 
-#bars {
-  height: 1em; }
-
 /* ================= TABBAR END ====================== */
 /* ================= LOADER =========================== */
 #loader {
@@ -391,7 +387,7 @@ body {
 .spinner {
   border: 5px solid #F3CA26;
   border-radius: 50%;
-  border-top: 5px solid #111118;
+  border-top: 5px solid #101017;
   width: 50px;
   height: 50px;
   -webkit-animation: spin 1s linear infinite;
@@ -423,10 +419,10 @@ body {
     transform: rotate(360deg); } }
 /* ===================== TOPBAR ====================*/
 header {
-  background-color: #111118;
+  background-color: #101017;
   top: 0;
   z-index: 999999;
-  width: 100%; }
+  width: 500px; }
 
 .topbar-wrapper {
   width: 90%;
@@ -539,10 +535,10 @@ header {
   padding: 8px 0;
   background-color: #F3CA26;
   text-decoration: none;
-  color: #111118; }
+  color: #101017; }
 
 .show-delete, .logout {
-  color: #111118;
+  color: #101017;
   background-color: #F3CA26;
   border-radius: 5px;
   padding: 2% 4%;
@@ -595,12 +591,14 @@ header {
 
 /* inheritances end */
 /* ============ import ======================== */
+#home {
+  overflow: hidden; }
+
 /* ================= SLIDER ====================*/
 .slider {
   display: flex;
   flex-wrap: nowrap;
   transition: 0.5s ease;
-  margin: 2% auto 0;
   cursor: pointer;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -674,7 +672,6 @@ header {
   z-index: 10; }
 
 /* ================= SLIDER END ====================*/
-/* ================= SLIDER END ====================*/
 /* gradients */
 /* inheritances */
 #barForm, #show-add-bar, .detailview, .detailview-content a {
@@ -692,9 +689,14 @@ header {
   height: 80vh;
   background-color: black;
   border-radius: 10px;
-  position: fixed;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
   top: 10%;
   overflow-y: scroll;
+  overflow-x: hidden;
   text-align: center; }
   .detailview-content h2 {
     margin: 0;
@@ -875,10 +877,10 @@ body {
   background-color: #09090D; }
 
 #content {
-  width: 100%;
+  width: 500px;
   height: 100%;
-  max-width: 500px;
-  background-color: #101017; }
+  background-color: #101017;
+  overflow: hidden; }
 
 .page {
   height: 100vh; }

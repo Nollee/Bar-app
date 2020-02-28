@@ -33,13 +33,13 @@ body{
     background-color: $main-black;
     position: fixed;
     bottom: 0px;
-    width: 100%;
+    width: 500px;
     height: 10%;
     z-index: 9999; 
 }
 
 .tabbar-wrapper{
-    width: 50%;
+
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -75,9 +75,6 @@ body{
 
 }
 
-#bars{
-  height: 1em;
-}
 
 /* ================= TABBAR END ====================== */
 
@@ -148,7 +145,7 @@ header{
   background-color: $main-black;
   top: 0;
   z-index: 999999;
-  width: 100%;
+  width: 500px;
 }
 .topbar-wrapper{
     width: 90%;
