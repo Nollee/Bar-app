@@ -143,7 +143,6 @@ body{
 
 header{
   background-color: $main-black;
-  position: fixed;
   top: 0;
   z-index: 999999;
   width: 500px;
@@ -160,14 +159,13 @@ header{
 .topbar-left{
     display: flex;
     align-items: center;
-    width: 60%;
     h1{
       font-size: 3rem;
   }
 }
 
 .pic-wrapper, .pic-wrapper-overview{
-  width: 25%;
+  width: 20%;
   display: flex;
   align-items: center;
   img{
@@ -190,6 +188,12 @@ header{
   img{
     width: 100%;
   }
+}
+
+#search-header{
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 

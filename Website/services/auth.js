@@ -90,12 +90,14 @@ class AuthService {
     }
     
     insertProfilePic(user){
-        document.querySelector('.pic-wrapper').innerHTML = /* html*/ `
-        <a href="#profile"><img src="${user.photoURL}?height=200"></a>
-        `
-        document.querySelector('.pic-wrapper-overview').innerHTML = /* html*/ `
-        <a href="#profile"><img src="${user.photoURL}?height=200"></a>
-        `
+
+        let elements = document.querySelectorAll('.pic-wrapper')
+        for (let element of elements) {
+            element.innerHTML = /* html */ `
+            <a href="#profile"><img src="${user.photoURL}?height=200"></a>
+            `
+            
+        }
     }
     // Makes the user log out
     logout() {

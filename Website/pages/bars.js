@@ -8,10 +8,10 @@ export default class BarPage {
   template() {
     document.getElementById('content').innerHTML += /* html */ `
       <section id="bars" class="page">
-        <header class="topbar">
+        <header id="search-header" class="topbar">
         <div class="topbar-wrapper">
         <div class="topbar-left">
-        <div class="pic-wrapper-overview"></div>
+        <div class="pic-wrapper"></div>
 
           <h1>Oversigt</h1>
           </div>
