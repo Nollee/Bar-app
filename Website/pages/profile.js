@@ -100,50 +100,50 @@ export default class ProfilePage {
           <div class="form-days">
           <p>Mandag</p>
           <div class="form-days-wrapper">
-          <input type="number" id="form-from-monday" placeholder="(fx 15)" required> <span> - </span>
-          <input type="number" id="form-to-monday" placeholder="(fx 02)" required> 
+          <input type="time" id="form-from-monday" placeholder="(fx 15)" required> <span> - </span>
+          <input type="time" id="form-to-monday" placeholder="(fx 02)" required> 
           </div> 
           </div>
           <div class="form-days">
           <span>Tirsdag</span>
           <div class="form-days-wrapper">
-          <input type="number" id="form-from-tuesday" placeholder="(fx 15)" required> <span> - </span>
-          <input type="number" id="form-to-tuesday" placeholder="(fx 02)" required> 
+          <input type="time" id="form-from-tuesday" placeholder="(fx 15)" required> <span> - </span>
+          <input type="time" id="form-to-tuesday" placeholder="(fx 02)" required> 
           </div>
           </div> 
           <div class="form-days">
           <p>Onsdag</p>
           <div class="form-days-wrapper">
-          <input type="number" id="form-from-wednesday" placeholder="(fx 15)" required> <span> - </span>
-          <input type="number" id="form-to-wednesday" placeholder="(fx 02)" required> 
+          <input type="time" id="form-from-wednesday" placeholder="(fx 15)" required> <span> - </span>
+          <input type="time" id="form-to-wednesday" placeholder="(fx 02)" required> 
           </div>
           </div>
           <div class="form-days">
           <p>Torsdag</p>
           <div class="form-days-wrapper">
-          <input type="number" id="form-from-thursday" placeholder="(fx 15)" required> <span> - </span>
-          <input type="number" id="form-to-thursday" placeholder="(fx 02)" required> 
+          <input type="time" id="form-from-thursday" placeholder="(fx 15)" required> <span> - </span>
+          <input type="time" id="form-to-thursday" placeholder="(fx 02)" required> 
           </div>
           </div>
           <div class="form-days">
           <p>Fredag</p>
           <div class="form-days-wrapper">
-          <input type="number" id="form-from-friday" placeholder="(fx 15)" required> <span> - </span>
-          <input type="number" id="form-to-friday" placeholder="(fx 02)" required> 
+          <input type="time" id="form-from-friday" placeholder="(fx 15)" required> <span> - </span>
+          <input type="time" id="form-to-friday" placeholder="(fx 02)" required> 
           </div>
           </div> 
           <div class="form-days">
           <p>Lørdag</p>
           <div class="form-days-wrapper">
-          <input type="number" id="form-from-saturday" placeholder="(fx 15)" required> <span> - </span>
-          <input type="number" id="form-to-saturday" placeholder="(fx 02)" required> 
+          <input type="time" id="form-from-saturday" placeholder="(fx 15)" required> <span> - </span>
+          <input type="time" id="form-to-saturday" placeholder="(fx 02)" required> 
           </div> 
           </div> 
           <div class="form-days">
           <p>Søndag</p>
           <div class="form-days-wrapper">
-          <input type="number" id="form-from-sunday" placeholder="(fx 15)" required> <span> - </span>
-          <input type="number" id="form-to-sunday" placeholder="(fx 02)" required> 
+          <input type="time" id="form-from-sunday" placeholder="(fx 15)" required> <span> - </span>
+          <input type="time" id="form-to-sunday" placeholder="(fx 02)" required> 
           </div>
           </div> 
           

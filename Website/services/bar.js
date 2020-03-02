@@ -11,7 +11,7 @@ class BarService {
         this._selectedBar;
         this.spaService = spaService;    
     }
-    init() {
+    init() { 
         // init all bars
         this.barRef.onSnapshot(snapshotData => {
             this.bars = []; 
@@ -44,9 +44,7 @@ class BarService {
               <p>${bar.type}</p> 
               <div class="small-dot"></div>
               <p>${bar.age}+</p>  
-              <div class="small-dot"></div> 
-             <!--<a href="https://maps.google.com/?q=${bar.address}">${bar.address}</a>  --> 
-             <!--<img class="bar-card-heart" src="../images/heart.svg" alt="image of heart">-->  
+              <div class="small-dot"></div>    
              ${this.generateFavBarButton(bar.id)}
              </div>      
              </article>       
@@ -75,9 +73,7 @@ class BarService {
               <p>${bar.type}</p> 
               <div class="small-dot"></div>
               <p>${bar.age}+</p>  
-              <div class="small-dot"></div> 
-             <!--<a href="https://maps.google.com/?q=${bar.address}">${bar.address}</a>  --> 
-             <!--<img class="bar-card-heart" src="../images/heart.svg" alt="image of heart">-->  
+              <div class="small-dot"></div>   
              ${this.generateFavBarButton(bar.id)}
              </div>
              </div>     
@@ -93,7 +89,7 @@ class BarService {
         for (let bar of this.bars) {
             if (bar.id === id) {
               this._selectedBar = bar;
-            }
+            } 
         } 
         document.querySelector("#detail-view").innerHTML = /*html */ `
         <a href="#bars" class="exit"><img src="images/x.svg"></a>
