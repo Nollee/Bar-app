@@ -25,7 +25,9 @@ class BarService {
             this.appendBarsHome(this.bars);       
         });
         this.appendFavBars();
-    }  
+    } 
+
+    // append bars to the bars subpage 
 
     appendBars(bars) {
         let htmlTemplate = "";
@@ -57,6 +59,8 @@ class BarService {
         console.log(bars);
       }
 
+      //append bars to slider at frontpage
+
       appendBarsHome(bars) {
         let htmlTemplate = "";
         for (let index = 0; index < bars.length; index++) {
@@ -87,6 +91,8 @@ class BarService {
         document.querySelector('#bar-highlight').innerHTML = htmlTemplate;
     
       }
+
+    // append bar detailview with given id  
     
     appendDetailView(id) { 
 
@@ -217,24 +223,24 @@ class BarService {
             </div>       
         </article>
   `; 
-            
-
+        
     }
+
+
+    // shows detailview of bar with given id
 
     showDetailView(barId){
         loaderService.show(true);
         this.appendDetailView(barId);
         this.spaService.navigateTo("detail-view");
         loaderService.show(false);
-
     }
 
     
+    // Generates favourite button
 
     generateFavBarButton(barId) {
-        console.log("hej");
         console.log(this.userHasFav(barId));
-        
         
         let btnTemplate = /*html*/ `
         <div class="fav-btn" onclick="addToFavourites('${barId}')">   
@@ -249,6 +255,8 @@ class BarService {
         return btnTemplate;
     }; 
 
+    // Checks if user has favBarid in favBars array
+
      userHasFav(favBarId) {
         if (authService.authUser.favBars && authService.authUser.favBars.includes(favBarId)) {
             return true;
@@ -257,7 +265,7 @@ class BarService {
         }
     } 
 
-    // adds a given movieId to the favMovies array inside _currentUser
+    // adds a given barId to the favBars array inside current user
 
     addToFavourites(barId) {
         loaderService.show(true);
@@ -266,11 +274,9 @@ class BarService {
         }, {
             merge: true
         }).then( () => this.appendDetailView(barId));
-
-        
     }
 
-    // removes a given movieId to the favMovies array inside _currentUser
+    // removes a given barId to the favMovies array inside users
     removeFromFavourites(barId) {
         loaderService.show(true);
         authService.authUserRef.update({
@@ -279,7 +285,8 @@ class BarService {
 
     }
 
-
+    // Loads favourite bars from favBars array - form given user id
+    
     async getFavBars() {
         let favBars = [];
         for (let barId of authService.authUser.favBars) {
@@ -291,6 +298,8 @@ class BarService {
         }
         return favBars;
     }
+
+    //appends favourite bars to #fav-container on the favourite page
 
     async appendFavBars() {
         let bars = await barService.getFavBars();
@@ -323,8 +332,7 @@ class BarService {
         document.querySelector('#fav-container').innerHTML = template;
     }
  
-
-
+    // search array for value and appends result
 
     search(value) {
         let searchQuery = value.toLowerCase();
@@ -340,6 +348,7 @@ class BarService {
     console.log(filteredBars);  
     }  
 
+    // adds new bar to array based on user input
 
   createBar() {
     // references to the input fields
@@ -419,10 +428,14 @@ class BarService {
     this.appendBars(this.bars);   
   }  
 
+  // shows add bar page by adding CSS class
+
   showAddBar() {
      let form = document.getElementById("form-popup");
      form.classList.add("active");       
   }
+
+// shows add bar page by removing CSS class
 
   hideAddBar() {
       let form = document.getElementById("form-popup");
