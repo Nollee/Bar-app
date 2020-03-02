@@ -2,7 +2,7 @@ class LoaderService {
   constructor() {
     this.template();
   }
-
+  // Adds spinner to DOM
   template() {
     document.querySelector('#content').innerHTML += /*html*/ `
       <div id="loader">
@@ -10,6 +10,8 @@ class LoaderService {
       </div>
     `;
   }
+
+  // shows and hides spinner by adding and removing CSS class
 
   show(show) {
     let loader = document.getElementById('loader');
