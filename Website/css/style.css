@@ -693,6 +693,12 @@ header {
   position: absolute;
   z-index: 10; }
 
+.nothing {
+  color: white;
+  font-size: 1.3rem;
+  text-align: center;
+  width: 100%; }
+
 /* ================= SLIDER END ====================*/
 /* gradients */
 /* inheritances */

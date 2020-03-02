@@ -1,3 +1,8 @@
+
+
+// ======= ALLE TRE, UNDTAGEN DET DER ER KOMMENTERET NAVN PÅ ==============
+
+
 import spaService from "./spa.js";
 import loaderService from "./loader.js";
 import barService from "./bar.js";
@@ -74,7 +79,7 @@ class AuthService {
 
     }
 
-    // Appends the data of the user 
+    // Appends the data of the user - Mikkel NA
     appendUserData(user){
         document.querySelector('#profile-container').innerHTML += /* html */ `
              <article class="profiledata">
@@ -89,7 +94,7 @@ class AuthService {
         console.log(user);
     }
     
-    // insets profile pic in the top-left of the screen
+    // insets profile pic in the top-left of the screen - Mikkel NA
     insertProfilePic(user){
 
         let elements = document.querySelectorAll('.pic-wrapper')
@@ -100,12 +105,12 @@ class AuthService {
             
         }
     }
-    // Makes the user log out
+    // Makes the user log out - Mikkel NA
     logout() {
         firebase.auth().signOut();
     }
     
-    // deletes the account
+    // deletes the account - Mikkel NA
     deleteAccount(){
         let user = firebase.auth().currentUser;
 
