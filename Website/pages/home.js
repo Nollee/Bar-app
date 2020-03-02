@@ -21,7 +21,7 @@ export default class homePage {
             </section>
             <h2 class="home-h2">DINE KUPONER</h2>
             <section class="slider coupon-slider" id="myCoupons">
-            <p class="nothing">Ingen kuponer tilføjet</p>
+            <p class="nothing">Ingen kuponer</p>
 
             </section>
 
