@@ -1,4 +1,6 @@
-// MIKKEL NORMANN ANDERSEN
+
+
+// ================== MIKKEL NA ===========================
 
 import spaService from "./spa.js";
 import authService from "./auth.js";
@@ -67,7 +69,6 @@ class CouponService {
             <p class="expire">Udløber: ${this.randomCoupon.expire}</p>
             <a class="seeMore" href="#home">Se kuponer</a>
             </article>
-            <div class="overlav"></div>
             `;
 
             // calls the function addToOwnedCoupons() for the random coupon that has been generated
@@ -137,7 +138,7 @@ class CouponService {
         // if you don't have any coupons, show this
         if (coupons.length === 0) {
             template = `
-                <p>Du har ingen kuponer</p>
+                <p class="nothing">ingen kuponer</p>
             `;
         }
         document.querySelector('#myCoupons').innerHTML = template;
@@ -229,3 +230,5 @@ class CouponService {
 
 const couponService = new CouponService();
 export default couponService;
+
+// ================== MIKKEL NA ===========================

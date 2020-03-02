@@ -15,7 +15,9 @@ export default class FavouritePage {
             </div>  
           </header>
 
-          <section id="fav-container" class="grid-container"></section>
+          <section id="fav-container" class="grid-container">
+          <p class="nothing">Ingen favoritter</p>
+          </section>
         </section>
       `;
     }  
