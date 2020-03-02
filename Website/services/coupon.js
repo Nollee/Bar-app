@@ -129,6 +129,8 @@ class CouponService {
     }; 
 
     async showOwnedCoupon(id){
+        loaderService.show(true);
+        
     let coupons = await couponService.getOwnedCoupons();
 
         for (let coupon of coupons) {
@@ -156,6 +158,8 @@ class CouponService {
         <div class="overlav"></div>
         `;
         this.spaService.navigateTo("detail-view");
+        loaderService.show(false);
+
     }
 
     removeCoupon(couponId) {

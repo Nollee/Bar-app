@@ -8,7 +8,8 @@ export default class LoginPage {
         <section id="login" class="page">
         <div class="toppic">
         <h1>BarHunt</h1>
-        <img src="./images/cheers.jpg">
+        <img src="images/cheers.jpg">
+        <div class="top-gradient"></div>
         </div>
           <!-- firebase auth container  -->
           <section id="firebaseui-auth-container"></section>
