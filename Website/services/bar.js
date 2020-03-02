@@ -45,8 +45,6 @@ class BarService {
               <div class="small-dot"></div>
               <p>${bar.age}+</p>  
               <div class="small-dot"></div> 
-             <!--<a href="https://maps.google.com/?q=${bar.address}">${bar.address}</a>  --> 
-             <!--<img class="bar-card-heart" src="../images/heart.svg" alt="image of heart">-->  
              ${this.generateFavBarButton(bar.id)}
              </div>      
              </article>       
@@ -76,8 +74,7 @@ class BarService {
               <div class="small-dot"></div>
               <p>${bar.age}+</p>  
               <div class="small-dot"></div> 
-             <!--<a href="https://maps.google.com/?q=${bar.address}">${bar.address}</a>  --> 
-             <!--<img class="bar-card-heart" src="../images/heart.svg" alt="image of heart">-->  
+
              ${this.generateFavBarButton(bar.id)}
              </div>
              </div>     
@@ -232,8 +229,6 @@ class BarService {
     
 
     generateFavBarButton(barId) {
-        console.log("hej");
-        console.log(this.userHasFav(barId));
         
         
         let btnTemplate = /*html*/ `
@@ -364,29 +359,7 @@ class BarService {
     let saturdayFromInput = document.querySelector('#form-from-saturday'); 
     let saturdayToInput = document.querySelector('#form-to-saturday'); 
     let sundayFromInput = document.querySelector('#form-from-sunday'); 
-    let sundayToInput = document.querySelector('#form-to-sunday'); 
-    console.log(nameInput.value);
-    console.log(descriptionInput.value);
-    console.log(imgInput.value);
-    console.log(spaceInput.value);
-    console.log(priceInput.value);
-    console.log(addressInput.value);
-    console.log(typeInput.value); 
-    console.log(ageInput.value);  
-    console.log(mondayFromInput.value);
-    console.log(mondayToInput.value); 
-    console.log(tuesdayFromInput.value);
-    console.log(tuesdayToInput.value); 
-    console.log(wednesdayFromInput.value);
-    console.log(wednesdayToInput.value); 
-    console.log(thursdayFromInput.value);
-    console.log(thursdayToInput.value); 
-    console.log(fridayFromInput.value);
-    console.log(fridayToInput.value); 
-    console.log(saturdayFromInput.value);
-    console.log(saturdayToInput.value); 
-    console.log(sundayFromInput.value);
-    console.log(sundayToInput.value); 
+    let sundayToInput = document.querySelector('#form-to-sunday');  
     
   
     let newBar = {

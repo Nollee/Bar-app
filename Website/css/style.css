@@ -364,7 +364,7 @@ body {
     width: 2em;
     height: 100%;
     display: flex;
-    justify-content: space-between; }
+    justify-content: center; }
 
 .tabbar a svg {
   transition: .5s ease;
@@ -374,15 +374,10 @@ body {
   width: 80%;
   height: 80%; }
 
-.tabbar a.active {
-  display: flex;
-  justify-content: center; }
-
 .tabbar a.active svg {
   transition: .5s ease;
   fill: white;
-  stroke: white;
-  width: 85%; }
+  stroke: white; }
 
 /* ================= TABBAR END ====================== */
 /* ================= LOADER =========================== */
@@ -474,7 +469,8 @@ header {
 
 #search-header {
   position: fixed;
-  top: 0; }
+  top: 0;
+  width: 100%; }
 
 /* gradients */
 /* inheritances */
@@ -561,6 +557,9 @@ header {
 .show-delete {
   width: 25%;
   text-align: center; }
+
+.show-delete:hover, .logout:hover, #delete-btn:hover, #back-btn:hover {
+  cursor: pointer; }
 
 .logout {
   width: 25%;
