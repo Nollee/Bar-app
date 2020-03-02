@@ -88,7 +88,7 @@ class BarService {
     
       }
     
-    showDetailView(id) { 
+    appendDetailView(id) { 
 
         for (let bar of this.bars) {
             if (bar.id === id) {
@@ -218,11 +218,22 @@ class BarService {
         </article>
   `; 
             
-    this.spaService.navigateTo("detail-view");
 
     }
 
+    showDetailView(barId){
+        this.appendDetailView(barId);
+        this.spaService.navigateTo("detail-view");
+
+    }
+
+    
+
     generateFavBarButton(barId) {
+        console.log("hej");
+        console.log(this.userHasFav(barId));
+        
+        
         let btnTemplate = /*html*/ `
         <div class="fav-btn" onclick="addToFavourites('${barId}')">   
         <img src="../images/heart.svg">
@@ -252,7 +263,8 @@ class BarService {
             favBars: firebase.firestore.FieldValue.arrayUnion(barId)
         }, {
             merge: true
-        });
+        }).then( () => this.appendDetailView(barId));
+
         
     }
 
@@ -261,7 +273,8 @@ class BarService {
         loaderService.show(true);
         authService.authUserRef.update({
             favBars: firebase.firestore.FieldValue.arrayRemove(barId)
-        });
+        }).then( () => this.appendDetailView(barId));
+
     }
 
 
