@@ -30,17 +30,22 @@
   display: inline-block;
   position: relative;
   width: 100%;
-  margin-top: 0;
-  background: #111118;
-  background: linear-gradient(180deg, rgba(17, 17, 24, 0) 0%, #111118 77%, #111118 91%, #111118 100%); }
+  margin-top: 0; }
   .toppic img {
     margin-top: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     position: relative;
-    z-index: -1;
     display: block; }
+  .toppic .top-gradient {
+    position: absolute;
+    background: #111118;
+    background: linear-gradient(180deg, rgba(17, 17, 24, 0) 0%, #111118 77%, #111118 91%, #111118 100%);
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0; }
   .toppic h1 {
     position: absolute;
     color: white;
@@ -50,7 +55,8 @@
     right: 0;
     bottom: 5%;
     font-size: 3rem;
-    text-align: center; }
+    text-align: center;
+    z-index: 3; }
 
 .mdl-card {
   background-color: transparent;
@@ -358,7 +364,7 @@ body {
     width: 2em;
     height: 100%;
     display: flex;
-    justify-content: space-between; }
+    justify-content: center; }
 
 .tabbar a svg {
   transition: .5s ease;
@@ -368,15 +374,10 @@ body {
   width: 80%;
   height: 80%; }
 
-.tabbar a.active {
-  display: flex;
-  justify-content: center; }
-
 .tabbar a.active svg {
   transition: .5s ease;
   fill: white;
-  stroke: white;
-  width: 85%; }
+  stroke: white; }
 
 /* ================= TABBAR END ====================== */
 /* ================= LOADER =========================== */
@@ -468,7 +469,8 @@ header {
 
 #search-header {
   position: fixed;
-  top: 0; }
+  top: 0;
+  width: 100%; }
 
 /* gradients */
 /* inheritances */
@@ -547,14 +549,17 @@ header {
   color: #101017;
   background-color: #F3CA26;
   border-radius: 5px;
-  padding: 2% 6%;
+  padding: 2% 3%;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem; }
 
 .show-delete {
-  width: 20%;
+  width: 25%;
   text-align: center; }
+
+.show-delete:hover, .logout:hover, #delete-btn:hover, #back-btn:hover {
+  cursor: pointer; }
 
 .logout {
   width: 25%;
@@ -687,6 +692,12 @@ header {
   height: 100%;
   position: absolute;
   z-index: 10; }
+
+.nothing {
+  color: white;
+  font-size: 1.3rem;
+  text-align: center;
+  width: 100%; }
 
 /* ================= SLIDER END ====================*/
 /* gradients */

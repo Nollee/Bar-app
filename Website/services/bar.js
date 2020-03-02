@@ -25,8 +25,9 @@ class BarService {
             this.appendBarsHome(this.bars);       
         });
         this.appendFavBars();
-    }  
+    } 
 
+    // append bars to the bars subpage - Martin og Mikkel FJ
     appendBars(bars) {
         let htmlTemplate = "";
         for (let index = 0; index < bars.length; index++) {
@@ -47,7 +48,7 @@ class BarService {
               <div class="small-dot"></div>    
              ${this.generateFavBarButton(bar.id)}
              </div>      
-             </article>       
+             </article>        
           `;
         } 
         document.querySelector('#bar-container').innerHTML = htmlTemplate;
@@ -55,6 +56,8 @@ class BarService {
         console.log(bars);
       }
 
+      //append bars to slider at frontpage - Martin
+    
       appendBarsHome(bars) {
         let htmlTemplate = "";
         for (let index = 0; index < bars.length; index++) {
@@ -83,8 +86,10 @@ class BarService {
         document.querySelector('#bar-highlight').innerHTML = htmlTemplate;
     
       }
+
+    // append bar detailview with given id - Mikkel FJ & Martin
     
-    showDetailView(id) { 
+    appendDetailView(id) { 
 
         for (let bar of this.bars) {
             if (bar.id === id) {
@@ -213,12 +218,24 @@ class BarService {
             </div>       
         </article>
   `; 
-            
-    this.spaService.navigateTo("detail-view");
-
+        
     }
 
+
+    // shows detailview of bar with given id - Mikkel FJ
+
+    showDetailView(barId){
+        loaderService.show(true);
+        this.appendDetailView(barId);
+        this.spaService.navigateTo("detail-view");
+        loaderService.show(false);
+    }
+
+    
+    // Generates favourite button - Martin
+
     generateFavBarButton(barId) {
+        
         let btnTemplate = /*html*/ `
         <div class="fav-btn" onclick="addToFavourites('${barId}')">   
         <img src="../images/heart.svg">
@@ -232,6 +249,8 @@ class BarService {
         return btnTemplate;
     }; 
 
+    // Checks if user has favBarid in favBars array - Martin
+
      userHasFav(favBarId) {
         if (authService.authUser.favBars && authService.authUser.favBars.includes(favBarId)) {
             return true;
@@ -240,7 +259,7 @@ class BarService {
         }
     } 
 
-    // adds a given movieId to the favMovies array inside _currentUser
+    // adds a given barId to the favBars array inside current user - Martin
 
     addToFavourites(barId) {
         loaderService.show(true);
@@ -248,19 +267,20 @@ class BarService {
             favBars: firebase.firestore.FieldValue.arrayUnion(barId)
         }, {
             merge: true
-        });
-        
+        }).then( () => this.appendDetailView(barId));
     }
 
-    // removes a given movieId to the favMovies array inside _currentUser
+    // removes a given barId to the favBars array inside users - Martin
     removeFromFavourites(barId) {
         loaderService.show(true);
         authService.authUserRef.update({
             favBars: firebase.firestore.FieldValue.arrayRemove(barId)
-        });
+        }).then( () => this.appendDetailView(barId));
+
     }
 
-
+    // Loads favourite bars from favBars array - form given user id - Martin
+    
     async getFavBars() {
         let favBars = [];
         for (let barId of authService.authUser.favBars) {
@@ -272,6 +292,8 @@ class BarService {
         }
         return favBars;
     }
+
+    //appends favourite bars to #fav-container on the favourite page - Martin
 
     async appendFavBars() {
         let bars = await barService.getFavBars();
@@ -296,16 +318,17 @@ class BarService {
              </article> 
           `;
         }
+        console.log(bars.length);
+        
         if (bars.length === 0) {
             template = `
-                <p>No Bars added</p>
+                <p class="nothing">Ingen favoritter</p>
             `;
         }
         document.querySelector('#fav-container').innerHTML = template;
     }
  
-
-
+    // search array for value and appends result - Mikkel FJ
 
     search(value) {
         let searchQuery = value.toLowerCase();
@@ -321,6 +344,7 @@ class BarService {
     console.log(filteredBars);  
     }  
 
+    // adds new bar to array based on user input - Mikkel FJ
 
   createBar() {
     // references to the input fields
@@ -345,29 +369,7 @@ class BarService {
     let saturdayFromInput = document.querySelector('#form-from-saturday'); 
     let saturdayToInput = document.querySelector('#form-to-saturday'); 
     let sundayFromInput = document.querySelector('#form-from-sunday'); 
-    let sundayToInput = document.querySelector('#form-to-sunday'); 
-    console.log(nameInput.value);
-    console.log(descriptionInput.value);
-    console.log(imgInput.value);
-    console.log(spaceInput.value);
-    console.log(priceInput.value);
-    console.log(addressInput.value);
-    console.log(typeInput.value); 
-    console.log(ageInput.value);  
-    console.log(mondayFromInput.value);
-    console.log(mondayToInput.value); 
-    console.log(tuesdayFromInput.value);
-    console.log(tuesdayToInput.value); 
-    console.log(wednesdayFromInput.value);
-    console.log(wednesdayToInput.value); 
-    console.log(thursdayFromInput.value);
-    console.log(thursdayToInput.value); 
-    console.log(fridayFromInput.value);
-    console.log(fridayToInput.value); 
-    console.log(saturdayFromInput.value);
-    console.log(saturdayToInput.value); 
-    console.log(sundayFromInput.value);
-    console.log(sundayToInput.value); 
+    let sundayToInput = document.querySelector('#form-to-sunday');  
     
   
     let newBar = {
@@ -400,10 +402,14 @@ class BarService {
     this.appendBars(this.bars);   
   }  
 
+  // shows add bar page by adding CSS class - Mikkel FJ
+
   showAddBar() {
      let form = document.getElementById("form-popup");
      form.classList.add("active");       
   }
+
+// shows add bar page by removing CSS class - Mikkel FJ
 
   hideAddBar() {
       let form = document.getElementById("form-popup");

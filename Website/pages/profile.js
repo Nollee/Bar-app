@@ -20,9 +20,9 @@ export default class ProfilePage {
           <section id="profile-container">
           </section>
           <div id="show-add-bar" onclick="showAddBar()">+</div>  
-          <div class="logout"><a href="#" onclick="logout()">Log Ud</a></div>
+          <div class="logout" onclick="logout()"><a href="#" ">Log Ud</a></div>
 
-
+        <!-- pop-up notifier before deleting account -->
           <div class="sure">
           <div class="delete">
           <h3>Er du sikker?</h3>
@@ -158,7 +158,8 @@ export default class ProfilePage {
     logout() {
         this.authService.logout();
       }
-
+    
+    // toggles class "show"
     toggleDelete(){
       let sure = document.querySelector(".sure");
       sure.classList.toggle("show");

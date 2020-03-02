@@ -1,3 +1,8 @@
+
+
+// ======= ALLE TRE, UNDTAGEN DET DER ER KOMMENTERET NAVN PÅ ==============
+
+
 import spaService from "./spa.js";
 import loaderService from "./loader.js";
 import barService from "./bar.js";
@@ -24,6 +29,7 @@ class AuthService {
         });
     }
 
+    // if user is authenticated, start following functions
     userAuthenticated(user) {
         this.spaService.hideTabbar(false);
         this.initAuthUserRef();
@@ -33,7 +39,7 @@ class AuthService {
         this.insertProfilePic(user);
 
     }
-
+    // if user is not authenticated, start following functions
     userNotAuthenticated() {
         this.spaService.hideTabbar(true);
         this.spaService.navigateTo("login");
@@ -54,7 +60,7 @@ class AuthService {
     initAuthUserRef() {
         let authUser = firebase.auth().currentUser;
         this.authUserRef = _db.collection("users").doc(authUser.uid);
-        // init user data and favourite movies
+        // init user data, init barService and init couponService
         this.authUserRef.onSnapshot({
             includeMetadataChanges: true
         }, userData => {
@@ -64,7 +70,6 @@ class AuthService {
                     ...userData.data()
                 }; //concating two objects: authUser object and userData objec from the db
                 this.authUser = user;
-                this.appendAuthUser();
                 barService.init();
                 couponService.init();
                 loaderService.show(false);
@@ -74,7 +79,7 @@ class AuthService {
 
     }
 
-    // Appends the data of the user 
+    // Appends the data of the user - Mikkel NA
     appendUserData(user){
         document.querySelector('#profile-container').innerHTML += /* html */ `
              <article class="profiledata">
@@ -89,6 +94,7 @@ class AuthService {
         console.log(user);
     }
     
+    // insets profile pic in the top-left of the screen - Mikkel NA
     insertProfilePic(user){
 
         let elements = document.querySelectorAll('.pic-wrapper')
@@ -99,12 +105,12 @@ class AuthService {
             
         }
     }
-    // Makes the user log out
+    // Makes the user log out - Mikkel NA
     logout() {
         firebase.auth().signOut();
     }
     
-    // deletes the account
+    // deletes the account - Mikkel NA
     deleteAccount(){
         let user = firebase.auth().currentUser;
 
@@ -112,35 +118,8 @@ class AuthService {
     }
 
 
-    // appends the value which has been written in updateUser()
-    appendAuthUser() {
-        document.querySelector('#name').value = this.authUser.displayName || "";
-        document.querySelector('#mail').value = this.authUser.email;
-    }
+    
 
-    // updates the auth user and puts the user into the database 
-    updateAuthUser(name, mail) {
-        this.loaderService.show(true);
-
-        let user = firebase.auth().currentUser;
-
-        // update auth user
-        user.updateProfile({
-            displayName: name,
-                });
-        
-        
-
-        // update database user
-        this.authUserRef.set({
-            name: name,
-        }, {
-            merge: true
-        }).then(() => {
-            this.loaderService.show(false);
-        });
-
-    }
 }
 
 const authService = new AuthService();

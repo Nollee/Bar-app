@@ -1,3 +1,7 @@
+
+
+// ================== MIKKEL NA ===========================
+
 import spaService from "./spa.js";
 import authService from "./auth.js";
 import loaderService from "./loader.js";
@@ -12,7 +16,7 @@ class CouponService {
     }
 
     init() {
-        // init all bars
+        // init all coupons from firebase
         this.couponRef.onSnapshot(snapshotData => {
             this.coupons = [];
             snapshotData.forEach(doc => {
@@ -22,13 +26,19 @@ class CouponService {
             });
             console.log(this.coupons);
                     });
+        // Calls the append function which appends owned coupons in "home"
         this.appendOwnedCoupons();
     }
 
+    //Appends 1 random coupon when clicked
     appendCoupons(){
         let coupons = this.coupons
+        // Math which gives the user 1 coupon every time they click
         this.randomCoupon = coupons[Math.floor(Math.random()*coupons.length)];
-        console.log(this.randomCoupon);
+
+        // if else statement that either gives a "you lose"-notification or a "congratulations!"-notification
+
+        // if-statement which looks on the generated coupon's property. if the coupon has a property called "lose", which has the value "lose", it appends the following:
         if (this.randomCoupon.lose === "lose") {
             document.querySelector("#coupon-container").innerHTML = /* html */ `
             <article class="coupon-wrapper">
@@ -42,7 +52,9 @@ class CouponService {
             <a href="#home" class="seeMore">Hjem</a>
             </article>
             `;
-        } else {
+        } 
+        // else it appends a real coupon
+        else {
             document.querySelector("#coupon-container").innerHTML = /* html */ `
             <article class="coupon-wrapper">
             <div class="img-wrapper">
@@ -57,27 +69,26 @@ class CouponService {
             <p class="expire">Udløber: ${this.randomCoupon.expire}</p>
             <a class="seeMore" href="#home">Se kuponer</a>
             </article>
-            <div class="overlav"></div>
             `;
+
+            // calls the function addToOwnedCoupons() for the random coupon that has been generated
             this.addToOwnedCoupons(this.randomCoupon.id);
 
         }
+
+        // navigates to the section "coupon-container", with the help of spa.js
         this.spaService.navigateTo("coupon-container");
 
         
     }
-
-    generateGetCouponButton(couponId) {
-        let btnTemplate = /*html*/ `
-        <button onclick="addToOwnedCoupons('${couponId}')">Add to favourites</button>
-          `; 
-        return btnTemplate;
-    }; 
-
-    // adds a given Id to the favMovies array inside _currentUser
-
+    
+    // adds the ID of the generated coupon to an array called "ownedCoupons" 
     addToOwnedCoupons(couponId) {
         loaderService.show(true);
+
+        //makes the array and adds a value which is equal to the id of the generated coupon
+
+        // calls the variable authUserRef from authService in auth.js
         authService.authUserRef.set({
             ownedCoupons: firebase.firestore.FieldValue.arrayUnion(couponId)
         }, {
@@ -87,7 +98,7 @@ class CouponService {
 
     }
 
-
+    // gets the ID of the owned coupons from the array "ownedCoupons" and connects it with the same ID from the collection "coupons"
     async getOwnedCoupons() {
         let ownedCoupons = [];
         for (let couponId of authService.authUser.ownedCoupons) {
@@ -100,9 +111,13 @@ class CouponService {
         return ownedCoupons;
     }
 
+    // appends the ownedCoupons to "home"
     async appendOwnedCoupons() {
         loaderService.show(true);
+
+        // calls getOwnedCoupons
         let coupons = await couponService.getOwnedCoupons();
+
         let template = "";
         for (let i = 0; i< coupons.length; i++) {
             let coupon = coupons[i];
@@ -119,16 +134,22 @@ class CouponService {
             </div>
           `;
         }
+
+        // if you don't have any coupons, show this
         if (coupons.length === 0) {
             template = `
-                <p>Du har ingen kuponer</p>
+                <p class="nothing">ingen kuponer</p>
             `;
         }
         document.querySelector('#myCoupons').innerHTML = template;
         loaderService.show(false);
     }; 
 
+
+    // function which shows details of coupon, when clicked on
     async showOwnedCoupon(id){
+        loaderService.show(true);
+        
     let coupons = await couponService.getOwnedCoupons();
 
         for (let coupon of coupons) {
@@ -155,9 +176,15 @@ class CouponService {
         </article>
         <div class="overlav"></div>
         `;
+
+        // navigates to "detail-view, which includes the shown coupon"
         this.spaService.navigateTo("detail-view");
+        loaderService.show(false);
+
     }
 
+
+    // removes coupon from "ownedCoupons", when user click on "Indløs Kupon"
     removeCoupon(couponId) {
         loaderService.show(true);
         authService.authUserRef.update({
@@ -170,7 +197,7 @@ class CouponService {
 
 
 
-
+    // Creates a new coupon with the help of a form
     createCoupon() {
         // references to the input fields
         let rabatInput = document.querySelector('#coupon-rabat');
@@ -179,6 +206,7 @@ class CouponService {
         let toInput = document.querySelector('#coupon-to'); 
         let expireInput = document.querySelector('#expire');
 
+        // makes a coupon with property and values
         let newCoupon = {
             rabat: rabatInput.value,
             for: forInput.value, 
@@ -187,16 +215,20 @@ class CouponService {
             expire: expireInput
         };
         
+        // makes a "loser-coupon"
         let lose = {
             lose: "lose"
         };
-        /* location.reload();  */
+
         this.couponRef.add(newCoupon);
-       /*  this.couponRef.add(lose);
-        this.couponRef.add(lose); */
+        // adds two "loser-coupons" when creating 1 real coupon
+       this.couponRef.add(lose);
+        this.couponRef.add(lose);
         console.log(this.coupons);
       } 
 }
 
 const couponService = new CouponService();
 export default couponService;
+
+// ================== MIKKEL NA ===========================
