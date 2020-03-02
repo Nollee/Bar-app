@@ -272,7 +272,7 @@ class BarService {
         }).then( () => this.appendDetailView(barId));
     }
 
-    // removes a given barId to the favMovies array inside users
+    // removes a given barId to the favBars array inside users
     removeFromFavourites(barId) {
         loaderService.show(true);
         authService.authUserRef.update({
