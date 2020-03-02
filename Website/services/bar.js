@@ -222,8 +222,10 @@ class BarService {
     }
 
     showDetailView(barId){
+        loaderService.show(true);
         this.appendDetailView(barId);
         this.spaService.navigateTo("detail-view");
+        loaderService.show(false);
 
     }
 
