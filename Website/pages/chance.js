@@ -24,7 +24,7 @@ export default class ChancePage {
 
           </section>
 
-         <!--
+         <!-- ============================ FORM TIL AT LAVE EN NY BAR =====================
           <form id="barForm">
       <h2>Tilføj en ny kupon</h2>
       

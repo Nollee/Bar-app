@@ -45,6 +45,7 @@ authService.init();
 
 // coupon handlers
 window.createCoupon = () => couponService.createCoupon();
+
 window.appendCoupons = () => couponService.appendCoupons();
 window.addToOwnedCoupons = (couponId) => chancePage.addToOwnedBars(couponId);
 window.removeCoupon = (couponId) => couponService.removeCoupon(couponId);

@@ -2,16 +2,18 @@
 
 // ================== MIKKEL NA ===========================
 
-import spaService from "./spa.js";
-import authService from "./auth.js";
-import loaderService from "./loader.js";
+import spaService from "./spa.js"; // - Importeres da vi skal linke videre til andet indhold
+
+import authService from "./auth.js"; // - importeres da vi skal have fat i brugerne ift. At hver bruger har sine egne kuponer som brugeren har vundet
+
+import loaderService from "./loader.js"; // - importeres da det er med til at illustrere for brugeren at vores web app er i gang med at loade indhold
 
 class CouponService {
     constructor(){
-        this.couponRef = _db.collection("coupons");
-        this.spaService = spaService;
-        this.coupons = [];
-        this.selectedCoupon;
+        this.couponRef = _db.collection("coupons"); // laver en variable for en collection inde I firebase kaldt: “coupons”
+        this.spaService = spaService; // kalder spaService 
+        this.coupons = []; // Laver et tomt array til vores kuponer
+        this.selectedCoupon; // laver en variable som skal bruges til detail-view for den valgte kupon
         
     }
 
